@@ -1,12 +1,16 @@
 const router = require("express").Router();
+//
 
-//all the clients routes comes here//
-
+//all the clients routes come  here//
+//api/clients
 const clientRoutes = () => {
-  
-  router.get('/', (req, res) => {
-    res.json({data: 'Hello from the Clients API!'});
-  })
+  // get the all clients
+
+  router.get("/", (req, res) => {
+    res.json({
+      data: "Hello from the clients API!",
+    });
+  });
 
   return router;
 };
