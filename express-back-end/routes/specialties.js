@@ -12,7 +12,7 @@ const specialtiesRoutes = () => {
       .catch(e => console.log(e))
   });
 
-  /*  */
+  /* Specialties of current professional */
   router.get("/:profid", (req, res) => {
       getSpecialtiesByProfessionalId(req.params.profid)
         .then(specialties => res.json(specialties))
