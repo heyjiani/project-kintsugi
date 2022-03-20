@@ -20,24 +20,38 @@ class App extends Component {
   render() {
     return (
 <body>
+
+
+  {/* nav bar below  */}
+
     <nav class='navigation'>
       <div class="logo">
       <h1>Kintsugi</h1>
       </div>
     </nav> 
+
+
+{/* the components will populate in the "components_container" div below */}
+
   <main>
       <div className="components_container">
         the componnents will go here 
-
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
       </div>
   </main>
+
+{/* footer below  */}
+
+<footer>
+  <div>
+<h4>Kintsugi</h4>
+</div>
+<div>
+About the makers. 
+</div>
+<div>
+© Kintsugi 2022
+</div>
+</footer>
 
       </body>
     );
