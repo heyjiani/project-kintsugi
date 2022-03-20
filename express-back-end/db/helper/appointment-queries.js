@@ -22,4 +22,18 @@ const getSingleAppointment = (id) => {
     });
 };
 
-module.exports = { getAppointments, getSingleAppointment };
+const newAppointment = (client_id, prof_id, appointment_data) => {
+  const { date, time, description } = appointment_data 
+  const queryValues = [client_id, prof_id, date, time, description]
+  const queryString = `INSERT INTO appointments (client_id, professional_id, date, time, description) VALUES
+  ($1, $2, $3, $4, $5) RETURNING *`
+  
+  return db
+    .query(queryString, queryValues)
+    .then((res) => res.rows[0])
+    .catch((err) => {
+      console.log(err.message);
+    });
+  };
+
+module.exports = { getAppointments, getSingleAppointment, newAppointment };
