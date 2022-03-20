@@ -11,7 +11,7 @@ const appointmentRoutes = () => {
       .then(response => res.json(response))
       .catch(e => console.log(e))
     });
-    
+
 
   // router.post("/", (req, res) => {
   //   // console.log(req.body)
