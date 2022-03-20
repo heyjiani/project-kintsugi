@@ -1,0 +1,37 @@
+h1 {
+  font-size: 144px;
+  color: #CBA96D;
+  margin: 0px;
+  padding: 0px 0px 0px 25px; 
+  font-weight: normal; 
+}
+
+h4 {
+  color: #CBA96D;
+  font-size: 25px; 
+  padding: -5px;
+  margin-top: -5px;
+}; 
+
+body {
+  background-image:
+  url('/react-front-end/images/Kintsugi_crack.png');
+}
+
+.components_container {
+background-color: #CBA96D;
+height: 700px; 
+padding-left: 25px; 
+}
+
+footer {
+background-color: white; 
+display: flex; 
+justify-content: space-between; 
+padding: 25px 25px 25px 25px; 
+font-size: 15px;
+
+
+};
+
+
