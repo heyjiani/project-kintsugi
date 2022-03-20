@@ -25,12 +25,19 @@ class App extends Component {
       <h1>Kintsugi</h1>
       </div>
     </nav> 
+  <main>
+      <div className="components_container">
+        the componnents will go here 
 
-
-      <div className="App">
-      body
-        
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
+  </main>
 
       </body>
     );

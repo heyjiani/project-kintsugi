@@ -4,6 +4,14 @@ h1 {
   margin: 0px;
   padding: 0px 0px 0px 25px; 
   font-weight: normal; 
+}
 
+body {
+background-image: url("/react-front-end/images/Kintsugi_crack.png");
+object-fit: fill;
+}
 
-};
+.components_container {
+background-color: #CBA96D;
+height: 100%; 
+}
