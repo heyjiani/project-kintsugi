@@ -24,10 +24,16 @@ class App extends Component {
 
   {/* nav bar below  */}
 
-    <nav class='navigation'>
-      <div class="logo">
+    <nav>
+
+      <div className='logo'>
       <h1>Kintsugi</h1>
       </div>
+
+      <div className='navigation_links'>
+        <div>About</div><div>Get</div><div>View Appointments</div>
+      </div>
+
     </nav> 
 
 
