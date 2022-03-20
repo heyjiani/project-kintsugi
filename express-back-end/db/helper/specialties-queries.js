@@ -1,5 +1,12 @@
 const db = require("../../lib/db");
 
+const getAllSpecialties = () => {
+  return db
+    .query(`SELECT * FROM specialties;`)
+    .then((res) => res.rows)
+    .catch((err) => console.log(err.message));
+};
+
 const getSpecialtiesByProfessionalId = professional_id => {
   const queryString = `
     SELECT name FROM specialties
@@ -16,5 +23,6 @@ const getSpecialtiesByProfessionalId = professional_id => {
 };
 
 module.exports = {
+  getAllSpecialties,
   getSpecialtiesByProfessionalId
 };
