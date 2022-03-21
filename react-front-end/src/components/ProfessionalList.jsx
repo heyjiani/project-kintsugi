@@ -6,10 +6,12 @@ import "../scss/ProfessionalList.scss";
 
 export default function ProfessionalList() {
   
-  // rendering three repeats for now //
+  // rendering 4 repeats for now //
+
   return (
     <section className="professionals">
       <ul className="professionals__list">
+        <ProfessionalListItem />
         <ProfessionalListItem />
         <ProfessionalListItem />
         <ProfessionalListItem />

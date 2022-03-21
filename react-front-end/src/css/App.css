@@ -30,7 +30,7 @@ body {
   background-image: "url(${/images/Kintsugi_crack.png})"
     repeat;
   display: block;
-  position: fixed;
+  /* position: fixed; */
 }
 
 .components_container {
