@@ -5,9 +5,9 @@ import Sidebar from "../components/Professionals/Sidebar";
 
 export default function ProfessionalsPage() {
   return(
-    <section>
+    <div className="professionals">
       <Sidebar />
       <ProfessionalList />
-    </section>
+    </div>
   )
 }

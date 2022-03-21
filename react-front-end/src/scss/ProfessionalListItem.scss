@@ -5,8 +5,9 @@ gonna move this to app.scss tomorrow! */
 
 .professionals {
   &__item {
-    // width: 50%;
+    width: 300px;
     padding: 1em;
+    margin: 2em;
 
     div {
       display: flex;

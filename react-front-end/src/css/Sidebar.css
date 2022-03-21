@@ -1,9 +1,14 @@
 .professionals__sidebar {
-  width: 20%;
+  width: 250px;
+  height: 100%;
   position: fixed;
   left: 0;
   padding: 1em;
-  background-color: papayawhip;
+  background-color: #ffefd5;
+}
+.professionals__sidebar__options {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=Sidebar.css.map */

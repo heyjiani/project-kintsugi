@@ -9,13 +9,11 @@ export default function ProfessionalList() {
   // rendering 4 repeats for now //
 
   return (
-    <section className="professionals">
-      <ul className="professionals__list">
-        <ProfessionalListItem />
-        <ProfessionalListItem />
-        <ProfessionalListItem />
-        <ProfessionalListItem />
-      </ul>
-    </section>
+    <ul className="professionals__list">
+      <ProfessionalListItem />
+      <ProfessionalListItem />
+      <ProfessionalListItem />
+      <ProfessionalListItem />
+    </ul>
   )
 }
