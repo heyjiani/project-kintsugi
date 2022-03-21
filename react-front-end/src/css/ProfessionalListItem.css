@@ -1,5 +1,21 @@
+/* barebones css, fix after normalizing app.css :) */
+.professionals__item {
+  padding: 1em;
+}
+.professionals__item div {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.professionals__item h2 {
+  font-size: 32px;
+  margin: 0;
+}
 .professionals__item-image {
   width: 50px;
+}
+.professionals__item footer {
+  padding: 0;
 }
 
 /*# sourceMappingURL=ProfessionalListItem.css.map */

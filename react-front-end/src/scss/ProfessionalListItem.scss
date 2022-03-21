@@ -1,9 +1,27 @@
+/* barebones css, fix after normalizing app.css :) */
 .professionals {
   &__item {
+    padding: 1em;
+
+    div {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin: 0;
+    }
 
     &-image {
       width: 50px;
     }
+
+    footer {
+      padding: 0;
+    }
+
   }
 
 }
