@@ -8,7 +8,7 @@ import {
   Routes,
 } from "react-router-dom";
 
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/Homepage";
 import ProfessionalsPage from "./pages/ProfessionalsPage";
 import AppointmentPage from "./pages/AppointmentPage";
 import BookingPage from "./pages/BookingPage";
