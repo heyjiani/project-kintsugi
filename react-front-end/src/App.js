@@ -1,16 +1,20 @@
 /* eslint-disable no-undef */
 import React from "react";
 // import axios from "axios";
-import "./css/App.css";
+
 import {
   BrowserRouter,
   Route,
   Routes,
 } from "react-router-dom";
 
-import Homepage from "./pages/Homepage";
+import HomePage from "./pages/Homepage";
 import ProfessionalsPage from "./pages/ProfessionalsPage";
 import AppointmentPage from "./pages/AppointmentPage";
+import BookingPage from "./pages/BookingPage";
+import Footer from "./pages/Footer";
+import "./scss/main.scss";
+import NavBar from "./pages/NavBar";
 
 // fetchData = () => {
 //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
@@ -27,39 +31,13 @@ import AppointmentPage from "./pages/AppointmentPage";
 
 function App() {
   return (
-    <body>
-      {/* nav bar below  */}
-
-      <nav class="navigation">
-        <div class="logo">
-          <h1>Kintsugi</h1>
-        </div>
-      </nav>
-
-      {/* the components will populate in the "components_container" div below */}
-
-      <main>
-        <div className="components_container">
-          the componnents will go here
-        </div>
-      </main>
-
-      {/* footer below  */}
-
-      <footer>
-        <div>
-          <h4>Kintsugi</h4>
-        </div>
-        <div>About the makers.</div>
-        <div>© Kintsugi 2022</div>
-      </footer>
-
+    <>
       <BrowserRouter>
-        {/* <Nav/ > */}
+        <NavBar />
         <Routes>
           <Route
             path="/"
-            element={<Homepage />}
+            element={<HomePage />}
             exact
           />
           <Route
@@ -68,14 +46,21 @@ function App() {
             exact
           />
           <Route
-            path="/form"
+            path="/myappointments"
             element={<AppointmentPage />}
             exact
           />
+          <Route
+            path="/booking"
+            element={<BookingPage />}
+            exact
+          />
+
           {/* <Route element={<Error />} /> */}
         </Routes>
+        <Footer />
       </BrowserRouter>
-    </body>
+    </>
   );
 }
 

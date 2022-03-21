@@ -1,0 +1,67 @@
+h1 {
+  font-size: 144px;
+  color: #cba96d;
+  margin: 0px;
+  padding: 0px 0px 0px 54px;
+  font-weight: normal;
+}
+
+h4 {
+  color: #cba96d;
+  font-size: 25px;
+  padding: -5px;
+  margin-top: -5px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation_links {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 54px 54px 54px;
+  font-size: 25px;
+  width: 500px;
+  color: #ae915e;
+}
+
+.components_container {
+  background-color: #cba96d;
+  height: 700px;
+  padding-top: 54px;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+footer {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 54px 2px 54px;
+  font-size: 15px;
+}
+
+a {
+  color: #ae915e;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Alegreya", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 36px;
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat976.ani),
+    url(https://cur.cursors-4u.net/nature/nat-10/nat976.gif),
+    auto !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco,
+    Consolas, "Courier New", monospace;
+}

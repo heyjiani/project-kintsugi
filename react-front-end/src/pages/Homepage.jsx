@@ -1,11 +1,15 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import HomeHeader from "../components/HomeHeader";
+import Placeholder from "../components/Placeholder";
 
 export default function Homepage() {
   return (
-    <Fragment>
-      <HomeHeader />
-    </Fragment>
+    <>
+      <div className="components_container">
+        <HomeHeader />
+        <Placeholder />
+      </div>
+    </>
   );
 }
