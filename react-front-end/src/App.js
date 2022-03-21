@@ -8,9 +8,10 @@ import {
   Routes,
 } from "react-router-dom";
 
-import Homepage from "./pages/Homepage";
+import HomePage from "./pages/HomePage";
 import ProfessionalsPage from "./pages/ProfessionalsPage";
 import AppointmentPage from "./pages/AppointmentPage";
+import BookingPage from "./pages/BookingPage";
 import "./scss/main.scss";
 
 // fetchData = () => {
@@ -50,7 +51,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Homepage />}
+          element={<HomePage />}
           exact
         />
         <Route
@@ -59,8 +60,13 @@ function App() {
           exact
         />
         <Route
-          path="/form"
+          path="/myappointments"
           element={<AppointmentPage />}
+          exact
+        />
+        <Route
+          path="/booking"
+          element={<BookingPage />}
           exact
         />
         {/* <Route element={<Error />} /> */}

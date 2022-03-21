@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import HomeHeader from "../components/HomeHeader";
 
 export default function Homepage() {
   return (
-    <Fragment className="components_container">
+    <div className="components_container">
       <HomeHeader />
-    </Fragment>
+    </div>
   );
 }

@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Button from "./Button";
 import Selection from "./Selection";
 
 export default function HomeHeader() {
   return (
-    <Fragment>
+    <div>
       <div className="heading">
         <h2>
           Find a mental health professional meets
@@ -18,6 +18,6 @@ export default function HomeHeader() {
       <Selection genre="Language" />
       <Selection genre="Province" />
       <Button text="Search" />
-    </Fragment>
+    </div>
   );
 }
