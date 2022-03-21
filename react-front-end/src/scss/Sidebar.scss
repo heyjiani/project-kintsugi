@@ -1,0 +1,15 @@
+.professionals {
+  &__sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    padding: 1em;
+    background-color: #ffefd5;
+
+    &__options {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
