@@ -1,13 +1,21 @@
 import React from "react"
 
+import "../scss/ProfessionalListItem.scss"
+
 export default function ProfessionalListItem() {
+  const professionalClass = "professionals__item"
+
   return (
-    <section>
+    <section className={professionalClass}>
       <header>
         <h2>Yumi Tanaka</h2>
       </header>
       <div>
-        <img src="https://cdn-icons-png.flaticon.com/128/1946/1946429.png"/>
+        <img
+          className="professionals__item-image"
+          src="https://cdn-icons-png.flaticon.com/128/1946/1946429.png"
+          alt=""
+        />
         <ul>
           <li>Therapist</li>
           <li>Family Conflict</li>
