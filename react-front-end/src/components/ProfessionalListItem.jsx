@@ -6,7 +6,7 @@ export default function ProfessionalListItem() {
   const professionalClass = "professionals__item"
 
   return (
-    <section className={professionalClass}>
+    <li className={professionalClass}>
       <header>
         <h2>Yumi Tanaka</h2>
       </header>
@@ -25,6 +25,6 @@ export default function ProfessionalListItem() {
       <footer>
         <button>Find out more</button>
       </footer>
-    </section>
+    </li>
   )
 }

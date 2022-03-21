@@ -1,8 +1,8 @@
 import React from "react";
-import ProfessionalListItem from "../components/ProfessionalListItem";
+import ProfessionalList from "../components/ProfessionalList";
 
 export default function ProfessionalsPage() {
   return(
-    <ProfessionalListItem />
+    <ProfessionalList />
   )
 }
