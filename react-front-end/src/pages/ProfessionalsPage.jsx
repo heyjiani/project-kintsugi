@@ -4,10 +4,10 @@ import ProfessionalList from "../components/Professionals/ProfessionalList";
 import Sidebar from "../components/Professionals/Sidebar";
 
 export default function ProfessionalsPage() {
-  return(
+  return (
     <div className="professionals">
       <Sidebar />
       <ProfessionalList />
     </div>
-  )
+  );
 }

@@ -1,10 +1,23 @@
 .btn {
   background-color: white;
-  color: #ae915e;
   padding: 2rem;
   border: 2px solid black;
   display: inline-block;
-  margin: 3rem; }
+  margin: 1em;
+  color: #ae915e; }
+
+.btn-delete {
+  background-color: white;
+  padding: 0.5em;
+  border: 2px solid black; }
+
+.btn-booking {
+  background-color: #ae915e;
+  padding: 0.5em;
+  border: 2px solid black;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center; }
 
 .selection {
   background-color: white;
@@ -12,3 +25,114 @@
   border: 2px solid black;
   display: inline-block;
   margin: 3rem; }
+
+.appointment {
+  display: flex; }
+
+.professional-detail {
+  width: 80%;
+  padding: 2rem;
+  background-color: white;
+  margin: 0 auto; }
+  .professional-detail__name {
+    color: #cba96d; }
+  .professional-detail__tags {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2rem; }
+  .professional-detail__bottom {
+    display: flex; }
+    .professional-detail__bottom-img {
+      width: 200px;
+      height: 250px; }
+
+.professionals__list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end; }
+
+/* barebones css, fix after normalizing app.css :) */
+/* ^ leaving this import here for now
+gonna move this to app.scss tomorrow! */
+.professionals__item {
+  width: 300px;
+  padding: 1em;
+  margin: 2em; }
+  .professionals__item div {
+    display: flex;
+    align-items: center;
+    font-size: 18px; }
+  .professionals__item h2 {
+    font-size: 32px;
+    margin: 0; }
+  .professionals__item-image {
+    width: 50px; }
+  .professionals__item footer {
+    padding: 0; }
+
+.professionals__sidebar {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  padding: 1em;
+  background-color: #ffefd5; }
+  .professionals__sidebar__options {
+    display: flex;
+    flex-direction: column; }
+
+h1 {
+  font-size: 144px;
+  color: #cba96d;
+  margin: 0px;
+  padding: 0px 0px 0px 54px;
+  font-weight: normal; }
+
+h4 {
+  color: #cba96d;
+  font-size: 25px;
+  padding: -5px;
+  margin-top: -5px; }
+
+.navigation {
+  display: flex;
+  flex-direction: column; }
+
+.navigation_links {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 54px 54px 54px;
+  font-size: 25px;
+  width: 500px;
+  color: #ae915e; }
+
+.components_container {
+  background-color: #cba96d;
+  height: 700px;
+  padding-top: 54px;
+  width: 100%;
+  justify-content: center;
+  text-align: center; }
+
+footer {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 54px 2px 54px;
+  font-size: 15px; }
+
+a {
+  color: #ae915e;
+  text-decoration: none; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Alegreya", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 36px;
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat976.ani), url(https://cur.cursors-4u.net/nature/nat-10/nat976.gif), auto !important; }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }

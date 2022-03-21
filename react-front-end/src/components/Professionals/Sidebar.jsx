@@ -1,7 +1,5 @@
 import React from "react";
 
-import "../../scss/Sidebar.scss"
-
 export default function Sidebar() {
   // need to populate checkboxes with prop data //
 
@@ -13,15 +11,18 @@ export default function Sidebar() {
       <div className="professionals__sidebar__options">
         <h4>City</h4>
         <div>
-          <input type="checkbox" />Item 1
+          <input type="checkbox" />
+          Item 1
         </div>
         <div>
-          <input type="checkbox" />Item 2
+          <input type="checkbox" />
+          Item 2
         </div>
         <div>
-        <input type="checkbox" />Item 3
+          <input type="checkbox" />
+          Item 3
         </div>
       </div>
     </aside>
-  )
+  );
 }

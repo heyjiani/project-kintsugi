@@ -2,10 +2,7 @@ import React from "react";
 
 import ProfessionalListItem from "./ProfessionalListItem";
 
-import "../../scss/ProfessionalList.scss";
-
 export default function ProfessionalList() {
-  
   // rendering 4 repeats for now //
 
   return (
@@ -15,5 +12,5 @@ export default function ProfessionalList() {
       <ProfessionalListItem />
       <ProfessionalListItem />
     </ul>
-  )
+  );
 }

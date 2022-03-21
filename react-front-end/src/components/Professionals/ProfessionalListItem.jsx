@@ -1,10 +1,10 @@
-import React from "react"
+import React from "react";
 
-import "../../scss/ProfessionalListItem.scss"
-
-export default function ProfessionalListItem(props) {
+export default function ProfessionalListItem(
+  props
+) {
   // const { first_name, last_name, city, province, profession, icon_url } = props;
-  const professionalClass = "professionals__item"
+  const professionalClass = "professionals__item";
 
   return (
     <li className={professionalClass}>
@@ -27,5 +27,5 @@ export default function ProfessionalListItem(props) {
         <button>Find out more</button>
       </footer>
     </li>
-  )
+  );
 }

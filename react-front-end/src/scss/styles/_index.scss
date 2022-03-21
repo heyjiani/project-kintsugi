@@ -32,8 +32,8 @@ h4 {
   height: 700px;
   padding-top: 54px;
   width: 100%;
-  justify-content: center; 
-  text-align: center; 
+  justify-content: center;
+  text-align: center;
 }
 
 footer {
@@ -49,3 +49,19 @@ a {
   text-decoration: none;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Alegreya", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 36px;
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat976.ani),
+    url(https://cur.cursors-4u.net/nature/nat-10/nat976.gif),
+    auto !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco,
+    Consolas, "Courier New", monospace;
+}
