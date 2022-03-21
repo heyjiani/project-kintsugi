@@ -9,7 +9,7 @@ export default function HomeHeader() {
           your needs.
         </h2>
 
-        <p>star</p>
+        <p>start </p>
       </div>
     </Fragment>
   );
