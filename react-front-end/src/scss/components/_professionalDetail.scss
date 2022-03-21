@@ -1,3 +1,24 @@
 .professional-detail {
   width: 80%;
+  padding: 2rem;
+  background-color: white;
+  margin: 0 auto;
+
+  &__name {
+    color: #cba96d;
+  }
+  &__tags {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2rem;
+  }
+
+  &__bottom {
+    display: flex;
+
+    &-img {
+      width: 200px;
+      height: 250px;
+    }
+  }
 }

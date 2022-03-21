@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React from "react";
 // import axios from "axios";
-import "./css/App.css";
+
 import {
   BrowserRouter,
   Route,
@@ -32,36 +32,34 @@ import NavBar from "./pages/NavBar";
 function App() {
   return (
     <>
-    <BrowserRouter>
-<NavBar />
-      <Routes>
-    
-        <Route
-          path="/"
-          element={<HomePage />}
-          exact
-        />
-        <Route
-          path="/professionals"
-          element={<ProfessionalsPage />}
-          exact
-        />
-        <Route
-          path="/myappointments"
-          element={<AppointmentPage />}
-          exact
-        />
-        <Route
-          path="/booking"
-          element={<BookingPage />}
-          exact
-        />
-       
-        {/* <Route element={<Error />} /> */}
-      </Routes>
-      <Footer />
-      
-    </BrowserRouter>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route
+            path="/"
+            element={<HomePage />}
+            exact
+          />
+          <Route
+            path="/professionals"
+            element={<ProfessionalsPage />}
+            exact
+          />
+          <Route
+            path="/myappointments"
+            element={<AppointmentPage />}
+            exact
+          />
+          <Route
+            path="/booking"
+            element={<BookingPage />}
+            exact
+          />
+
+          {/* <Route element={<Error />} /> */}
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }

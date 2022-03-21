@@ -3,7 +3,7 @@ import ProfessionalDetail from "../components/ProfessionalDetail";
 
 export default function BookingPage() {
   return (
-    <div>
+    <div className="components_container">
       <ProfessionalDetail />
     </div>
   );
