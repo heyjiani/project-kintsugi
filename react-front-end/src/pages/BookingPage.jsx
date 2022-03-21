@@ -1,5 +1,10 @@
 import React from "react";
+import ProfessionalDetail from "../components/ProfessionalDetail";
 
 export default function BookingPage() {
-  return <div>BookingPage</div>;
+  return (
+    <div>
+      <ProfessionalDetail />
+    </div>
+  );
 }

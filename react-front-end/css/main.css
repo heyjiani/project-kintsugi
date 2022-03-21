@@ -1,10 +1,23 @@
 .btn {
   background-color: white;
-  color: #ae915e;
-  padding: 2rem;
+  padding: 2em;
   border: 2px solid black;
   display: inline-block;
-  margin: 3rem; }
+  margin: 1em;
+  color: #ae915e; }
+
+.btn-delete {
+  background-color: white;
+  padding: 0.5em;
+  border: 2px solid black; }
+
+.btn-booking {
+  background-color: #ae915e;
+  padding: 0.5em;
+  border: 2px solid black;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center; }
 
 .selection {
   background-color: white;
@@ -12,3 +25,6 @@
   border: 2px solid black;
   display: inline-block;
   margin: 3rem; }
+
+.appointment {
+  display: flex; }

@@ -7,7 +7,10 @@ export default function AppointmentList() {
     <section>
       <header>
         <h2>Upcoming Appointments</h2>
-        <p>Click on an appointment to edit or delete</p>
+        <p className="btn-delete">
+          Click on an appointment to edit or
+          delete
+        </p>
       </header>
       <ul>
         <AppointmentListItem />
@@ -15,5 +18,5 @@ export default function AppointmentList() {
         <AppointmentListItem />
       </ul>
     </section>
-  )
+  );
 }
