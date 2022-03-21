@@ -1,0 +1,50 @@
+h1 {
+  font-size: 144px;
+  color: #CBA96D;
+  margin: 0px;
+  padding: 0px 0px 0px 54px; 
+  font-weight: normal; 
+}
+
+h4 {
+  color: #CBA96D;
+  font-size: 25px; 
+  padding: -5px;
+  margin-top: -5px;
+}; 
+
+.navigation {
+display: flex; 
+}
+
+.navigation_links {
+  display: flex; 
+  justify-content: space-between; 
+  padding: 0px 54px 54px 54px; 
+  font-size: 25px;
+  width: 500px; 
+  color: #AE915E;
+  };
+
+body {
+  background-image: 'url(${/images/Kintsugi_crack.png})' repeat;
+  display: block;
+  position: fixed; 
+}
+
+.components_container {
+/* background-color: #CBA96D; */
+height: 700px; 
+padding-left: 54px; 
+padding-top: 54px; 
+}
+
+footer {
+background-color: white; 
+display: flex; 
+justify-content: space-between; 
+padding: 25px 54px 2px 54px; 
+font-size: 15px;
+};
+
+

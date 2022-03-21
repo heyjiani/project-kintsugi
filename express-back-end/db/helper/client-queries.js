@@ -21,5 +21,4 @@ const getSingleClient = (id) => {
       console.log(err.message);
     });
 };
-
 module.exports = { getClients, getSingleClient };
