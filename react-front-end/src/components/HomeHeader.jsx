@@ -1,16 +1,23 @@
 import React, { Fragment } from "react";
+import Button from "./Button";
+import Selection from "./Selection";
 
 export default function HomeHeader() {
   return (
     <Fragment>
-      <div>
+      <div className="heading">
         <h2>
           Find a mental health professional meets
           your needs.
         </h2>
-
-        <p>start </p>
+        <p>
+          start by selecting language and
+          location.
+        </p>
       </div>
+      <Selection genre="Language" />
+      <Selection genre="Province" />
+      <Button text="Search" />
     </Fragment>
   );
 }

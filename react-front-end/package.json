@@ -14,8 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass --watch scss:css",
-    "scss": "node-sass --watch scss -o css"
+    "scss": "node-sass --watch src/scss -o css"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,6 +27,6 @@
   ],
   "proxy": "http://localhost:8080",
   "devDependencies": {
-    "node-sass": "^7.0.1"
+    "node-sass": "^4.14.0"
   }
 }

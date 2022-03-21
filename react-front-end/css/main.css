@@ -1,0 +1,10 @@
+.btn {
+  color: #ae915e;
+  padding: 2rem;
+  border: 2px solid black;
+  display: inline-block; }
+
+.selection {
+  padding: 2rem;
+  border: 2px solid black;
+  display: inline-block; }

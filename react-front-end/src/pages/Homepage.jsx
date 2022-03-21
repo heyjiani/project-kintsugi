@@ -4,7 +4,7 @@ import HomeHeader from "../components/HomeHeader";
 
 export default function Homepage() {
   return (
-    <Fragment>
+    <Fragment className="components_container">
       <HomeHeader />
     </Fragment>
   );
