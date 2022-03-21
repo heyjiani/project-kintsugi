@@ -31,12 +31,6 @@ function App() {
     // <body>
     //   {/* nav bar below  */}
 
-    //   <nav class="navigation">
-    //     <div class="logo">
-    //       <h1>Kintsugi</h1>
-    //     </div>
-    //   </nav>
-
     //   {/* the components will populate in the "components_container" div below */}
 
     //   <main>
@@ -47,16 +41,12 @@ function App() {
 
     //   {/* footer below  */}
 
-    //   <footer>
-    //     <div>
-    //       <h4>Kintsugi</h4>
-    //     </div>
-    //     <div>About the makers.</div>
-    //     <div>© Kintsugi 2022</div>
-    //   </footer>
-
     <BrowserRouter>
-      {/* <Nav/ > */}
+      <nav class="navigation">
+        <div class="logo">
+          <h1>Kintsugi</h1>
+        </div>
+      </nav>
       <Routes>
         <Route
           path="/"
@@ -75,6 +65,13 @@ function App() {
         />
         {/* <Route element={<Error />} /> */}
       </Routes>
+      <footer>
+        <div>
+          <h4>Kintsugi</h4>
+        </div>
+        <div>About the makers.</div>
+        <div>© Kintsugi 2022</div>
+      </footer>
     </BrowserRouter>
   );
 }
