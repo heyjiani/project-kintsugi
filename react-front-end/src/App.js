@@ -12,7 +12,9 @@ import HomePage from "./pages/Homepage";
 import ProfessionalsPage from "./pages/ProfessionalsPage";
 import AppointmentPage from "./pages/AppointmentPage";
 import BookingPage from "./pages/BookingPage";
+import Footer from "./pages/Footer";
 import "./scss/main.scss";
+import NavBar from "./pages/NavBar";
 
 // fetchData = () => {
 //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
@@ -29,26 +31,11 @@ import "./scss/main.scss";
 
 function App() {
   return (
-    // <body>
-    //   {/* nav bar below  */}
-
-    //   {/* the components will populate in the "components_container" div below */}
-
-    //   <main>
-    //     <div className="components_container">
-    //       the componnents will go here
-    //     </div>
-    //   </main>
-
-    //   {/* footer below  */}
-
+    <>
     <BrowserRouter>
-      <nav class="navigation">
-        <div class="logo">
-          <h1>Kintsugi</h1>
-        </div>
-      </nav>
+<NavBar />
       <Routes>
+    
         <Route
           path="/"
           element={<HomePage />}
@@ -69,16 +56,13 @@ function App() {
           element={<BookingPage />}
           exact
         />
+       
         {/* <Route element={<Error />} /> */}
       </Routes>
-      <footer>
-        <div>
-          <h4>Kintsugi</h4>
-        </div>
-        <div>About the makers.</div>
-        <div>© Kintsugi 2022</div>
-      </footer>
+      <Footer />
+      
     </BrowserRouter>
+    </>
   );
 }
 
