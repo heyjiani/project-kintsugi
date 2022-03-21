@@ -1,0 +1,33 @@
+/* barebones css, fix after normalizing app.css :) */
+/* resetting to create a clean style base :) */
+/* remove annoying dot from lists */
+ol,
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ^ leaving this import here for now
+gonna move this to app.scss tomorrow! */
+.professionals__item {
+  padding: 1em;
+}
+.professionals__item div {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.professionals__item h2 {
+  font-size: 32px;
+  margin: 0;
+}
+.professionals__item-image {
+  width: 50px;
+}
+.professionals__item footer {
+  padding: 0;
+}
+
+/*# sourceMappingURL=ProfessionalListItem.css.map */
