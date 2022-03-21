@@ -12,7 +12,9 @@ li {
 /* ^ leaving this import here for now
 gonna move this to app.scss tomorrow! */
 .professionals__item {
+  width: 300px;
   padding: 1em;
+  margin: 2em;
 }
 .professionals__item div {
   display: flex;

@@ -5,6 +5,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 36px;
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat976.ani), url(https://cur.cursors-4u.net/nature/nat-10/nat976.gif), auto !important;
 }
 
 code {
