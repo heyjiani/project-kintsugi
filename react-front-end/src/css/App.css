@@ -15,6 +15,7 @@ h4 {
 
 .navigation {
   display: flex;
+  flex-direction: column;
 }
 
 .navigation_links {
@@ -26,18 +27,13 @@ h4 {
   color: #ae915e;
 }
 
-body {
-  background-image: "url(${/images/Kintsugi_crack.png})"
-    repeat;
-  display: block;
-  /* position: fixed; */
-}
-
 .components_container {
   background-color: #cba96d;
   height: 700px;
-  padding-left: 54px;
   padding-top: 54px;
+  width: 100%;
+  justify-content: center; 
+  text-align: center; 
 }
 
 footer {
@@ -47,3 +43,9 @@ footer {
   padding: 25px 54px 2px 54px;
   font-size: 15px;
 }
+
+a {
+  color: #ae915e;
+  text-decoration: none;
+}
+
