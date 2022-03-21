@@ -1,4 +1,8 @@
 /* barebones css, fix after normalizing app.css :) */
+@import "reset.scss";
+/* ^ leaving this import here for now
+gonna move this to app.scss tomorrow! */
+
 .professionals {
   &__item {
     padding: 1em;
