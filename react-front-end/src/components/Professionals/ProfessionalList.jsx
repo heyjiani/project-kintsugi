@@ -2,7 +2,7 @@ import React from "react";
 
 import ProfessionalListItem from "./ProfessionalListItem";
 
-import "../scss/ProfessionalList.scss";
+import "../../scss/ProfessionalList.scss";
 
 export default function ProfessionalList() {
   
