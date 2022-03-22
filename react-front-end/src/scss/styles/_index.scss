@@ -9,6 +9,7 @@ body {
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat976.ani),
     url(https://cur.cursors-4u.net/nature/nat-10/nat976.gif),
     auto !important;
+    
 }
 
 .navigation {
@@ -18,12 +19,14 @@ body {
   left: 0;
   padding: 0px;
   z-index: 99;
-  background-color: #ffffff;
   font-family: "Alegreya", serif;
   border-bottom: 4px solid #856c6c;
   display: flex; 
   flex-direction: row; 
   justify-content:center;
+  background-image: url('https://i.postimg.cc/hvhT5KWR/smallbackground.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 
     .logo {
       display: flex; 

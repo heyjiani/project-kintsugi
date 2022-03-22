@@ -1,12 +1,23 @@
 .professionals {
+
+  background-color: #E3CE94; 
   
   &__container {
     margin: 150px 0 0 260px;
     font-size: 20px;
     text-align: center;
+    background-color: #E3CE94;
+
 
     .display-info {
-      padding: 0.5em;
+        margin-top: 50px;
+        font-size: 1.5rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        margin-left: 9rem;
+        margin-right: 9rem; 
+        background-color: #ffffff;
+        box-shadow: $default-box-shadow;
     }
   }
 
