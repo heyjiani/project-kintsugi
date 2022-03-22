@@ -4,6 +4,8 @@ import AppointmentList from "../components/AppointmentList";
 
 export default function AppointmentPage() {
   return (
-    <AppointmentList />
-  )
+    <div className="components_container">
+      <AppointmentList />
+    </div>
+  );
 }
