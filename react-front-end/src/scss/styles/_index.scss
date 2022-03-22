@@ -29,12 +29,25 @@ h4 {
 
 .components_container {
   background-color: #cba96d;
-  height: 700px;
   padding-top: 54px;
+  padding-bottom: 20px; 
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
 }
+
+.form_container {
+  background-color: #ffffff; 
+  width: 800px; 
+  display: flex; 
+  text-align: center; 
+  font-size: 15px; 
+  padding: 2rem;
+  margin: 2rem; 
+  margin-bottom: 3rem; 
+  flex-direction: column;
+}
+
 
 footer {
   background-color: white;
