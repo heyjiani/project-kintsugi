@@ -14,17 +14,15 @@ export default function ProfessionalsPage() {
     axios
       .get("/api/professionals")
       .then(prof => {
-        console.log(prof.data)
+        // console.log(prof.data)
         setState(() => ({professionals: prof.data}))
       })
   }, []);
 
-  const professionals = state.professionals;
-
   return (
     <div className="professionals">
       <Sidebar />
-      <ProfessionalList {...professionals} />
+      <ProfessionalList professionals={state.professionals} />
     </div>
   );
 }
