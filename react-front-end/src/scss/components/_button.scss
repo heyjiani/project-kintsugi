@@ -1,22 +1,21 @@
+@import "styles/variable.scss";
+@import "styles/mixin.scss";
+
 .btn {
-  background-color: white;
+  @include btnBox;
   padding: 2rem;
-  border: 2px solid black;
-  display: inline-block;
   margin: 1em;
   color: #ae915e;
 }
 
 .btn-delete {
-  background-color: white;
+  @include btnBox;
   padding: 0.5em;
-  border: 2px solid black;
 }
 
 .btn-booking {
   background-color: #ae915e;
   padding: 0.5em;
-  border: 2px solid black;
   width: 80%;
   margin: 0 auto;
   text-align: center;
