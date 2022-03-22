@@ -18,7 +18,6 @@ export default function ProfessionalListItem(
 
   const navigate = useNavigate();
   const handleOnClick = () => {
-    console.log(id);
     navigate(`/booking/${id}`);
   };
 
