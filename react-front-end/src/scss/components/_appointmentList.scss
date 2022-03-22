@@ -11,22 +11,20 @@
   padding-left: 1rem;
   padding-right: 1rem;
   box-shadow: $default-box-shadow;
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
   width: 50%;
-    div {
-      padding: .5rem; 
-    }
-    img {
-      width: 10%; 
-      opacity: .5;
-    }
+  div {
+    padding: 0.5rem;
+  }
+  img {
+    width: 10%;
+    opacity: 0.5;
+  }
 }
 
-.btn-delete
-{margin-top: 50px; 
-  font-size: 1.5rem; 
-  padding-left: 3rem; 
-  padding-right: 3rem; 
-};
-
-
+.btn-delete {
+  margin-top: 50px;
+  font-size: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}

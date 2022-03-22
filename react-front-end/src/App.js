@@ -51,7 +51,7 @@ function App() {
             exact
           />
           <Route
-            path="/booking"
+            path="/booking/:id"
             element={<BookingPage />}
             exact
           />
