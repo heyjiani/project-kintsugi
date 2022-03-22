@@ -7,11 +7,11 @@ export default function HomeHeader() {
     <div>
       <div className="heading">
         <h2>
-          Find a mental health professional meets
+          Find a mental health professional that meets
           your needs.
         </h2>
         <p>
-          start by selecting language and
+          Start by selecting a language and a
           location.
         </p>
       </div>

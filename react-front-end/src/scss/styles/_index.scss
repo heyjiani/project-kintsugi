@@ -12,21 +12,28 @@ body {
 }
 
 .navigation {
-  height: 140px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  padding: 0px; 
   z-index: 99;
-  background-color: #F6F6F6;
+  background-color: #ffffff;
+  background-image: url('https://i.ibb.co/sjQGNdJ/Artboard-2.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed; 
   font-family: "Alegreya", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  border-bottom: 4px solid #856c6c;
 
-  h1 {
-    font-size: 70px;
+   h1 {
+    font-size: 120px;
     color: #cba96d;
     margin: 0px;
+    margin-top: -10px; 
+    margin-bottom: -10px;
     padding-left: 0.5em;
     font-weight: normal;
     font-family: "Alegreya", serif;
@@ -35,23 +42,25 @@ body {
   }
 
   &__links {
-    width: 40%;
+    width: 28%;
     display: flex;
     justify-content: space-between;
-    padding: 0 1.5em;
-    font-size: 25px;
+    padding: 0 3em;
+    font-size: 24px;
     color: #ae915e;
   }
 }
 
 .components_container {
   background-color: #cba96d;
-  padding-top: 54px;
+  padding-top: 150px;
   padding-bottom: 20px; 
+  margin-left: -8px;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
   
+
 }
 
 .form_container {
@@ -79,6 +88,7 @@ footer {
     font-size: 25px;
     padding: -5px;
     margin-top: -5px;
+    font-family: "Alegreya", serif;
   }
 }
 
@@ -98,4 +108,46 @@ textarea {
 code {
   font-family: source-code-pro, Menlo, Monaco,
     Consolas, "Courier New", monospace;
+}
+
+// header
+
+.heading h2 {
+  font-size: 3rem; 
+  font-family: "Alegreya", serif;
+  font-weight: normal;
+  padding: 0px; 
+  margin: 30px 0px -30px 0px;
+};
+
+.heading p {
+  font-size: 2.2rem;  
+  margin-bottom: -30px; 
+};
+
+.heading {
+  margin-bottom: -1rem;
+
+};
+
+.placeholder {
+  background-color: #ffffff;
+  width: 60%; 
+  text-align: center; 
+  box-shadow: $default-box-shadow;
+  padding: 1rem; 
+  font-size: 1.5rem; 
+
+  img {
+    width: 25%; 
+    opacity: 0.5;
+
+  }
+}
+
+.center {
+  text-align: center; 
+  display: flex;
+  justify-content: space-between;
+
 }
