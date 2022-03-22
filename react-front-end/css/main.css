@@ -47,6 +47,8 @@
       height: 250px; }
 
 .professionals__list {
+  width: 100%;
+  padding-top: 50px;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end; }
@@ -70,19 +72,29 @@ gonna move this to app.scss tomorrow! */
   .professionals__item footer {
     padding: 0; }
 
-.professionals__sidebar {
+.sidebar {
   width: 250px;
   height: 100%;
   position: fixed;
   left: 0;
   top: 140px;
   float: left;
-  padding: 0.5em;
   z-index: 2;
   background-color: #ffefd5; }
-  .professionals__sidebar__options {
+  .sidebar header {
+    padding: 0 0.5em;
+    font-size: 32px; }
+  .sidebar__options {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    font-size: 28px;
+    width: 100%; }
+    .sidebar__options__category {
+      background-color: bisque; }
+    .sidebar__options h4 {
+      margin: 0; }
+    .sidebar__options div {
+      padding: 0 0.5em; }
 
 body {
   width: 100%;

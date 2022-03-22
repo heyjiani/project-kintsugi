@@ -6,10 +6,12 @@ export default function Sidebar() {
   // add onClick toggle show/hide to each category //
 
   return (
-    <aside className="professionals__sidebar">
+    <aside className="sidebar">
       <header>Sort</header>
-      <div className="professionals__sidebar__options">
-        <h4>City</h4>
+      <div className="sidebar__options">
+        <div className="sidebar__options__category">
+          <h4>City</h4>
+        </div>
         <div>
           <input type="checkbox" />
           Item 1
