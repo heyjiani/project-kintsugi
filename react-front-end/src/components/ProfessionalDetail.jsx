@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function ProfessionalDetail(prop) {
-  console.log(prop.specialties);
-
   return (
     <div className="professional-detail">
       <p className="btn-booking">
