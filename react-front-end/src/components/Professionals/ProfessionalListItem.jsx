@@ -11,7 +11,7 @@ export default function ProfessionalListItem(props) {
       </header>
       <div>
         <img
-          className="professionals__item-image"
+          className="professionals__item__image"
           src="https://cdn-icons-png.flaticon.com/128/1946/1946429.png"
           alt=""
         />
