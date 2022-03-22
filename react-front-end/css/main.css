@@ -46,43 +46,69 @@
       width: 200px;
       height: 250px; }
 
-.professionals__list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end; }
+.professionals {
+  display: flex; }
+  .professionals__list {
+    width: 100%;
+    padding-top: 200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around; }
 
 /* barebones css, fix after normalizing app.css :) */
-/* ^ leaving this import here for now
-gonna move this to app.scss tomorrow! */
 .professionals__item {
   width: 300px;
-  padding: 1em;
-  margin: 2em; }
+  height: 200px;
+  padding: 0.2em 0.4em;
+  margin: 1em;
+  background-color: #F6F6F6; }
+  .professionals__item header {
+    font-size: 28px;
+    margin: 0;
+    text-align: right; }
   .professionals__item div {
     display: flex;
     align-items: center;
     font-size: 18px; }
-  .professionals__item h2 {
-    font-size: 32px;
-    margin: 0; }
-  .professionals__item-image {
-    width: 50px; }
+  .professionals__item ul {
+    display: flex;
+    flex-direction: column;
+    padding: 1em; }
+    .professionals__item ul li {
+      padding: 5px; }
+  .professionals__item__image {
+    width: 100px; }
   .professionals__item footer {
-    padding: 0; }
+    padding: 1em;
+    overflow: hidden; }
+    .professionals__item footer button {
+      border: none;
+      background-color: #967d53;
+      float: right; }
 
-.professionals__sidebar {
+.sidebar {
   width: 250px;
   height: 100%;
   position: fixed;
   left: 0;
   top: 140px;
   float: left;
-  padding: 0.5em;
   z-index: 2;
   background-color: #ffefd5; }
-  .professionals__sidebar__options {
+  .sidebar header {
+    padding: 0 0.5em;
+    font-size: 32px; }
+  .sidebar__options {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    font-size: 28px;
+    width: 100%; }
+    .sidebar__options__category {
+      background-color: bisque; }
+    .sidebar__options h4 {
+      margin: 0; }
+    .sidebar__options div {
+      padding: 0 0.5em; }
 
 body {
   width: 100%;
@@ -160,5 +186,14 @@ ol,
 ul,
 li {
   list-style: none;
+  margin: 0;
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0; }

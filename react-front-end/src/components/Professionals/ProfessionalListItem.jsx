@@ -1,8 +1,6 @@
 import React from "react";
 
-export default function ProfessionalListItem(
-  props
-) {
+export default function ProfessionalListItem(props) {
   // const { first_name, last_name, city, province, profession, icon_url } = props;
   const professionalClass = "professionals__item";
 
@@ -13,7 +11,7 @@ export default function ProfessionalListItem(
       </header>
       <div>
         <img
-          className="professionals__item-image"
+          className="professionals__item__image"
           src="https://cdn-icons-png.flaticon.com/128/1946/1946429.png"
           alt=""
         />
