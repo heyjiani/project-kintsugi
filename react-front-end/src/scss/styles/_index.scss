@@ -19,20 +19,24 @@ body {
   padding: 0px; 
   z-index: 99;
   background-color: #ffffff;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed; 
   font-family: "Alegreya", serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   border-bottom: 4px solid #856c6c;
+  display: flex; 
+  flex-direction: row; 
+  justify-content:center;
+
+    .logo {
+      display: flex; 
+      justify-content: center; 
+
+    }
 
    h1 {
-    font-size: 120px;
+    font-size: 70px;
     color: #cba96d;
     margin: 0px;
     margin-top: -10px; 
-    margin-bottom: -10px;
+    margin-bottom: 0px;
     padding-left: 0.5em;
     font-weight: normal;
     font-family: "Alegreya", serif;
@@ -41,12 +45,18 @@ body {
   }
 
   &__links {
-    width: 28%;
     display: flex;
-    justify-content: space-between;
-    padding: 0 3em;
-    font-size: 24px;
+    padding: 0 2em;
+    font-size: 30px;
     color: #ae915e;
+    width: 100%; 
+    margin-top: 1.6rem; 
+    margin-left: 1rem;
+
+    div {
+      padding-left: 40px; 
+
+    }
   }
 }
 
