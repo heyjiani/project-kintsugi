@@ -1,9 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function ProfessionalListItem(
-  props
-) {
+export default function ProfessionalListItem(props) {
   const {
     first_name,
     last_name,
