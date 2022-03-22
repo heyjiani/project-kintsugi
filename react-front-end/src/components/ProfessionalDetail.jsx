@@ -1,8 +1,8 @@
 import React from "react";
-import ProfessionalsPage from "../pages/ProfessionalsPage";
 
 export default function ProfessionalDetail(prop) {
-  console.log(prop);
+  console.log(prop.specialties);
+
   return (
     <div className="professional-detail">
       <p className="btn-booking">
@@ -15,7 +15,10 @@ export default function ProfessionalDetail(prop) {
       </p>
       <div className="professional-detail__tags">
         <li>{prop.professional.profession}</li>
-        <li>specialties</li>
+        {prop.specialties &&
+          prop.specialties.map((item, i) => {
+            return <li key={i}>{item.name}</li>;
+          })}
         <li>
           {prop.professional.province}{" "}
           {prop.professional.city}

@@ -12,9 +12,13 @@ export default function BookingPage() {
   let { id } = useParams();
   const [professionalInfo, setProfessionalInfo] =
     useState({});
+  const [specialties, setSpecialties] = useState(
+    []
+  );
 
   useEffect(() => {
     getProfessionalInfo();
+    getProfessionalSpecialties();
   }, []);
 
   const getProfessionalInfo = () => {
@@ -25,10 +29,19 @@ export default function BookingPage() {
       });
   };
 
+  const getProfessionalSpecialties = () => {
+    axios
+      .get(`/api/specialties/${id}`)
+      .then((res) => {
+        setSpecialties(res.data);
+      });
+  };
+
   return (
     <div className="components_container">
       <ProfessionalDetail
         professional={professionalInfo}
+        specialties={specialties}
       />
       <BookingForm />
     </div>
