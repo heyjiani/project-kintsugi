@@ -1,6 +1,7 @@
 import React from "react";
 import {useState} from "react";
 import Calendar, { CenturyView } from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 export default function BookingForm() {
   const [date, setDate] = useState(new Date());
