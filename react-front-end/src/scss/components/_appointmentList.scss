@@ -1,3 +1,10 @@
+@import "styles/variable.scss";
+
 .appointment {
   display: flex;
+  background-color: white;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 2em 3em;
+  box-shadow: $default-box-shadow;
 }
