@@ -7,7 +7,7 @@ export default function NavBar() {
     <nav className="navigation">
       <div className="logo">
         <h1>Kintsugi</h1>
-      </div>
+        </div>
       <NavLinks />
     </nav>
   );
