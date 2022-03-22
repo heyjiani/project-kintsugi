@@ -1,32 +1,34 @@
 import React from "react";
+import ProfessionalsPage from "../pages/ProfessionalsPage";
 
-export default function ProfessionalDetail() {
+export default function ProfessionalDetail(prop) {
+  console.log(prop);
   return (
     <div className="professional-detail">
       <p className="btn-booking">
-        click here to book with first name
+        click here to book with{" "}
+        {prop.professional.first_name}
       </p>
       <p className="professional-detail__name">
-        Professional's full name
+        {prop.professional.first_name}{" "}
+        {prop.professional.last_name}
       </p>
       <div className="professional-detail__tags">
-        <li>profession</li>
+        <li>{prop.professional.profession}</li>
         <li>specialties</li>
-        <li>location city</li>
+        <li>
+          {prop.professional.province}{" "}
+          {prop.professional.city}
+        </li>
       </div>
       <div className="professional-detail__bottom">
         <img
           className="professional-detail__bottom-img"
-          src="https://thispersondoesnotexist.com/image?yesitsmeagain=”&rand()"
+          src={prop.professional.icon_url}
           alt=""
         />
         <span>
-          -description- The clowns had taken over.
-          And yes, they were literally clowns.
-          Over 100 had appeared out of a small VW
-          bug that had been driven up to the bank.
-          Now they were all inside and had taken
-          it over.
+          {prop.professional.description}
         </span>
       </div>
     </div>
