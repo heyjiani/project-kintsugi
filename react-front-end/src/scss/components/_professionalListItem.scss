@@ -1,29 +1,32 @@
-/* barebones css, fix after normalizing app.css :) */
+@import "styles/variable.scss";
 
 .professionals {
   &__item {
-    width: 300px;
-    height: 200px;
-    padding: 0.2em 0.4em;
-    margin: 1em;
+    width: 360px;
+    height: 250px;
+    padding: 0.2em;
+    margin: 0.5em;
     background-color: #F6F6F6;
+    box-shadow: $default-box-shadow;
 
     header {
-      font-size: 28px;
-      margin: 0;
+      font-size: 24px;
       text-align: right;
+      padding-right: 0.8em;
     }
 
     div {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       font-size: 18px;
+      padding: 0 1em;
     }
 
     ul {
       display: flex;
       flex-direction: column;
-      padding: 1em;
+      padding: 0.2em 1em;
 
       li {
         padding: 5px;
@@ -36,12 +39,19 @@
 
     footer {
       padding: 1em;
-      overflow: hidden;
+      background-color: inherit;
 
       button {
+        width: 150px;
+        height: 40px;
         border: none;
-        background-color: rgb(150, 125, 83);
-        float: right;
+        font-size: 22px;
+        margin-left: 45%;
+        background-color: #9a896c;
+      }
+
+      button:hover {
+        background-color: #c6a978;
       }
     }
   }

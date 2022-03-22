@@ -1,9 +1,11 @@
 .professionals {
-  display: flex;
+  // display: flex;
+  // align-items: center;
 
-  &__list {
+  &__container {
     width: 100%;
     padding-top: 200px;
+    padding-left: 80px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
