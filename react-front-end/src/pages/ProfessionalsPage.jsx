@@ -14,7 +14,6 @@ export default function ProfessionalsPage() {
     axios
       .get("/api/professionals")
       .then(prof => {
-        // console.log(prof.data)
         setState(() => ({professionals: prof.data}))
       })
   }, []);

@@ -22,7 +22,7 @@ export default function ProfessionalListItem(props) {
         </ul>
       </div>
       <footer>
-        <button>Find out more</button>
+        <button onClick={() => props.onClick()}>Find out more</button>
       </footer>
     </li>
   );

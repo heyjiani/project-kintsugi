@@ -1,15 +1,17 @@
-import React, { useState, useEffect }from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 import ProfessionalListItem from "./ProfessionalListItem";
 
 export default function ProfessionalList(props) {
-  // rendering 4 repeats for now //
   const { professionals } = props;
+  const navigate = useNavigate();
+  const handleOnClick = () => navigate('/booking');
 
   const parsedProfessionalData =
     Array.isArray(professionals) && professionals.map(p => {
-      return <ProfessionalListItem key={p.id} {...p} />
+      return <ProfessionalListItem key={p.id} {...p} onClick={handleOnClick}/>
     });
 
   return (
