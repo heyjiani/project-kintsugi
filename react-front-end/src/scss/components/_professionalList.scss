@@ -1,14 +1,20 @@
 .professionals {
-  // display: flex;
-  // align-items: center;
-
+  
   &__container {
+    margin: 150px 0 0 260px;
+    font-size: 20px;
+    text-align: center;
+
+    .display-info {
+      padding: 0.5em;
+    }
+  }
+
+  &__list {
     width: 100%;
-    padding-top: 200px;
-    padding-left: 80px;
+    padding: 2em;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-
+    justify-content: center;
   }
 }

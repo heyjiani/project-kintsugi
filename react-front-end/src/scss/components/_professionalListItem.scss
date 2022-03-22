@@ -1,11 +1,11 @@
-@import "styles/variable.scss";
+@import "styles/_variable.scss";
 
 .professionals {
   &__item {
-    width: 360px;
+    width: 36%;
     height: 250px;
-    padding: 0.2em;
-    margin: 0.5em;
+    padding: 0.3em;
+    margin: 2em 2.5em;
     background-color: #F6F6F6;
     box-shadow: $default-box-shadow;
 
@@ -19,7 +19,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 18px;
+      font-size: 16px;
       padding: 0 1em;
     }
 
@@ -27,6 +27,7 @@
       display: flex;
       flex-direction: column;
       padding: 0.2em 1em;
+      text-align: left;
 
       li {
         padding: 5px;
