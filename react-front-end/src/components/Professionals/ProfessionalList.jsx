@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect }from "react";
+import axios from 'axios';
 
 import ProfessionalListItem from "./ProfessionalListItem";
 
-export default function ProfessionalList() {
+export default function ProfessionalList(props) {
   // rendering 4 repeats for now //
+
 
   return (
     <div className="professionals__container">
