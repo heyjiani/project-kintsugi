@@ -1,24 +1,53 @@
 .professional-detail {
-  width: 80%;
+  width: 60%;
   padding: 2rem;
   background-color: white;
   margin: 0 auto;
+  margin-top: 4rem; 
+  box-shadow: $default-box-shadow;
 
   &__name {
     color: #cba96d;
   }
+
   &__tags {
     display: flex;
     justify-content: space-around;
     padding-bottom: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .btn-booking {
+    color: #ffffff;
+    font-size: 2rem;
+    width: 70%;
+    box-shadow: $default-box-shadow;
+  };
+  .btn-booking:hover {
+    background-color: #E3CE94;
+  }
+
+
+  &__name {
+    font-family: Alegreya;
+    font-size: 2.5rem; 
+
   }
 
   &__bottom {
     display: flex;
+    font-size: 1.5rem;
+
+    span {
+      padding: 1rem;
+    }
 
     &-img {
       width: 200px;
       height: 250px;
+      margin: 1rem; 
     }
   }
+ 
+
 }

@@ -4,8 +4,27 @@
   display: flex;
   background-color: white;
   align-items: center;
+  text-align: center;
+  justify-content: space-between;
   padding: 0.5rem;
   margin: 2em 3em;
-  justify-content: space-evenly;
+  padding-left: 1rem;
+  padding-right: 1rem;
   box-shadow: $default-box-shadow;
+  font-size: 1.2rem;
+  width: 50%;
+  div {
+    padding: 0.5rem;
+  }
+  img {
+    width: 10%;
+    opacity: 0.5;
+  }
+}
+
+.btn-delete {
+  margin-top: 50px;
+  font-size: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }

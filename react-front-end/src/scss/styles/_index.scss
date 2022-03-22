@@ -19,8 +19,6 @@ body {
   padding: 0px;
   z-index: 99;
   background-color: #ffffff;
-  // background-image: url(../../../public/image/Kintsugi_crack.png);
-  background-image: url("https://i.ibb.co/sjQGNdJ/Artboard-2.png");
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
@@ -56,22 +54,9 @@ body {
   background-color: #cba96d;
   padding-top: 150px;
   padding-bottom: 20px;
-  margin-left: -8px;
   width: 100%;
   justify-content: center;
   text-align: center;
-}
-
-.form_container {
-  background-color: #ffffff;
-  width: 800px;
-  display: flex;
-  text-align: center;
-  font-size: 15px;
-  padding: 2rem;
-  margin: 2rem;
-  margin-bottom: 3rem;
-  flex-direction: column;
 }
 
 footer {
@@ -109,7 +94,7 @@ code {
 
 // header
 
-.heading h2 {
+h2 {
   font-size: 3rem;
   font-family: "Alegreya", serif;
   font-weight: normal;
@@ -144,4 +129,30 @@ code {
   text-align: center;
   display: flex;
   justify-content: space-between;
+}
+
+// bookingForm
+
+.form_container {
+  background-color: #ffffff;
+  width: 60%;
+  text-align: center;
+  font-size: 15px;
+  padding: 2rem;
+  margin: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: $default-box-shadow;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  td {
+    text-align: left;
+    padding-left: 10px;
+  }
+}
+
+.professional_display {
+  display: flex;
+  flex-direction: row;
 }

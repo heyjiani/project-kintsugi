@@ -1,28 +1,28 @@
 import React from "react";
 
 export default function ProfessionalListItem(props) {
-  // const { first_name, last_name, city, province, profession, icon_url } = props;
+  const {first_name, last_name, city, province, profession, icon_url, language_1} = props;
   const professionalClass = "professionals__item";
 
   return (
     <li className={professionalClass}>
       <header>
-        <h2>Yumi Tanaka</h2>
+        <h2>{first_name} {last_name}</h2>
       </header>
       <div>
         <img
           className="professionals__item__image"
-          src="https://cdn-icons-png.flaticon.com/128/1946/1946429.png"
-          alt=""
+          src={icon_url}
+          alt={first_name}
         />
         <ul>
-          <li>Therapist</li>
-          <li>Family Conflict</li>
-          <li>Campbell River, BC</li>
+          <li>{profession}</li>
+          <li>{language_1}</li>
+          <li>{city}, {province}</li>
         </ul>
       </div>
       <footer>
-        <button>Find out more</button>
+        <button onClick={() => props.onClick()}>Find out more</button>
       </footer>
     </li>
   );
