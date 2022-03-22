@@ -1,8 +1,6 @@
 import React from "react";
 
-export default function ProfessionalListItem(
-  props
-) {
+export default function ProfessionalListItem(props) {
   // const { first_name, last_name, city, province, profession, icon_url } = props;
   const professionalClass = "professionals__item";
 

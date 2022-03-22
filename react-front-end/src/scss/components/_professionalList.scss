@@ -1,11 +1,12 @@
 .professionals {
+  display: flex;
 
   &__list {
     width: 100%;
-    padding-top: 50px;
+    padding-top: 2em;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-end;
+    justify-content: space-around;
 
   }
 }
