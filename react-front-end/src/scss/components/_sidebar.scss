@@ -1,17 +1,13 @@
 .sidebar {
-  width: 280px;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 140px;
-  float: left;
-  // padding: 0.5em;
-  z-index: 2;
-  background-color: #ffefd5;
+  width: 30%;
+  background-color: #ffffff;
+  box-shadow: $default-box-shadow;
+  margin-left: 50px; 
 
   header {
     padding: 0 0.5em;
     font-size: 32px;
+    margin-top: 90px; 
   }
 
   &__options {
@@ -21,7 +17,7 @@
     width: 100%;
 
     &__category {
-      background-color: bisque;
+      background-color: #E3CE94;
     }
 
     h4 {

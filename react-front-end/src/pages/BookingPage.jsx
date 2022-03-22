@@ -16,6 +16,8 @@ export default function BookingPage() {
     []
   );
 
+  // const [show, setShow] = useState(false);
+
   useEffect(() => {
     getProfessionalInfo();
     getProfessionalSpecialties();
@@ -43,7 +45,10 @@ export default function BookingPage() {
         professional={professionalInfo}
         specialties={specialties}
       />
-      <BookingForm />
+      <BookingForm
+        professional={professionalInfo}
+        specialties={specialties}
+      />
     </div>
   );
 }
