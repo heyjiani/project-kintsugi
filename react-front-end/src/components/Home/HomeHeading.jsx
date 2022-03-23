@@ -7,7 +7,6 @@ import {
 } from "../../searchData";
 
 export default function HomeHeading() {
-  console.log(provinceData);
   return (
     <div>
       <div className="heading">
