@@ -20,7 +20,6 @@ export default function BookingForm(props) {
     specialties &&
     specialties
       .map((item) => {
-        console.log(item.name);
         return item.name;
       })
       .join();
