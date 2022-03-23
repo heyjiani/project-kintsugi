@@ -7,7 +7,7 @@ import Sidebar from "../components/Professionals/Sidebar";
 export default function ProfessionalsPage() {
 
   const [state, setState] = useState({
-    professionals: {}
+    professionals: []
   })
 
   useEffect(() => {

@@ -1,39 +1,34 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useApplicationData = () => {
-  const [professionalInfo, setProfessionalInfo] =
-    useState({});
-  const [specialties, setSpecialties] = useState(
-    []
-  );
+export default function useApplicationData() {
+  const [state, setState] = useState({
+    professionals: [],
+    specialties: [],
+    appointments: [],
+  });
 
   useEffect(() => {
-    getProfessionalSpecialties();
-    getProfessionalInfo();
+    Promise.all([
+      axios.get("/api/professionals"),
+      axios.get("/api/appointments"),
+      axios.get("/api/specialties"),
+    ]).then((all) => {
+      setState((prev) => ({
+        ...prev,
+        professionals: all[0].data,
+        appointments: all[1].data,
+        specialties: all[2].data,
+      }));
+    });
   }, []);
 
-  const getProfessionalSpecialties = () => {
-    axios.get(`/api/specialties`).then((res) => {
-      console.log(res.data);
-      setSpecialties(res.data);
-    });
-  };
+  // const findProfessionalById = (id) => {
+  //   return state.professionals.filter(p => p.id === id);
+  // };
 
-  const getProfessionalInfo = () => {
-    axios
-      .get(`/api/professionals`)
-      .then((res) => {
-        setProfessionalInfo(res.data);
-      });
-  };
-
-  return {
-    professionalInfo,
-    specialties,
-    getProfessionalInfo,
-    getProfessionalSpecialties,
-  };
-};
-
-export default useApplicationData;
+  // return {
+  //   state,
+  //   findProfessionalById
+  // };
+}
