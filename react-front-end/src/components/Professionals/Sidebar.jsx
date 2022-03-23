@@ -7,7 +7,13 @@ export default function Sidebar(props) {
 
   return (
     <div className="sidebar">
-      <header><img src="https://cdn-icons.flaticon.com/png/512/1620/premium/1620735.png?token=exp=1648052951~hmac=bb1eab46446957048f5bc2f90ff6e8e6" /> &nbsp;&nbsp;&nbsp;&nbsp; Sort</header>
+      <header>
+        <img
+          src="https://cdn-icons.flaticon.com/png/512/1620/premium/1620735.png?token=exp=1648052951~hmac=bb1eab46446957048f5bc2f90ff6e8e6"
+          alt=""
+        />{" "}
+        &nbsp;&nbsp;&nbsp;&nbsp; Sort
+      </header>
       <div className="sidebar__options">
         <div className="sidebar__options__category">
           <h4>City</h4>
