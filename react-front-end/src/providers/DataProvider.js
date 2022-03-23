@@ -8,7 +8,7 @@ import axios from "axios";
 export const DataContext = createContext();
 
 export default function DataProvider(props) {
-  const [professionalInfo, setProfessionalInfo] =
+  const [professionals, setProfessionals] =
     useState({});
   const [specialties, setSpecialties] = useState(
     []
@@ -16,7 +16,7 @@ export default function DataProvider(props) {
 
   useEffect(() => {
     getProfessionalSpecialties();
-    getProfessionalInfo();
+    getAllProfessionals();
   }, []);
 
   const getProfessionalSpecialties = () => {
@@ -25,18 +25,18 @@ export default function DataProvider(props) {
     });
   };
 
-  const getProfessionalInfo = () => {
+  const getAllProfessionals = () => {
     axios
       .get(`/api/professionals`)
       .then((res) => {
-        setProfessionalInfo(res.data);
+        setProfessionals(res.data);
       });
   };
 
   const providerData = {
-    professionalInfo,
+    professionals,
     specialties,
-    getProfessionalInfo,
+    getAllProfessionals,
     getProfessionalSpecialties,
   };
 
