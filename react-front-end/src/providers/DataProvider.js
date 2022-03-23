@@ -44,14 +44,18 @@ export default function DataProvider(props) {
     });
   };
 
+  console.log("out", professionals);
+  const [pro, setPro] = useState([]);
   // //fetch professional by id//
-  // const findProfessionalById = (id) => {
-  //   // console.log(id);
-  //   // console.log(professionals);
-  //   return professionals.filter(
-  //     (item) => item.id === parseInt(id)
-  //   );
-  // };
+  const findProfessionalById = (id) => {
+    console.log(id);
+    console.log("pro", professionals);
+    const h = professionals.filter(
+      (item) => item.id === parseInt(id)
+    );
+    setPro([...h]);
+    console.log(pro);
+  };
 
   const getProfessionalById = (id) => {
     axios
@@ -65,7 +69,6 @@ export default function DataProvider(props) {
     axios
       .get(`/api/professionals/${id}/specialties`)
       .then((res) => {
-        console.log(res.data);
         setSpecialtiesForProfessional(res.data);
       });
   };
@@ -76,12 +79,13 @@ export default function DataProvider(props) {
     specialties,
     specialtiesForProfessional,
     appointments,
+    pro,
     getAllProfessionals,
     getAllSpecialties,
     getAllAppointments,
     getProfessionalById,
     getSpecialtiesByProfessionalId,
-    // findProfessionalById,
+    findProfessionalById,
   };
 
   return (

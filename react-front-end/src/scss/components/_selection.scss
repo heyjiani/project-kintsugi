@@ -2,9 +2,18 @@
 
 .selection {
   background-color: white;
-  padding: .3rem .5rem .3rem .5rem;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
   display: inline-block;
   margin: 3rem;
   box-shadow: $default-box-shadow;
   font-size: 1.7rem;
+}
+.selection__heading:hover {
+  padding: 0;
+  color: #ae915e;
+  transform: scale(1.05);
+}
+
+.select__list {
+  background-color: #e3ce94;
 }
