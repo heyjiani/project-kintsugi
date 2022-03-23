@@ -1,7 +1,10 @@
 import React from "react";
 import Button from "./Button";
 import Selection from "./Selection";
-import { provinceData } from "../searchData";
+import {
+  provinceData,
+  languageData,
+} from "../searchData";
 
 export default function HomeHeader() {
   console.log(provinceData);
@@ -17,7 +20,10 @@ export default function HomeHeader() {
           location.
         </p>
       </div>
-      <Selection genre="Language" />
+      <Selection
+        genre="Language"
+        data={languageData}
+      />
       <Selection
         genre="Province"
         data={provinceData}

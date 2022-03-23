@@ -7,9 +7,12 @@ export default function AppointmentList(props) {
   /* still need to pass professional data to appointment card and dropdown */
 
   const parsedAppointmentData =
-    Array.isArray(appointments) && appointments.map(a => {
-      return <AppointmentListItem key={a.id} {...a} />
-    })
+    Array.isArray(appointments) &&
+    appointments.map((a) => {
+      return (
+        <AppointmentListItem key={a.id} {...a} />
+      );
+    });
 
   return (
     <section>
@@ -20,9 +23,7 @@ export default function AppointmentList(props) {
           delete
         </p>
       </header>
-      <ul>
-        {parsedAppointmentData}
-      </ul>
+      <ul>{parsedAppointmentData}</ul>
     </section>
   );
 }

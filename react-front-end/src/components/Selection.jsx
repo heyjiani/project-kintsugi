@@ -8,7 +8,6 @@ export default function Selection(props) {
     <>
       <div className="selection">
         {props.genre}
-        {props.genre}
       </div>
     </>
   );
