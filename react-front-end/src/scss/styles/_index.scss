@@ -48,11 +48,12 @@ body {
   &__links {
     display: flex;
     padding: 0 2em;
-    font-size: 30px;
+    font-size: 2vw;
     color: #ae915e;
     width: 100%;
     margin-top: 1.6rem;
     margin-left: 1rem;
+    white-space:nowrap;
 
     div {
       padding-left: 40px;
