@@ -8,16 +8,10 @@ import axios from "axios";
 export const DataContext = createContext();
 
 export default function DataProvider(props) {
-  const [professionals, setProfessionals] =
-    useState([]);
-  const [specialties, setSpecialties] = useState(
-    []
-  );
-  const [professional, setProfessional] =
-    useState([]);
-
-  const [appointments, setAppointments] =
-    useState([]);
+  const [professionals, setProfessionals] = useState([]);
+  const [specialties, setSpecialties] = useState([]);
+  const [professional, setProfessional] = useState([]);
+  const [appointments, setAppointments] = useState([]);
 
   const [
     specialtiesForProfessional,

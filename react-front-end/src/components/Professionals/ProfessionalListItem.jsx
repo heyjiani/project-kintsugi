@@ -11,7 +11,10 @@ export default function ProfessionalListItem(props) {
     icon_url,
     language_1,
     id,
+    specialties
   } = props;
+
+  
   const professionalClass = "professionals__item";
 
   const navigate = useNavigate();

@@ -3,13 +3,17 @@ import React from "react";
 import ProfessionalListItem from "./ProfessionalListItem";
 
 export default function ProfessionalList(props) {
-  const { professionals } = props;
+  const { professionals, specialties } = props;
 
   const parsedProfessionalData =
     Array.isArray(professionals) &&
     professionals.map((p) => {
       return (
-          <ProfessionalListItem key={p.id} {...p} />
+          <ProfessionalListItem
+            key={p.id}
+            {...p}
+            specialties={specialties}
+          />
       );
     });
 
