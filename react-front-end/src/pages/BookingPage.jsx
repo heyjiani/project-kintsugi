@@ -1,6 +1,7 @@
 import React, {
   useContext,
   useEffect,
+  useState,
 } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -12,51 +13,59 @@ import { DataContext } from "../providers/DataProvider";
 
 export default function BookingPage() {
   let { id } = useParams();
-
   const {
+    professional,
     professionals,
     specialties,
-    appointments,
-    getProfessionals,
-    getSpecialties,
-    getAppointments,
+    getProfessionalById,
   } = useContext(DataContext);
 
-  console.log(specialties);
+  useEffect(() => {
+    getProfessionalById(id);
+  }, []);
+  console.log(professional);
+  // const [professional, setProfessional] =
+  //   useState([]);
+
+  // console.log(professionals);
+
+  // const findProfessionalById = (id) => {
+  //   professionals.filter(
+  //     (item) => item.id === parseInt(id)
+  //   );
+  // };
+
+  // console.log(findProfessionalById(id));
+
   // const [show, setShow] = useState(false);
 
-  // useEffect(() => {
-  //   getProfessionalInfo;
-  //   getProfessionalSpecialties;
-  // }, []);
+  //fetch professional by id//
 
-  // const getProfessionalInfo = () => {
-  //   axios
-  //     .get(`/api/professionals/${id}`)
-  //     .then((res) => {
-  //       setProfessionalInfo(res.data);
-  //     });
+  // const getSingleAppointment = (id) => {
+  //   const array = findProfessionalById(id);
+  //   console.log("array", array, id);
+  //   setProfessional([...array]);
   // };
 
-  // const getProfessionalSpecialties = () => {
-  //   axios
-  //     .get(`/api/specialties/${id}`)
-  //     .then((res) => {
-  //       setSpecialties(res.data);
-  //     });
+  // const findProfessionalById = (id) => {
+  //   console.log(professionals);
+  //   const h = professionals.filter(
+  //     (item) => item.id === parseInt(id)
+  //   );
+  //   setProfessional([...h]);
   // };
+  // console.log("find", findProfessionalById(id));
 
   return (
-    <div>hi</div>
-    // <div className="components_container">
-    //   <ProfessionalDetail
-    //     professional={professionalInfo}
-    //     specialties={specialties}
-    //   />
-    //   <BookingForm
-    //     // professional={professionalInfo}
-    //     // specialties={specialties}
-    //   />
-    // </div>
+    <div className="components_container">
+      <ProfessionalDetail
+        professional={professional}
+        // specialties={specialties}
+      />
+      {/* <BookingForm
+        professional={professional}
+        specialties={specialties}
+      /> */}
+    </div>
   );
 }

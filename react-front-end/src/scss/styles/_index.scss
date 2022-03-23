@@ -9,7 +9,6 @@ body {
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat976.ani),
     url(https://cur.cursors-4u.net/nature/nat-10/nat976.gif),
     auto !important;
-    
 }
 
 .navigation {
@@ -21,24 +20,23 @@ body {
   z-index: 99;
   font-family: "Alegreya", serif;
   border-bottom: 4px solid #856c6c;
-  display: flex; 
-  flex-direction: row; 
-  justify-content:center;
-  background-image: url('https://i.postimg.cc/hvhT5KWR/smallbackground.png');
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-image: url("https://i.postimg.cc/hvhT5KWR/smallbackground.png");
   background-repeat: no-repeat;
   background-size: cover;
 
-    .logo {
-      display: flex; 
-      justify-content: center; 
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
 
-    }
-
-   h1 {
+  h1 {
     font-size: 70px;
     color: #cba96d;
     margin: 0px;
-    margin-top: -10px; 
+    margin-top: -10px;
     margin-bottom: 0px;
     padding-left: 0.5em;
     font-weight: normal;
@@ -52,13 +50,12 @@ body {
     padding: 0 2em;
     font-size: 30px;
     color: #ae915e;
-    width: 100%; 
-    margin-top: 1.6rem; 
+    width: 100%;
+    margin-top: 1.6rem;
     margin-left: 1rem;
 
     div {
-      padding-left: 40px; 
-
+      padding-left: 40px;
     }
   }
 }
