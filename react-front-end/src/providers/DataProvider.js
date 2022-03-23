@@ -15,6 +15,7 @@ export default function DataProvider(props) {
   useEffect(() => {
     getAllSpecialties();
     getAllProfessionals();
+    getAllAppointments();
   }, []);
 
   const getAllSpecialties = () => {

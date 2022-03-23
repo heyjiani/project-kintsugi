@@ -1,13 +1,18 @@
 import React from "react";
 
-export default function AppointmentListItem() {
+export default function AppointmentListItem(props) {
   // component has a dropdown on click //
+  const { time, description, professional_id } = props;
+
+  /* convert date to String */
+  const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  const date = new Date(props.date).toLocaleDateString([], dateOptions);
 
   return (
     <li className="appointment">
-      <div>2022-06-07</div>
-      <div>some time</div>
-      <div>Insert info about appointment</div>
+      <div>{date}</div>
+      <div>{time}</div>
+      <div>{description}</div>
       <img
         src="https://cdn-icons-png.flaticon.com/128/1946/1946429.png"
         alt=""
