@@ -56,6 +56,7 @@ export default function DataProvider(props) {
     appointments,
     getAllProfessionals,
     getAllSpecialties,
+    getAllAppointments,
   };
 
   return (

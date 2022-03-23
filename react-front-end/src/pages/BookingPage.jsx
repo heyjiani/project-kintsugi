@@ -14,10 +14,12 @@ export default function BookingPage() {
   let { id } = useParams();
 
   const {
-    professionalInfo,
+    professionals,
     specialties,
-    getProfessionalInfo,
-    getProfessionalSpecialties,
+    appointments,
+    getProfessionals,
+    getSpecialties,
+    getAppointments,
   } = useContext(DataContext);
 
   console.log(specialties);
