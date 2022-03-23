@@ -8,11 +8,12 @@ import { DataContext } from "../providers/DataProvider";
 export default function ProfessionalsPage() {
 
   const { professionals } = useContext(DataContext);
-  // console.log(professionalInfo);
+  const { specialties } = useContext(DataContext);
+  
 
   return (
     <div className="professionals">
-      <Sidebar />
+      <Sidebar specialties={specialties}/>
       <ProfessionalList professionals={professionals} />
     </div>
   );

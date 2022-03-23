@@ -8,21 +8,21 @@ import axios from "axios";
 export const DataContext = createContext();
 
 export default function DataProvider(props) {
-  const [professionals, setProfessionals] =
-    useState({});
-  const [specialties, setSpecialties] = useState(
-    []
-  );
+  const [professionals, setProfessionals] = useState({});
+  const [specialties, setSpecialties] = useState([]);
+  const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-    getProfessionalSpecialties();
+    getAllSpecialties();
     getAllProfessionals();
   }, []);
 
-  const getProfessionalSpecialties = () => {
-    axios.get(`/api/specialties`).then((res) => {
-      setSpecialties(res.data);
-    });
+  const getAllSpecialties = () => {
+    axios
+      .get(`/api/specialties`)
+      .then((res) => {
+        setSpecialties(res.data);
+      });
   };
 
   const getAllProfessionals = () => {
@@ -33,11 +33,28 @@ export default function DataProvider(props) {
       });
   };
 
+  const getAllAppointments = () => {
+    axios
+      .get(`/api/appointments`)
+      .then((res) => {
+        setAppointments(res.data)
+      })
+  }
+
+  // const getSpecialtiesByProfessionalId = id => {
+  //   axios
+  //     .get(`/api/professionals/${id}/specialties`)
+  //     .then(res => {
+  //       console.log(res.data);
+  //     })
+  // };
+
   const providerData = {
     professionals,
     specialties,
+    appointments,
     getAllProfessionals,
-    getProfessionalSpecialties,
+    getAllSpecialties,
   };
 
   return (
