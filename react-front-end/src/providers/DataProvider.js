@@ -19,6 +19,11 @@ export default function DataProvider(props) {
   const [appointments, setAppointments] =
     useState([]);
 
+  const [
+    specialtiesForProfessional,
+    setSpecialtiesForProfessional,
+  ] = useState([]);
+
   useEffect(() => {
     getAllSpecialties();
     getAllProfessionals();
@@ -62,23 +67,26 @@ export default function DataProvider(props) {
       });
   };
 
-  // const getSpecialtiesByProfessionalId = id => {
-  //   axios
-  //     .get(`/api/professionals/${id}/specialties`)
-  //     .then(res => {
-  //       console.log(res.data);
-  //     })
-  // };
+  const getSpecialtiesByProfessionalId = (id) => {
+    axios
+      .get(`/api/professionals/${id}/specialties`)
+      .then((res) => {
+        console.log(res.data);
+        setSpecialtiesForProfessional(res.data);
+      });
+  };
 
   const providerData = {
     professional,
     professionals,
     specialties,
+    specialtiesForProfessional,
     appointments,
     getAllProfessionals,
     getAllSpecialties,
     getAllAppointments,
     getProfessionalById,
+    getSpecialtiesByProfessionalId,
     // findProfessionalById,
   };
 

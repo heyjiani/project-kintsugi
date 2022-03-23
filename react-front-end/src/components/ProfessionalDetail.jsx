@@ -3,7 +3,7 @@ import React from "react";
 export default function ProfessionalDetail(
   props
 ) {
-  const { professional } = props;
+  const { professional, specialties } = props;
   return (
     <div className="professional-detail">
       <p className="btn-booking">
@@ -16,11 +16,10 @@ export default function ProfessionalDetail(
       </p>
       <div className="professional-detail__tags">
         <li>{professional.profession}</li>
-        {/* {prop.specialties &&
-          prop.specialties.map((item, i) => {
+        {specialties &&
+          specialties.map((item, i) => {
             return <li key={i}>{item.name}</li>;
-          })} */}
-        <li>h</li>
+          })}
         <li>
           {professional.province}{" "}
           {professional.city}

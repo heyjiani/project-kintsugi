@@ -14,12 +14,15 @@ export default function BookingPage() {
     professional,
     professionals,
     specialties,
+    specialtiesForProfessional,
     getProfessionalById,
+    getSpecialtiesByProfessionalId,
   } = useContext(DataContext);
 
   useEffect(() => {
     getProfessionalById(id);
-  }, []);
+    getSpecialtiesByProfessionalId(id);
+  }, [id]);
 
   // const [professional, setProfessional] =
   //   useState([]);
@@ -50,7 +53,7 @@ export default function BookingPage() {
     <div className="components_container">
       <ProfessionalDetail
         professional={professional}
-        // specialties={specialties}
+        specialties={specialtiesForProfessional}
       />
       {/* <BookingForm
         professional={professional}
