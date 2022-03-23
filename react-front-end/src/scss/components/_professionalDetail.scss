@@ -6,6 +6,8 @@
   margin-top: 4rem; 
   box-shadow: $default-box-shadow;
 
+    
+
   &__name {
     color: #cba96d;
   }
@@ -15,6 +17,12 @@
     justify-content: space-around;
     padding-bottom: 2rem;
     font-size: 1.5rem;
+
+    img {
+      width: 25px; 
+      margin-right: 10px; 
+      margin-top: 5px; 
+    }
   }
 
   .btn-booking {

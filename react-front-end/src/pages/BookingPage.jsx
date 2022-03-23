@@ -47,16 +47,19 @@ export default function BookingPage() {
   // };
 
   return (
-    <div>hi</div>
-    // <div className="components_container">
-    //   <ProfessionalDetail
-    //     professional={professionalInfo}
-    //     specialties={specialties}
-    //   />
-    //   <BookingForm
-    //     // professional={professionalInfo}
-    //     // specialties={specialties}
-    //   />
-    // </div>
+    <>
+    <div className="components_container">
+      <ProfessionalDetail
+        professional={professionalInfo}
+        specialties={specialties}
+      /> </div>
+      <div className="components_container">
+      <BookingForm
+        professional={professionalInfo}
+        specialties={specialties}
+      />
+    </div>
+    </>
+
   );
 }
