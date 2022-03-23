@@ -1,27 +1,20 @@
-import React, { useState, useEffect }from "react";
-import axios from 'axios';
+import React, { useContext }from "react";
 
 import ProfessionalList from "../components/Professionals/ProfessionalList";
 import Sidebar from "../components/Professionals/Sidebar";
 
+import { DataContext } from "../providers/DataProvider";
+
 export default function ProfessionalsPage() {
 
-  const [state, setState] = useState({
-    professionals: []
-  })
-
-  useEffect(() => {
-    axios
-      .get("/api/professionals")
-      .then(prof => {
-        setState(() => ({professionals: prof.data}))
-      })
-  }, []);
+  const { professionals } = useContext(DataContext);
+  const { specialties } = useContext(DataContext);
+  
 
   return (
     <div className="professionals">
-      <Sidebar />
-      <ProfessionalList professionals={state.professionals} />
+      <Sidebar specialties={specialties}/>
+      <ProfessionalList professionals={professionals} />
     </div>
   );
 }

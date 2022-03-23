@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Sidebar() {
+export default function Sidebar(props) {
   // need to populate checkboxes with prop data //
 
   // add onClick toggle show/hide to each category //
