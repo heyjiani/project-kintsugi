@@ -1,7 +1,13 @@
-import { useEffect, useState } from "react";
+import React, {
+  createContext,
+  useEffect,
+  useState,
+} from "react";
 import axios from "axios";
 
-const useApplicationData = () => {
+export const DataContext = createContext();
+
+export default function DataProvider(prop) {
   const [professionalInfo, setProfessionalInfo] =
     useState({});
   const [specialties, setSpecialties] = useState(
@@ -28,12 +34,16 @@ const useApplicationData = () => {
       });
   };
 
-  return {
+  const providerData = {
     professionalInfo,
     specialties,
     getProfessionalInfo,
     getProfessionalSpecialties,
   };
-};
 
-export default useApplicationData;
+  return (
+    <DataContext.Provider
+      value={providerData}
+    ></DataContext.Provider>
+  );
+}
