@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React, {
+  useContext,
+  useEffect,
+} from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import BookingForm from "../components/BookingForm";
 
 import ProfessionalDetail from "../components/ProfessionalDetail";
 import useApplicationData from "../hooks/useApplicationData";
-import DataContext from "../providers/DataProvider";
+import { DataContext } from "../providers/DataProvider";
 
 export default function BookingPage() {
   let { id } = useParams();
@@ -15,7 +18,8 @@ export default function BookingPage() {
     specialties,
     getProfessionalInfo,
     getProfessionalSpecialties,
-  } = DataContext();
+  } = useContext(DataContext);
+
   console.log(specialties);
   // const [show, setShow] = useState(false);
 
