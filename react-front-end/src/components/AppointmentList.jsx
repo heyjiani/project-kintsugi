@@ -2,7 +2,15 @@ import React from "react";
 
 import AppointmentListItem from "./AppointmentListItem";
 
-export default function AppointmentList() {
+export default function AppointmentList(props) {
+  const { appointments, professionals } = props;
+  /* still need to pass professional data to appointment card and dropdown */
+
+  const parsedAppointmentData =
+    Array.isArray(appointments) && appointments.map(a => {
+      return <AppointmentListItem key={a.id} {...a} />
+    })
+
   return (
     <section>
       <header>
@@ -13,9 +21,7 @@ export default function AppointmentList() {
         </p>
       </header>
       <ul>
-        <AppointmentListItem />
-        <AppointmentListItem />
-        <AppointmentListItem />
+        {parsedAppointmentData}
       </ul>
     </section>
   );

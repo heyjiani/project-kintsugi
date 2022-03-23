@@ -9,7 +9,7 @@ export default function ProfessionalList(props) {
     Array.isArray(professionals) &&
     professionals.map((p) => {
       return (
-        <ProfessionalListItem key={p.id} {...p} />
+          <ProfessionalListItem key={p.id} {...p} />
       );
     });
 
