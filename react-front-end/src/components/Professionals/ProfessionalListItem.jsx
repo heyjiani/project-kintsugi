@@ -9,12 +9,12 @@ export default function ProfessionalListItem(props) {
     province,
     profession,
     icon_url,
-    language_1,
     id,
     specialties
   } = props;
 
-  
+
+
   const professionalClass = "professionals__item";
 
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ export default function ProfessionalListItem(props) {
         />
         <ul>
           <li>{profession}</li>
-          <li>{language_1}</li>
+          <li>{specialties[0]}</li>
           <li>
             {city}, {province}
           </li>
