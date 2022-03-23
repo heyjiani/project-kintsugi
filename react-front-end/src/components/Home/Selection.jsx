@@ -15,7 +15,12 @@ export default function Selection({
 
   return (
     <div className="selection">
-      <div onClick={handleShow}>{genre}</div>
+      <div
+        className="selection__heading"
+        onClick={handleShow}
+      >
+        {genre}
+      </div>
       {show && (
         <ul>
           <SelectionList data={data} />

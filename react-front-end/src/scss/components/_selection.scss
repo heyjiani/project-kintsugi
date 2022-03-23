@@ -8,6 +8,11 @@
   box-shadow: $default-box-shadow;
   font-size: 1.7rem;
 }
+.selection__heading:hover {
+  color: #ae915e;
+  transform: scale(1.05);
+}
+
 .select__list {
   background-color: #e3ce94;
 }
