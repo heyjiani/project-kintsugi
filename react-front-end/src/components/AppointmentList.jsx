@@ -12,6 +12,7 @@ export default function AppointmentList(props) {
     })
 
   return (
+    <>
     <section>
       <header>
         <h2>Upcoming Appointments</h2>
@@ -20,9 +21,12 @@ export default function AppointmentList(props) {
           delete
         </p>
       </header>
-      <ul>
-        {parsedAppointmentData}
-      </ul>
+        <div className="center_list">
+           <ul>
+             {parsedAppointmentData}
+           </ul>
+       </div>
     </section>
+    </>
   );
 }
