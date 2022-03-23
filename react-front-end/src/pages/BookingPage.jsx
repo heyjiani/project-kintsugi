@@ -4,11 +4,8 @@ import React, {
   useState,
 } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import BookingForm from "../components/BookingForm";
-
 import ProfessionalDetail from "../components/ProfessionalDetail";
-import useApplicationData from "../hooks/useApplicationData";
 import { DataContext } from "../providers/DataProvider";
 
 export default function BookingPage() {
@@ -23,7 +20,7 @@ export default function BookingPage() {
   useEffect(() => {
     getProfessionalById(id);
   }, []);
-  console.log(professional);
+
   // const [professional, setProfessional] =
   //   useState([]);
 
@@ -41,14 +38,7 @@ export default function BookingPage() {
 
   //fetch professional by id//
 
-  // const getSingleAppointment = (id) => {
-  //   const array = findProfessionalById(id);
-  //   console.log("array", array, id);
-  //   setProfessional([...array]);
-  // };
-
   // const findProfessionalById = (id) => {
-  //   console.log(professionals);
   //   const h = professionals.filter(
   //     (item) => item.id === parseInt(id)
   //   );
