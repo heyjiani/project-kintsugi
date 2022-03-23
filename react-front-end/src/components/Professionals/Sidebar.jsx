@@ -3,11 +3,12 @@ import React from "react";
 export default function Sidebar(props) {
   // need to populate checkboxes with prop data //
   const { specialties, handleCheck } = props;
+  // ----- work in progress! ----- //
 
   const parsedSpecialties = specialties.map(s => {
     return (
       <div key={s.id}>
-        <input type="checkbox" value={s.name} onChange={e => handleCheck(s.name, e)} />
+        <input type="checkbox" value={s.name} onChange={e => handleCheck(s.id, e)} />
         {s.name}
       </div>
     )

@@ -13,14 +13,21 @@ export default function ProfessionalsPage() {
   // const [activeFilter, setActiveFilter] = useState;
   const [profData, setProfData] = useState([]);
   
-  const handleCheckbox = (value, event) => {
+  // --- work in progress!!--- //
+  const handleCheckbox = (box_id, event) => {
     if (event.target.checked) {
-      console.log('checked', value)
+      console.log('checked', box_id)
 
-      // let selected = professionals.filter(p => p.id === )
+      let selected = professionals.filter(p => p.id === box_id)
+      setProfData([...profData, ...selected]);
+      console.log('profData', profData)
 
     } else {
-      console.log('UNCHECKED', value)
+      console.log('UNCHECKED', box_id)
+
+      let unSelected = professionals.filter(p => p.id === box_id)
+      setProfData(prev => [...prev])
+      console.log('profData', profData)
     }
 
   }
