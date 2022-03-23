@@ -6,7 +6,7 @@ export default function Sidebar(props) {
   // add onClick toggle show/hide to each category //
 
   return (
-    <aside className="sidebar">
+    <div className="sidebar">
       <header>Sort</header>
       <div className="sidebar__options">
         <div className="sidebar__options__category">
@@ -25,6 +25,6 @@ export default function Sidebar(props) {
           Item 3
         </div>
       </div>
-    </aside>
+    </div>
   );
 }
