@@ -6,8 +6,8 @@ export default function Sidebar(props) {
   // add onClick toggle show/hide to each category //
 
   return (
-    <aside className="sidebar">
-      <header>Sort</header>
+    <div className="sidebar">
+      <header><img src="https://cdn-icons.flaticon.com/png/512/1620/premium/1620735.png?token=exp=1648052951~hmac=bb1eab46446957048f5bc2f90ff6e8e6" /> &nbsp;&nbsp;&nbsp;&nbsp; Sort</header>
       <div className="sidebar__options">
         <div className="sidebar__options__category">
           <h4>City</h4>
@@ -25,6 +25,6 @@ export default function Sidebar(props) {
           Item 3
         </div>
       </div>
-    </aside>
+    </div>
   );
 }
