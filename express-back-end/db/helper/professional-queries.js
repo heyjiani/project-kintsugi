@@ -21,11 +21,3 @@ module.exports = {
   getAllProfessionals,
   getProfessionalById
 };
-
-// const getProfessionalByLanguage = language => {
-  
-// };
-
-// const getProfessionalByProvince = province => {
-  
-// }

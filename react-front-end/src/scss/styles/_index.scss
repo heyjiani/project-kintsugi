@@ -65,7 +65,9 @@ body {
   padding-top: 150px;
   padding-bottom: 20px;
   width: 100%;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
   text-align: center;
 }
 
@@ -155,14 +157,68 @@ h2 {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-left: 20%;
+  margin-right: 20%; 
+
+
+  .go_back {
+    box-shadow: $default-box-shadow;
+    background-color: #cba96d;
+    font-size: 22px; 
+    margin-left: 20%; 
+    margin-right: 20%;
+
+  }
 
   td {
     text-align: left;
     padding-left: 10px;
+   
+  }
+
+  table {
+    padding-left: 1rem; 
+  }
+
+  img {
+    width: 30px ; 
+    padding: 0px; 
+    margin: 0px; 
+
+  }
+
+  .profile_header  {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row ;
+    margin-left: 2rem; 
+
+    .proff_name h2{
+      font-family: Alegreya;
+      font-size: 2rem; 
+      color: #E3CE94;
+      margin-bottom: -1rem; 
+      margin-top: -.5rem; 
+      margin-left: 1rem; 
+
+    }
   }
 }
 
 .professional_display {
   display: flex;
   flex-direction: row;
+}
+
+.bottomhalf {
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+}
+
+.timeslots {
+  display: flex;
+justify-content: center;
+flex-direction: row;
 }
