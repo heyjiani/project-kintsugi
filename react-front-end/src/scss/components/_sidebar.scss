@@ -6,10 +6,21 @@
   margin-right: 10px;
   width: 25%;
   height: 90%;
+  padding-bottom: 1em;
+
+  img {
+    width: 20%;
+    margin-bottom: -15px;
+  }
 
   header {
-    padding: 0 0.5em;
-    font-size: 32px;
+    padding: .5em 1em .5em 1em;
+    justify-content: center;
+    font-family: Alegreya;
+    font-size: 3vw; 
+    color: #E3CE94;
+    font-weight: bold;
+    
   }
 
   &__options {
@@ -25,6 +36,9 @@
     }
     div {
       padding: 0 0.5em;
+      background-color: #E3CE94;
+      margin: 10px 1em 10px 1em;
+      box-shadow: $default-box-shadow;
     }
   }
 }
