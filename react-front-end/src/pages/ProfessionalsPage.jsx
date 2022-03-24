@@ -1,4 +1,4 @@
-import React, { useContext, useState }from "react";
+import React, { useContext, useEffect, useState }from "react";
 
 import ProfessionalList from "../components/Professionals/ProfessionalList";
 import Sidebar from "../components/Professionals/Sidebar";
@@ -11,26 +11,30 @@ export default function ProfessionalsPage() {
   const { specialties } = useContext(DataContext);
 
   const [checkedValues, setCheckedValues] = useState([]);
+  const [checkedProfs, setCheckedProfs] = useState([]);
 
-  // console.log(checkedValues)
+  const newCheckedValues = [];
+
+  // useEffect(() => {
+  //   setCheckedValues()
+  // }, [checkedValues]);
   // --- work in progress!!--- //
-  const handleCheckbox = (box_id, event) => {
+  const handleCheck = (event) => {
 
-    if (event.target.checked ) {
-      console.log('checked', box_id)
-      const newCheckedValues = professionals.filter(p => specialties[box_id].professionals.includes(p.id));
-      setCheckedValues(prev => [...newCheckedValues]);
-      // console.log('profData', profData)
-      // console.log('disorder is', specialties[box_id])
+    if (event.target.checked) {
+      console.log('checked', event.target.value);
+      newCheckedValues.push(event.target.value);
+      setCheckedValues(prev => [...prev, ...newCheckedValues]);
+      console.log(checkedValues)
+
+      const newProfData = professionals.filter(p => p.specialties.includes(event.target.value));
+      setCheckedProfs([...newProfData]);
+      console.log('profData', checkedProfs)
 
     } else {
-      console.log('UNCHECKED', box_id)
-      const newCheckedValues = professionals.filter(p => specialties[box_id].professionals.includes(p.id));
-      setCheckedValues(prev => [...newCheckedValues]);
-      // setCheckedValues(prev => [...prev])
-      // let unSelected = professionals.filter(p => p.id === box_id)
-      // setProfData(prev => [...prev])
-      // console.log('profData', profData)
+      console.log('UNCHECKED', event.target.value)
+      const newCheckedValues = checkedValues.slice(0, -1);
+      setCheckedValues(newCheckedValues);
     }
   }
 
@@ -38,10 +42,10 @@ export default function ProfessionalsPage() {
     <div className="professionals">
       <Sidebar
         specialties={specialties}
-        handleCheck={handleCheckbox}
+        handleCheck={handleCheck}
       />
       <ProfessionalList
-        professionals={checkedValues.length ? checkedValues : professionals}
+        professionals={checkedValues.length ? checkedProfs : professionals}
         specialties={specialties}
       />
     </div>

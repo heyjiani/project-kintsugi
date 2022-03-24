@@ -8,7 +8,7 @@ export default function Sidebar(props) {
   const parsedSpecialties = specialties.map(s => {
     return (
       <div key={s.id}>
-        <input type="checkbox" value={s.name} onChange={e => handleCheck(s.id, e)} />
+        <input type="checkbox" value={s.id} onClick={e => handleCheck(e)} />
         {s.name}
       </div>
     )
