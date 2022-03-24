@@ -1,28 +1,41 @@
 const router = require("express").Router();
-const { getAllProfessionals, getProfessionalById } = require('../db/helper/professional-queries');
-const { getSpecialtiesByProfessionalId } = require('../db/helper/specialties-queries');
+const {
+  getAllProfessionals,
+  getProfessionalById,
+  getProfessionalBySearch,
+} = require("../db/helper/professional-queries");
+const {
+  getSpecialtiesByProfessionalId,
+} = require("../db/helper/specialties-queries");
 
 // routes for professionals API //
 
 const professionalRoutes = () => {
-
-  router.get('/', (req, res) => {
+  router.get("/", (req, res) => {
     getAllProfessionals()
-      .then(response => res.json(response))
-      .catch(e => console.log(e))
+      .then((response) => res.json(response))
+      .catch((e) => console.log(e));
   });
 
-  router.get('/:id/specialties', (req, res) => {
+  router.get("/search", (req, res) => {
+    const prov = req.query.prov;
+    const lang = req.query.lang;
+    getProfessionalBySearch(prov, lang)
+      .then((response) => res.json(response))
+      .catch((e) => console.log(e));
+  });
+
+  router.get("/:id/specialties", (req, res) => {
     getSpecialtiesByProfessionalId(req.params.id)
-      .then(response => res.json(response))
-      .catch(e => console.log(e))
+      .then((response) => res.json(response))
+      .catch((e) => console.log(e));
   });
 
-  router.get('/:id', (req, res) => {
+  router.get("/:id", (req, res) => {
     getProfessionalById(req.params.id)
-      .then(response => res.json(response))
-      .catch(e => console.log(e))
-  })
+      .then((response) => res.json(response))
+      .catch((e) => console.log(e));
+  });
 
   return router;
 };
