@@ -31,7 +31,7 @@ const appointmentRoutes = () => {
   // });
 
   router.post("/", (req, res) => {
-    console.log(req.body)
+    console.log('req.body', req.body)
     newAppointment(1, 2, req.body)
       .then((response) => {
         console.log('NA response', response)
