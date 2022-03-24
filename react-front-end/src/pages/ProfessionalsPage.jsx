@@ -10,26 +10,28 @@ export default function ProfessionalsPage() {
   const { professionals } = useContext(DataContext);
   const { specialties } = useContext(DataContext);
 
-  // const [activeFilter, setActiveFilter] = useState;
-  const [profData, setProfData] = useState([]);
-  
+  const [checkedValues, setCheckedValues] = useState([]);
+
+  // console.log(checkedValues)
   // --- work in progress!!--- //
   const handleCheckbox = (box_id, event) => {
-    if (event.target.checked) {
-      console.log('checked', box_id)
 
-      let selected = professionals.filter(p => p.id === box_id)
-      setProfData([...profData, ...selected]);
-      console.log('profData', profData)
+    if (event.target.checked ) {
+      console.log('checked', box_id)
+      const newCheckedValues = professionals.filter(p => specialties[box_id].professionals.includes(p.id));
+      setCheckedValues(prev => [...newCheckedValues]);
+      // console.log('profData', profData)
+      // console.log('disorder is', specialties[box_id])
 
     } else {
       console.log('UNCHECKED', box_id)
-
-      let unSelected = professionals.filter(p => p.id === box_id)
-      setProfData(prev => [...prev])
-      console.log('profData', profData)
+      const newCheckedValues = professionals.filter(p => specialties[box_id].professionals.includes(p.id));
+      setCheckedValues(prev => [...newCheckedValues]);
+      // setCheckedValues(prev => [...prev])
+      // let unSelected = professionals.filter(p => p.id === box_id)
+      // setProfData(prev => [...prev])
+      // console.log('profData', profData)
     }
-
   }
 
   return (
@@ -39,7 +41,7 @@ export default function ProfessionalsPage() {
         handleCheck={handleCheckbox}
       />
       <ProfessionalList
-        professionals={professionals}
+        professionals={checkedValues.length ? checkedValues : professionals}
         specialties={specialties}
       />
     </div>
