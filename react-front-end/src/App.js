@@ -15,6 +15,7 @@ import BookingPage from "./pages/BookingPage";
 import Footer from "./pages/Footer";
 import "./scss/main.scss";
 import NavBar from "./pages/NavBar";
+import ThankYou from "./pages/ThankYouPage";
 
 // fetchData = () => {
 //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
@@ -53,6 +54,11 @@ function App() {
           <Route
             path="/booking/:id"
             element={<BookingPage />}
+            exact
+          />
+           <Route
+            path="/thankyou"
+            element={<ThankYou/>}
             exact
           />
 
