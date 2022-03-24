@@ -12,23 +12,20 @@ export default function BookingPage() {
   let { id } = useParams();
   const {
     professional,
-    professionals,
-    // specialties,
-    pro,
     specialtiesForProfessional,
     getProfessionalById,
     getSpecialtiesByProfessionalId,
-    findProfessionalById,
+    // findProfessionalById,
   } = useContext(DataContext);
 
   useEffect(() => {
     getProfessionalById(id);
     getSpecialtiesByProfessionalId(id);
-    findProfessionalById(id);
+    // findProfessionalById(id);
+
   }, [id]);
 
-  // console.log(professionals);
-  console.log(pro);
+
 
   // const findProfessionalById = (id) => {
   //   professionals.filter(
@@ -56,10 +53,10 @@ export default function BookingPage() {
         professional={professional}
         specialties={specialtiesForProfessional}
       />
-      {/* <BookingForm
+      <BookingForm
         professional={professional}
         specialties={specialtiesForProfessional}
-      /> */}
+      />
     </div>
   );
 }

@@ -26,7 +26,7 @@ export default function BookingForm(props) {
 
   console.log(specialtiesListItem);
   return (
-    <>
+    <>{professional &&
       <div className="form_container">
         <p className="go_back">
           Go back & view more professionals.
@@ -138,7 +138,7 @@ export default function BookingForm(props) {
         </div>
 
         {/* form container div below  */}
-      </div>
+      </div>}
     </>
   );
 }

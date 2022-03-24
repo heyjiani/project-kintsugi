@@ -41,7 +41,7 @@ function App() {
             exact
           />
           <Route
-            path="/professionals"
+            path="/professionals/search/:prov/:lang"
             element={<ProfessionalsPage />}
             exact
           />

@@ -12,11 +12,11 @@ export default function DataProvider(props) {
   const [specialties, setSpecialties] = useState([]);
   const [professional, setProfessional] = useState([]);
   const [appointments, setAppointments] = useState([]);
-
   const [
     specialtiesForProfessional,
     setSpecialtiesForProfessional,
   ] = useState([]);
+  const [searchedProfessionals, setSearchedProfessionals] = useState([]);
 
   useEffect(() => {
     getAllSpecialties();
@@ -44,18 +44,18 @@ export default function DataProvider(props) {
     });
   };
 
-  console.log("out", professionals);
-  const [pro, setPro] = useState([]);
-  // //fetch professional by id//
-  const findProfessionalById = (id) => {
-    console.log(id);
-    console.log("pro", professionals);
-    const h = professionals.filter(
-      (item) => item.id === parseInt(id)
-    );
-    setPro([...h]);
-    console.log(pro);
-  };
+
+
+  // // //fetch professional by id//
+  // const findProfessionalById = (id) => {
+  //   console.log("inside", id, professionals);
+  //   const professional = professionals.filter(
+  //     (item) => item.id === parseInt(id)
+  //   );
+  //   console.log(professional[0]);
+  //   setProfessional(professional[0]);
+
+  // };
 
   const getProfessionalById = (id) => {
     axios
@@ -73,19 +73,38 @@ export default function DataProvider(props) {
       });
   };
 
+
+
+  // const getProfessionalBySearch = (prov, lang) => {
+  //   axios.get(`/api/professional/search?prov=${prov}&lang=${lang}`)
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setSearchedProfessionals(res.data)
+  //     })
+  // }
+
+  const getProfessionalBySearch = (prov, lang) => {
+    axios.get(`/api/professionals/search/${prov}/${lang}`)
+      .then((res) => {
+        setSearchedProfessionals(res.data);
+      })
+  }
+
   const providerData = {
     professional,
     professionals,
     specialties,
     specialtiesForProfessional,
     appointments,
-    pro,
+    searchedProfessionals,
+
     getAllProfessionals,
     getAllSpecialties,
     getAllAppointments,
     getProfessionalById,
     getSpecialtiesByProfessionalId,
-    findProfessionalById,
+    // findProfessionalById,
+    getProfessionalBySearch
   };
 
   return (

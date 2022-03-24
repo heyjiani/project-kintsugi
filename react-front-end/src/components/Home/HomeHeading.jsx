@@ -1,12 +1,20 @@
-import React from "react";
-import Button from "../Button";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Selection from "./Selection";
 import {
   provinceData,
   languageData,
 } from "../../searchData";
+import { DataContext } from "../../providers/DataProvider";
 
 export default function HomeHeading() {
+  const navigate = useNavigate()
+
+
+  const handleClick = () => {
+    console.log("clicked");
+    navigate("/professionals/search/BC/Japanese")
+  }
   return (
     <div>
       <div className="heading">
@@ -27,7 +35,7 @@ export default function HomeHeading() {
         genre="Province"
         data={provinceData}
       />
-      <Button text="Search" />
+      <div onClick={handleClick} className="btn">Search</div>
     </div>
   );
 }

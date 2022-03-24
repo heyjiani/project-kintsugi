@@ -1,11 +1,10 @@
 import React from "react";
 
-export default function ProfessionalDetail(
-  props
-) {
+export default function ProfessionalDetail(props) {
   const { professional, specialties } = props;
+
   return (
-    <div className="professional-detail">
+    <>{professional && <div className="professional-detail">
       <p className="btn-booking">
         click here to book with{" "}
         {professional.first_name}
@@ -33,6 +32,8 @@ export default function ProfessionalDetail(
         />
         <span>{professional.description}</span>
       </div>
-    </div>
+    </div>}
+    </>
+
   );
 }
