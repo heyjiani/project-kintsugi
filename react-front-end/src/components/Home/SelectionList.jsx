@@ -3,14 +3,14 @@ import { DataContext } from "../../providers/DataProvider";
 
 export default function SelectionList(props) {
   const [active, setActive] = useState(null);
-  const { addSearchItem, searchItem } = useContext(DataContext);
+  const { addSearchItem } = useContext(DataContext);
 
   const handleToggle = (e, i) => {
     const { genre, item } = e.target.dataset;
-    console.log("click", genre, item);
+
     setActive(i);
     addSearchItem(genre, item)
-    console.log(searchItem);
+
   };
 
   return (
@@ -25,7 +25,7 @@ export default function SelectionList(props) {
               handleToggle(e, i);
             }}
             className={
-              active === i ? "select__list" : ""
+              active === i ? "selection__list selected__list" : "selection__list"
             }
           >
             {item}

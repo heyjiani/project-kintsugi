@@ -6,11 +6,11 @@ export default function ProfessionalDetail(props) {
   return (
     <>{professional && <div className="professional-detail">
       <p className="btn-booking">
-        click here to book with{" "}
+        click here to book with&nbsp;
         {professional.first_name}
       </p>
       <p className="professional-detail__name">
-        {professional.first_name}{" "}
+        {professional.first_name}&nbsp;
         {professional.last_name}
       </p>
       <div className="professional-detail__tags">
@@ -20,7 +20,7 @@ export default function ProfessionalDetail(props) {
             return <li key={i}>{item.name}</li>;
           })}
         <li>
-          {professional.province}{" "}
+          {professional.province}&nbsp;
           {professional.city}
         </li>
       </div>

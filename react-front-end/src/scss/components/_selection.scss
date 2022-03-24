@@ -7,13 +7,26 @@
   margin: 3rem;
   box-shadow: $default-box-shadow;
   font-size: 1.7rem;
-}
-.selection__heading:hover {
-  padding: 0;
-  color: #ae915e;
-  transform: scale(1.05);
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  &__list {
+    font-size: 1.2rem;
+    margin: 0.2rem;
+  }
+
+  &__heading:hover,
+  &__list:hover {
+    padding: 0;
+    color: #d5c085;
+    transform: scale(1.05);
+  }
 }
 
-.select__list {
-  background-color: #e3ce94;
+.selected__list {
+  font-weight: 700;
+  color: #ae915e;
 }

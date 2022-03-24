@@ -7,7 +7,6 @@ export default function ProfessionalList(props) {
   const { professionals, specialties } = props;
   const { searchItem } = useContext(DataContext);
   const { Province, Language } = searchItem;
-  console.log(searchItem);
 
   const parsedProfessionalData =
     Array.isArray(professionals) &&
@@ -27,6 +26,7 @@ export default function ProfessionalList(props) {
 
   return (
     <div className="professionals__container">
+
       <h2 className="display-info">
         Displaying professionals who speak&nbsp;
         {Language} in &nbsp;{Province}

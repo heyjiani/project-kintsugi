@@ -10,13 +10,12 @@ const {
 
 const appointmentRoutes = () => {
   router.get("/", (req, res) => {
-    console.log("JSON Statham");
     getAppointments()
       .then((response) => res.json(response))
       .catch((e) => console.log(e));
   });
 
-  router.get("/all/:id", (req, res) => {
+  router.get("/client/:id", (req, res) => {
     getAppointmentsByUserId(req.params.id)
       .then((response) => res.json(response))
       .catch((e) => console.log(e));
@@ -31,8 +30,12 @@ const appointmentRoutes = () => {
   // });
 
   router.post("/", (req, res) => {
-    newAppointment(req.body)
-      .then((response) => res.json(response))
+    newAppointment(1, 2, req.body)
+      .then((response) => {
+        console.log('NA response', response)
+        res.json(response)
+      })
+
       .catch((e) => console.log(e));
   });
 

@@ -13,10 +13,7 @@ export default function ProfessionalListItem(props) {
     specialties
   } = props;
 
-
-
   const professionalClass = "professionals__item";
-
   const navigate = useNavigate();
   const handleOnClick = () => {
     navigate(`/booking/${id}`);

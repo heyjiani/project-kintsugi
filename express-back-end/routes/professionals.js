@@ -17,14 +17,6 @@ const professionalRoutes = () => {
       .catch((e) => console.log(e));
   });
 
-  // router.get("/search", (req, res) => {
-  //   const prov = req.query.prov;
-  //   const lang = req.query.lang;
-  //   getProfessionalBySearch(prov, lang)
-  //     .then((response) => res.json(response))
-  //     .catch((e) => console.log(e));
-  // });
-
   router.get("/search/:prov/:lang", (req, res) => {
     const prov = req.params.prov;
     const lang = req.params.lang;

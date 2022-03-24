@@ -15,6 +15,7 @@ export default function DataProvider(props) {
   const [specialtiesForProfessional, setSpecialtiesForProfessional] = useState([]);
   const [searchedProfessionals, setSearchedProfessionals] = useState([]);
   const [searchItem, setSearchItem] = useState({ Province: "", Language: "" });
+  const [clientAppointments, setClientAppointments] = useState([]);
 
   useEffect(() => {
     getAllSpecialties();
@@ -41,6 +42,13 @@ export default function DataProvider(props) {
       setAppointments(res.data);
     });
   };
+
+  const getAppointmentsByUserId = (id) => {
+    axios.get(`api/appointments/client/${id}`)
+      .then((res) => {
+        setClientAppointments(res.data);
+      })
+  }
 
   // // //fetch professional by id//
   // const findProfessionalById = (id) => {
@@ -104,6 +112,8 @@ export default function DataProvider(props) {
     appointments,
     searchedProfessionals,
     searchItem,
+    clientAppointments,
+    getAppointmentsByUserId,
     getAllProfessionals,
     getAllSpecialties,
     getAllAppointments,

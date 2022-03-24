@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function NavLinks() {
   return (
@@ -10,7 +11,7 @@ export default function NavLinks() {
         <a href="/">Get Help</a>
       </div>
       <div>
-        <a href="/">View Appointments</a>
+        <NavLink to="/appointments/client/1">View Appointments</NavLink>
       </div>
     </div>
   );

@@ -98,6 +98,9 @@ textarea {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 20px;
+  width: 75%;
+  min-height: 65%;
+  resize: none;
 }
 
 code {

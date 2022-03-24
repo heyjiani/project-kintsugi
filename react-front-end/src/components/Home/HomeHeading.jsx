@@ -8,8 +8,8 @@ export default function HomeHeading() {
   const navigate = useNavigate();
   const { searchItem } = useContext(DataContext);
   const { Province, Language } = searchItem;
-  const handleClick = () => {
 
+  const handleClick = () => {
     navigate(`/professionals/search/${Province}/${Language}`)
   }
   return (
@@ -24,15 +24,17 @@ export default function HomeHeading() {
           location.
         </p>
       </div>
-      <Selection
-        genre="Language"
-        data={languageData}
-      />
-      <Selection
-        genre="Province"
-        data={provinceData}
-      />
-      <div onClick={handleClick} className="btn">Search</div>
+      <div className="selection__container">
+        <Selection
+          genre="Language"
+          data={languageData}
+        />
+        <Selection
+          genre="Province"
+          data={provinceData}
+        />
+        <div onClick={handleClick} className="btn">Search</div>
+      </div>
     </div>
   );
 }

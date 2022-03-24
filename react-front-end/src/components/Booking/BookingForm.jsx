@@ -2,19 +2,10 @@ import React from "react";
 import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import InputForm from "./InputForm";
 
 export default function BookingForm(props) {
   const { professional, specialties } = props;
-  const [date, setDate] = useState(new Date());
-
-  const [category, setCategory] =
-    React.useState("");
-
-  const handleCategoryChange = (category) => {
-    setCategory(category);
-    console.log(category);
-  };
-
   const specialtiesListItem =
     //get the name value //
     specialties &&
@@ -80,65 +71,13 @@ export default function BookingForm(props) {
           {/* profile-header ends*/}
         </div>
         <p />
+        <InputForm
+          professional={professional} />
 
-        <div className="bottomhalf">
-          {/* <form
-                    class="center"
-                    action="/"
-                    method="POST"
-                    id="submitRequest"
-                    >
-                        </form> */}
+      </div>
+    }
+      {/* form container div below  */}
 
-          <div className="timeslots">
-            <div>
-              Select appointment date:{" "}
-              <Calendar
-                onChange={setDate}
-                value={date}
-              />
-            </div>
-
-            <div>
-              Select appointment time:
-              <select
-                name="category"
-                value={category}
-                onChange={(event) =>
-                  handleCategoryChange(
-                    event.target.value
-                  )
-                }
-              >
-                <option id="0">9:00 am</option>
-                <option id="1">10:00 am</option>
-                <option id="2">11:00 am</option>
-                <option id="3">12:00 pm</option>
-                <option id="4">1:00pm</option>
-                <option id="5">2:00pm</option>
-                <option id="6">3:00pm</option>
-              </select>
-            </div>
-          </div>
-
-          <p />
-
-          <div>
-            <textarea
-              style={{ width: 600, height: 400 }}
-              name="text"
-              id="appointment_request"
-              class="request"
-              type="text"
-              placeholder="Please provide the mental health worker with some additional details about your appointment request. If you’d prefer, select the microphone to record your message. It will translate your request from your primary language to English. "
-            ></textarea>
-            <br />
-            <button>Submit</button>
-          </div>
-        </div>
-
-        {/* form container div below  */}
-      </div>}
     </>
   );
 }

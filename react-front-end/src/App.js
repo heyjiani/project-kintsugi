@@ -33,7 +33,7 @@ function App() {
             exact
           />
           <Route
-            path="/myappointments"
+            path="/appointments/client/:id"
             element={<AppointmentPage />}
             exact
           />
