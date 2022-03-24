@@ -1,8 +1,6 @@
 import React from "react";
 
-export default function ProfessionalDetail(
-  props
-) {
+export default function ProfessionalDetail(props) {
   const { professional, specialties } = props;
   return (
     <div className="professional-detail">

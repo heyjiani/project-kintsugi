@@ -1,11 +1,11 @@
 import React, {
   useContext,
   useEffect,
-  useState,
+  // useState,
 } from "react";
 import { useParams } from "react-router-dom";
-import BookingForm from "../components/BookingForm";
-import ProfessionalDetail from "../components/ProfessionalDetail";
+import BookingForm from "../components/Booking/BookingForm";
+import ProfessionalDetail from "../components/Booking/ProfessionalDetail";
 import { DataContext } from "../providers/DataProvider";
 
 export default function BookingPage() {
@@ -13,21 +13,22 @@ export default function BookingPage() {
   const {
     professional,
     professionals,
-    specialties,
+    // specialties,
+    pro,
     specialtiesForProfessional,
     getProfessionalById,
     getSpecialtiesByProfessionalId,
+    findProfessionalById,
   } = useContext(DataContext);
 
   useEffect(() => {
     getProfessionalById(id);
     getSpecialtiesByProfessionalId(id);
+    findProfessionalById(id);
   }, [id]);
 
-  // const [professional, setProfessional] =
-  //   useState([]);
-
   // console.log(professionals);
+  console.log(pro);
 
   // const findProfessionalById = (id) => {
   //   professionals.filter(
@@ -55,10 +56,14 @@ export default function BookingPage() {
         professional={professional}
         specialties={specialtiesForProfessional}
       />
-      {/* <BookingForm
+      <BookingForm
         professional={professional}
-        specialties={specialties}
-      /> */}
+        specialties={specialtiesForProfessional}
+      />
     </div>
   );
 }
+
+// state that detects and then displays - conditional wrapping
+// useContext or state- pass down click function via props
+// booking page runs the check of the props
