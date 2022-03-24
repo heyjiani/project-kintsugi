@@ -1,19 +1,16 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Selection from "./Selection";
-import {
-  provinceData,
-  languageData,
-} from "../../searchData";
+import { provinceData, languageData } from "../../searchData";
 import { DataContext } from "../../providers/DataProvider";
 
 export default function HomeHeading() {
-  const navigate = useNavigate()
-
-
+  const navigate = useNavigate();
+  const { searchItem } = useContext(DataContext);
+  const { Province, Language } = searchItem;
   const handleClick = () => {
-    console.log("clicked");
-    navigate("/professionals/search/BC/Japanese")
+
+    navigate(`/professionals/search/${Province}/${Language}`)
   }
   return (
     <div>

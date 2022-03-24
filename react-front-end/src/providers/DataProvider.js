@@ -12,11 +12,9 @@ export default function DataProvider(props) {
   const [specialties, setSpecialties] = useState([]);
   const [professional, setProfessional] = useState([]);
   const [appointments, setAppointments] = useState([]);
-  const [
-    specialtiesForProfessional,
-    setSpecialtiesForProfessional,
-  ] = useState([]);
+  const [specialtiesForProfessional, setSpecialtiesForProfessional] = useState([]);
   const [searchedProfessionals, setSearchedProfessionals] = useState([]);
+  const [searchItem, setSearchItem] = useState({ Province: "", Language: "" });
 
   useEffect(() => {
     getAllSpecialties();
@@ -43,8 +41,6 @@ export default function DataProvider(props) {
       setAppointments(res.data);
     });
   };
-
-
 
   // // //fetch professional by id//
   // const findProfessionalById = (id) => {
@@ -90,6 +86,16 @@ export default function DataProvider(props) {
       })
   }
 
+  const addSearchItem = (genre, item) => {
+    setSearchItem((prev) => {
+      return {
+        ...prev,
+        [genre]: item
+      };
+    });
+
+  };
+
   const providerData = {
     professional,
     professionals,
@@ -97,14 +103,14 @@ export default function DataProvider(props) {
     specialtiesForProfessional,
     appointments,
     searchedProfessionals,
-
+    searchItem,
     getAllProfessionals,
     getAllSpecialties,
     getAllAppointments,
     getProfessionalById,
     getSpecialtiesByProfessionalId,
-    // findProfessionalById,
-    getProfessionalBySearch
+    getProfessionalBySearch,
+    addSearchItem
   };
 
   return (

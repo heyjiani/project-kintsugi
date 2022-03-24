@@ -23,7 +23,7 @@ export default function Selection({
       </div>
       {show && (
         <ul>
-          <SelectionList data={data} />
+          <SelectionList data={data} genre={genre} />
         </ul>
       )}
     </div>

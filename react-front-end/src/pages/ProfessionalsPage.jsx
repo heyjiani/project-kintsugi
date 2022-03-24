@@ -6,9 +6,7 @@ import { DataContext } from "../providers/DataProvider";
 
 export default function ProfessionalsPage() {
   let { prov, lang } = useParams()
-  const { getProfessionalBySearch, searchedProfessionals } = useContext(DataContext);
-  const { professionals } = useContext(DataContext);
-  const { specialties } = useContext(DataContext);
+  const { getProfessionalBySearch, searchedProfessionals, professionals, specialties } = useContext(DataContext);
 
   // const [activeFilter, setActiveFilter] = useState;
   const [profData, setProfData] = useState([]);
@@ -17,8 +15,6 @@ export default function ProfessionalsPage() {
     getProfessionalBySearch(prov, lang);
 
   }, [])
-  console.log(prov, lang);
-  console.log({ searchedProfessionals });
 
   // --- work in progress!!--- //
   const handleCheckbox = (box_id, event) => {

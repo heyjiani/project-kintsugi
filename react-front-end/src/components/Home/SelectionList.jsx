@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { DataContext } from "../../providers/DataProvider";
 
 export default function SelectionList(props) {
   const [active, setActive] = useState(null);
-  const [searchItem, setSearchItem] =
-    useState("");
+  const { addSearchItem, searchItem } = useContext(DataContext);
 
   const handleToggle = (e, i) => {
-    const value = e.target.dataset.txt;
-    console.log("click", e.target.dataset.txt, i);
+    const { genre, item } = e.target.dataset;
+    console.log("click", genre, item);
     setActive(i);
-    setSearchItem(value);
+    addSearchItem(genre, item)
     console.log(searchItem);
   };
 
   return (
-    <div>
+    <div >
       {props.data.map((item, i) => {
         return (
           <li
-            data-txt={item}
+            data-genre={props.genre}
+            data-item={item}
             key={i}
             onClick={(e) => {
               handleToggle(e, i);
