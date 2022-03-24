@@ -56,10 +56,14 @@ export default function BookingPage() {
         professional={professional}
         specialties={specialtiesForProfessional}
       />
-      {/* <BookingForm
+      <BookingForm
         professional={professional}
         specialties={specialtiesForProfessional}
-      /> */}
+      />
     </div>
   );
 }
+
+// state that detects and then displays - conditional wrapping
+// useContext or state- pass down click function via props
+// booking page runs the check of the props
