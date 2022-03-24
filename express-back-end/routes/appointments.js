@@ -31,8 +31,12 @@ const appointmentRoutes = () => {
   // });
 
   router.post("/", (req, res) => {
-    newAppointment(req.body)
-      .then((response) => res.json(response))
+    console.log(req.body)
+    newAppointment(1, 2, req.body)
+      .then((response) => {
+        console.log('NA response', response)
+        res.json(response)})
+      
       .catch((e) => console.log(e));
   });
 

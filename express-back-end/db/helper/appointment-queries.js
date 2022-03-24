@@ -43,13 +43,14 @@ const newAppointment = (
   const { date, time, description } =
     appointment_data;
   const queryValues = [
+    id,
     client_id,
     prof_id,
     date,
     time,
     description,
   ];
-  const queryString = `INSERT INTO appointments (client_id, professional_id, date, time, description) VALUES
+  const queryString = `INSERT INTO appointments (id, client_id, professional_id, date, time, description) VALUES
   ($1, $2, $3, $4, $5) RETURNING *`;
 
   return db
