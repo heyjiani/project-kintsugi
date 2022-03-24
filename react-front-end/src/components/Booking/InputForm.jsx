@@ -2,15 +2,20 @@
 // how to toggle?
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+
+
+
 
 export default function InputForm(props) {
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState("09:00:00");
   const [formState, setFormState] = useState(false)
   const { professional } = props;
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,13 +41,21 @@ export default function InputForm(props) {
          method: 'post',
          headers: {'Content-Type': 'application/json'},
          body: JSON.stringify(myData)
-       }).then(response=>response.json())
+       })
+       .then(response=>response.json())
        .then(body=>{
             console.log('fetch successfull')
-   }).catch((error) => {
-    console.error('Error:', error);
-  });}
+            navigate('/thankyou')
+        })
+       
+        .catch((error) => {
+        console.error('Error posting new appointment. Error:', error);
+        });
+
+}
   // }
+
+  
 
   useEffect(() => {
     if (!formState === false) addNewAppointmentData(); 
@@ -99,7 +112,7 @@ export default function InputForm(props) {
               placeholder="Please provide the mental health worker with some additional details about your appointment request. If you’d prefer, select the microphone to record your message. It will translate your request from your primary language to English. "
             />
             <br />
-            <button type="submit">Submit</button> 
+            <button type="submit" >Submit</button> 
                   </div>
                   
          </form>
