@@ -17,7 +17,7 @@ export default function Sidebar(props) {
   const parsedProfessions = professions.map((p, i) => {
     return (
       <div key={i}>
-        <input type="checkbox" value={p} onClick={e => handleCheck(e)} />
+        <input type="radio" value={p} onClick={e => handleCheck(e)} />
         {p}
       </div>
     )
@@ -26,7 +26,7 @@ export default function Sidebar(props) {
   const parsedCities = cities.map((c, i) => {
     return (
       <div key={i}>
-        <input type="checkbox" value={c} onClick={e => handleCheck(e)} />
+        <input type="radio" value={c} onClick={e => handleCheck(e)} />
         {c}
       </div>
     )
@@ -42,18 +42,21 @@ export default function Sidebar(props) {
         &nbsp;&nbsp;&nbsp;&nbsp; Sort
       </header>
       <div className="sidebar__options">
-      <div className="sidebar__options__category">
-        <h4>City</h4>
-      </div>
-        {parsedCities}
-      <div className="sidebar__options__category">
-        <h4>Profession</h4>
-      </div>
-        {parsedProfessions}
+
         <div className="sidebar__options__category">
           <h4>Issues</h4>
         </div>
         {parsedSpecialties}
+
+        <div className="sidebar__options__category">
+          <h4>City</h4>
+        </div>
+        {parsedCities}
+
+        <div className="sidebar__options__category">
+          <h4>Profession</h4>
+        </div>
+        {parsedProfessions}
       </div>
     </div>
   );
