@@ -16,14 +16,13 @@ export default function DataProvider(props) {
   const [searchedProfessionals, setSearchedProfessionals] = useState([]);
   const [searchItem, setSearchItem] = useState({ Province: "", Language: "" });
   const [clientAppointments, setClientAppointments] = useState([]);
-
   const [checkedValues, setCheckedValues] = useState([]);
   const [checkedCategories, setCheckedCategories] = useState({ city: "", profession: "" });
 
   useEffect(() => {
     getAllSpecialties();
     getAllProfessionals();
-    getAllAppointments();
+    // getAllAppointments();
   }, []);
 
   const getAllSpecialties = () => {
@@ -40,11 +39,11 @@ export default function DataProvider(props) {
       });
   };
 
-  const getAllAppointments = () => {
-    axios.get(`/api/appointments`).then((res) => {
-      setAppointments(res.data);
-    });
-  };
+  // const getAllAppointments = () => {
+  //   axios.get(`/api/appointments`).then((res) => {
+  //     setAppointments(res.data);
+  //   });
+  // };
 
   const getAppointmentsByUserId = (id) => {
     axios.get(`api/appointments/client/${id}`)
@@ -52,17 +51,6 @@ export default function DataProvider(props) {
         setClientAppointments(res.data);
       })
   }
-
-  // // //fetch professional by id//
-  // const findProfessionalById = (id) => {
-  //   console.log("inside", id, professionals);
-  //   const professional = professionals.filter(
-  //     (item) => item.id === parseInt(id)
-  //   );
-  //   console.log(professional[0]);
-  //   setProfessional(professional[0]);
-
-  // };
 
   const getProfessionalById = (id) => {
     axios
@@ -79,16 +67,6 @@ export default function DataProvider(props) {
         setSpecialtiesForProfessional(res.data);
       });
   };
-
-
-
-  // const getProfessionalBySearch = (prov, lang) => {
-  //   axios.get(`/api/professional/search?prov=${prov}&lang=${lang}`)
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setSearchedProfessionals(res.data)
-  //     })
-  // }
 
   const getProfessionalBySearch = (prov, lang) => {
     axios.get(`/api/professionals/search/${prov}/${lang}`)
@@ -117,8 +95,6 @@ export default function DataProvider(props) {
   };
 
   const getFilteredProf = (profs, specs) => {
-
-    console.log("hi", profs);
     // if specs are empty, return all profs
     return (
       (specs.length
@@ -150,13 +126,12 @@ export default function DataProvider(props) {
     return filteredData;
   };
 
-
   const providerData = {
     professional,
     professionals,
     specialties,
     specialtiesForProfessional,
-    appointments,
+    // appointments,
     searchedProfessionals,
     searchItem,
     clientAppointments,
@@ -165,7 +140,7 @@ export default function DataProvider(props) {
     getAppointmentsByUserId,
     getAllProfessionals,
     getAllSpecialties,
-    getAllAppointments,
+    // getAllAppointments,
     getProfessionalById,
     getSpecialtiesByProfessionalId,
     getProfessionalBySearch,
@@ -174,6 +149,7 @@ export default function DataProvider(props) {
     getProfsByCategory,
     handleCheck,
     handleRadio,
+
   };
 
   return (

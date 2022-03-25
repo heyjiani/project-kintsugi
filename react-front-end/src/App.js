@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import React from "react";
-// import axios from "axios";
 
 import {
   BrowserRouter,
@@ -34,7 +33,7 @@ function App() {
             exact
           />
           <Route
-            path="/appointments/client/:id"
+            path="/myappointments"
             element={<AppointmentPage />}
             exact
           />
@@ -43,9 +42,9 @@ function App() {
             element={<BookingPage />}
             exact
           />
-           <Route
+          <Route
             path="/thankyou"
-            element={<ThankYou/>}
+            element={<ThankYou />}
             exact
           />
 

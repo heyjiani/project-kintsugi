@@ -30,7 +30,7 @@ export default function InputForm(props) {
   };
 
   const addNewAppointmentData = (event) => {
-    const myData = 
+    const myData =
     {
       professional: professional.id,
       date: date,
@@ -38,27 +38,27 @@ export default function InputForm(props) {
       info: formState
     }
     fetch('/api/appointments', {
-         method: 'post',
-         headers: {'Content-Type': 'application/json'},
-         body: JSON.stringify(myData)
-       })
-       .then(response=>response.json())
-       .then(body=>{
-            console.log('fetch successfull')
-            navigate('/thankyou')
-        })
-       
-        .catch((error) => {
-        console.error('Error posting new appointment. Error:', error);
-        });
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(myData)
+    })
+      .then(response => response.json())
+      .then(body => {
+        console.log('fetch successfull')
+        navigate('/thankyou')
+      })
 
-}
+      .catch((error) => {
+        console.error('Error posting new appointment. Error:', error);
+      });
+
+  }
   // }
 
-  
+
 
   useEffect(() => {
-    if (!formState === false) addNewAppointmentData(); 
+    if (!formState === false) addNewAppointmentData();
   }, [formState]);
 
   return (
@@ -66,57 +66,57 @@ export default function InputForm(props) {
     <div className="bottomhalf">
 
       <form onSubmit={handleSubmit}>
-          <div className="timeslots">
-            <div>
-              Select appointment date:{" "}
-              <Calendar
-                onChange={setDate}
-                value={date}
-                name="date"
-                type="date"
-              />
-            </div>
-
-            <div>
-              Select appointment time:
-              <select
-                name="time"
-                value={time}
-                type="time"
-                onChange={(event) =>
-                  handleTimeChange(
-                    event.target.value
-                  )
-                }
-              >
-                <option id="0" value="09:00:00">09:00am</option>
-                <option id="1" value="10:00:00">10:00am</option>
-                <option id="2" value="11:00:00">11:00am</option>
-                <option id="3" value="12:00:00">12:00pm</option>
-                <option id="4" value="13:00:00">1:00pm</option>
-                <option id="5" value="14:00:00">2:00pm</option>
-                <option id="6" value="15:00:00">3:00pm</option>
-              </select>
-            </div>
+        <div className="timeslots">
+          <div>
+            Select appointment date:{" "}
+            <Calendar
+              onChange={setDate}
+              value={date}
+              name="date"
+              type="date"
+            />
           </div>
 
-          <p />
-
           <div>
-            <textarea
-              style={{ width: 600, height: 400 }}
-              name="description"
-              id="appointment_request"
-              class="request"
-              type="text"
-              placeholder="Please provide the mental health worker with some additional details about your appointment request. If you’d prefer, select the microphone to record your message. It will translate your request from your primary language to English. "
-            />
-            <br />
-            <button type="submit" >Submit</button> 
-                  </div>
-                  
-         </form>
-      </div> 
-          
-    )  
-  };
+            Select appointment time:
+            <select
+              name="time"
+              value={time}
+              type="time"
+              onChange={(event) =>
+                handleTimeChange(
+                  event.target.value
+                )
+              }
+            >
+              <option id="0" value="09:00:00">09:00am</option>
+              <option id="1" value="10:00:00">10:00am</option>
+              <option id="2" value="11:00:00">11:00am</option>
+              <option id="3" value="12:00:00">12:00pm</option>
+              <option id="4" value="13:00:00">1:00pm</option>
+              <option id="5" value="14:00:00">2:00pm</option>
+              <option id="6" value="15:00:00">3:00pm</option>
+            </select>
+          </div>
+        </div>
+
+        <p />
+
+        <div>
+          <textarea
+            style={{ width: 600, height: 400 }}
+            name="description"
+            id="appointment_request"
+            class="request"
+            type="text"
+            placeholder="Please provide the mental health worker with some additional details about your appointment request. If you’d prefer, select the microphone to record your message. It will translate your request from your primary language to English. "
+          />
+          <br />
+          <button type="submit" >Submit</button>
+        </div>
+
+      </form>
+    </div>
+
+  )
+};
