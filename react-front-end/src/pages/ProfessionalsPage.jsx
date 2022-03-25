@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback }from "react";
+import React, { useContext, useState }from "react";
 
 import ProfessionalList from "../components/Professionals/ProfessionalList";
 import Sidebar from "../components/Professionals/Sidebar";
