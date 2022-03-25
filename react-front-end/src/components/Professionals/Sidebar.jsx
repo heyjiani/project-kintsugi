@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Sidebar(props) {
 
-  const { specialties, handleCheck, professions, cities } = props;
+  const { specialties, handleCheck, professions, cities, handleRadio } = props;
 
   const parsedSpecialties = specialties.map(s => {
     return (
@@ -11,13 +11,12 @@ export default function Sidebar(props) {
         {s.name}
       </div>
     )
-  })
-  console.log('PROF', professions)
+  });
 
   const parsedProfessions = professions.map((p, i) => {
     return (
       <div key={i}>
-        <input type="radio" value={p} onClick={e => handleCheck(e)} />
+        <input type="radio" name="profession" value={p} onClick={e => handleRadio(e, 'profession', p)} />
         {p}
       </div>
     )
@@ -26,7 +25,7 @@ export default function Sidebar(props) {
   const parsedCities = cities.map((c, i) => {
     return (
       <div key={i}>
-        <input type="radio" value={c} onClick={e => handleCheck(e)} />
+        <input type="radio" name="city" value={c} onClick={e => handleRadio(e, 'city', c)} />
         {c}
       </div>
     )

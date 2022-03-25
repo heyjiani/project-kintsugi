@@ -6,7 +6,7 @@ import { DataContext } from "../providers/DataProvider";
 
 export default function ProfessionalsPage() {
   let { prov, lang } = useParams()
-  const { getProfessionalBySearch, searchedProfessionals, specialties, handleCheck, checkedValues, getFilteredProf } = useContext(DataContext);
+  const { getProfessionalBySearch, searchedProfessionals, specialties, handleCheck, checkedValues, getFilteredProf, checkedCategories, getProfsByCategory, handleRadio } = useContext(DataContext);
 
   useEffect(() => {
     getProfessionalBySearch(prov, lang);
@@ -31,6 +31,8 @@ export default function ProfessionalsPage() {
     return allCities;
   }
 
+  const filteredProfData = getProfsByCategory(getFilteredProf(searchedProfessionals, checkedValues), checkedCategories)
+
   return (
     <div className="professionals">
       <Sidebar
@@ -38,9 +40,10 @@ export default function ProfessionalsPage() {
         professions={getProfessions(searchedProfessionals)}
         specialties={specialties}
         handleCheck={handleCheck}
+        handleRadio={handleRadio}
       />
       <ProfessionalList
-        professionals={checkedValues.length ? getFilteredProf(searchedProfessionals, checkedValues) : searchedProfessionals}
+        professionals={filteredProfData}
         specialties={specialties}
       />
     </div>
