@@ -17,6 +17,9 @@ export default function DataProvider(props) {
   const [searchItem, setSearchItem] = useState({ Province: "", Language: "" });
   const [clientAppointments, setClientAppointments] = useState([]);
 
+  const [checkedValues, setCheckedValues] = useState([]);
+  const [checkedCategories, setCheckedCategories] = useState({ city: "", profession: "" });
+
   useEffect(() => {
     getAllSpecialties();
     getAllProfessionals();
@@ -104,6 +107,48 @@ export default function DataProvider(props) {
 
   };
 
+  const handleCheck = (event) => {
+    if (event.target.checked) {
+      setCheckedValues(prev => [...prev, event.target.value]);
+    } else {
+      const newCheckedValues = checkedValues.filter(c => c !== event.target.value)
+      setCheckedValues(newCheckedValues);
+    }
+  };
+
+  const getFilteredProf = (profs, specs) => {
+    // if specs are empty, return all profs
+    return (
+      (specs.length
+        && profs.filter(p => specs.every(id => p.specialties.includes(parseInt(id)))))
+      || profs
+      )
+  };
+
+  const handleRadio = (event, category) => {
+    if (event.target.checked) {
+      setCheckedCategories(prev => {
+        return { ...prev,  [category]: event.target.value }
+      })
+    } else {
+      setCheckedCategories(prev => {
+        return { ...prev, [category]: "" }
+      })
+    }
+  }
+
+  const getProfsByCategory = (profs, categories) => {
+    let filteredData = profs;
+    if (categories.city.length) {
+      filteredData = filteredData.filter(p => p.city === categories.city )
+    }
+    if (categories.profession.length) {
+      filteredData = filteredData.filter(p => p.profession === categories.profession )
+    }
+    return filteredData;
+  };
+
+
   const providerData = {
     professional,
     professionals,
@@ -113,6 +158,8 @@ export default function DataProvider(props) {
     searchedProfessionals,
     searchItem,
     clientAppointments,
+    checkedValues,
+    checkedCategories,
     getAppointmentsByUserId,
     getAllProfessionals,
     getAllSpecialties,
@@ -120,7 +167,11 @@ export default function DataProvider(props) {
     getProfessionalById,
     getSpecialtiesByProfessionalId,
     getProfessionalBySearch,
-    addSearchItem
+    addSearchItem,
+    getFilteredProf,
+    getProfsByCategory,
+    handleCheck,
+    handleRadio,
   };
 
   return (
