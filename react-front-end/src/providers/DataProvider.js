@@ -39,6 +39,8 @@ export default function DataProvider(props) {
       });
   };
 
+  console.log("cont", professionals);
+
   // const getAllAppointments = () => {
   //   axios.get(`/api/appointments`).then((res) => {
   //     setAppointments(res.data);

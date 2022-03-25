@@ -10,7 +10,7 @@ export default function AppointmentList(props) {
     Array.isArray(appointments) &&
     appointments.map((a) => {
       return (
-        <AppointmentListItem key={a.id} {...a} />
+        <AppointmentListItem key={a.id} {...a} professionals={professionals} />
       );
     });
 

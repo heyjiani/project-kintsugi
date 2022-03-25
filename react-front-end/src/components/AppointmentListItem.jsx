@@ -2,7 +2,13 @@ import React from "react";
 
 export default function AppointmentListItem(props) {
   // component has a dropdown on click //
-  const { time, description, professional_id } = props;
+  const { time, professional_id, professionals, description } = props;
+
+
+  const professionalForAppointment = () => {
+    professionals.filter(p => p.id = professional_id)
+  };
+
 
   /* convert date to String */
   const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };

@@ -7,7 +7,7 @@ import { DataContext } from "../providers/DataProvider";
 export default function AppointmentPage() {
   let { id } = useParams();
   const { professionals, getAppointmentsByUserId, clientAppointments } = useContext(DataContext);
-
+  console.log("pro", professionals);
   useEffect(() => {
     getAppointmentsByUserId(1)
 
