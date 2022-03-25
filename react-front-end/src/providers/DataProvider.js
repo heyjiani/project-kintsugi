@@ -16,6 +16,7 @@ export default function DataProvider(props) {
   const [searchedProfessionals, setSearchedProfessionals] = useState([]);
   const [searchItem, setSearchItem] = useState({ Province: "", Language: "" });
   const [clientAppointments, setClientAppointments] = useState([]);
+  const [checkedValues, setCheckedValues] = useState([]);
 
   useEffect(() => {
     getAllSpecialties();
@@ -104,6 +105,20 @@ export default function DataProvider(props) {
 
   };
 
+  const handleCheck = (event) => {
+    if (event.target.checked) {
+      setCheckedValues(prev => [...prev, event.target.value]);
+    } else {
+      const newCheckedValues = checkedValues.filter(c => c !== event.target.value)
+      setCheckedValues(newCheckedValues);
+    }
+  };
+  
+  const getFilteredProf = (profs, specs) => {
+    return profs.filter(p => specs.every(id => p.specialties.includes(parseInt(id))));
+  };
+
+
   const providerData = {
     professional,
     professionals,
@@ -113,6 +128,7 @@ export default function DataProvider(props) {
     searchedProfessionals,
     searchItem,
     clientAppointments,
+    checkedValues,
     getAppointmentsByUserId,
     getAllProfessionals,
     getAllSpecialties,
@@ -120,7 +136,9 @@ export default function DataProvider(props) {
     getProfessionalById,
     getSpecialtiesByProfessionalId,
     getProfessionalBySearch,
-    addSearchItem
+    addSearchItem,
+    getFilteredProf,
+    handleCheck,
   };
 
   return (
