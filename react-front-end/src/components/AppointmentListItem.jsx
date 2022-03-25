@@ -6,7 +6,7 @@ export default function AppointmentListItem(props) {
 
 
   const professionalForAppointment = () => {
-    professionals.filter(p => p.id = professional_id)
+    professionals.filter(p => p.id === professional_id)
   };
 
 
