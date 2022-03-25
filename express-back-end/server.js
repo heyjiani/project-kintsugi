@@ -1,9 +1,15 @@
 require("dotenv").config();
 const Express = require("express");
 const morgan = require("morgan");
+const http = require('http');
+
 const BodyParser = require("body-parser");
 const app = Express();
 const PORT = 8080;
+
+
+const socket = require('socket.io');
+const io = socket();
 
 
 // Express Configuration
