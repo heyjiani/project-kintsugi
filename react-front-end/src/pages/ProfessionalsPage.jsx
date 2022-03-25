@@ -8,41 +8,37 @@ export default function ProfessionalsPage() {
   let { prov, lang } = useParams()
   const { getProfessionalBySearch, searchedProfessionals, professionals, specialties } = useContext(DataContext);
 
-  // const [activeFilter, setActiveFilter] = useState;
-  const [profData, setProfData] = useState([]);
+  const [checkedValues, setCheckedValues] = useState([]);
 
   useEffect(() => {
     getProfessionalBySearch(prov, lang);
 
-  }, [])
+  }, []);
 
-  // --- work in progress!!--- //
-  const handleCheckbox = (box_id, event) => {
+
+  const handleCheck = (event) => {
     if (event.target.checked) {
-      console.log('checked', box_id)
-
-      let selected = professionals.filter(p => p.id === box_id)
-      setProfData([...profData, ...selected]);
-      console.log('profData', profData)
-
+      setCheckedValues(prev => [...prev, event.target.value]);
     } else {
-      console.log('UNCHECKED', box_id)
-
-      let unSelected = professionals.filter(p => p.id === box_id)
-      setProfData(prev => [...prev])
-      console.log('profData', profData)
+      const newCheckedValues = checkedValues.filter(c => c !== event.target.value)
+      setCheckedValues(newCheckedValues);
     }
+  }
 
+
+  const getFilteredProf = specs => {
+    return professionals.filter(p => specs.every(id => p.specialties.includes(parseInt(id))));
   }
 
   return (
     <div className="professionals">
       <Sidebar
         specialties={specialties}
-        handleCheck={handleCheckbox}
+        handleCheck={handleCheck}
       />
       <ProfessionalList
-        professionals={searchedProfessionals}
+
+        professionals={checkedValues.length ? getFilteredProf(checkedValues) : searchedProfessionals}
         specialties={specialties}
       />
     </div>
