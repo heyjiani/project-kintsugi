@@ -117,18 +117,20 @@ export default function DataProvider(props) {
   };
 
   const getFilteredProf = (profs, specs) => {
+
+    console.log("hi", profs);
     // if specs are empty, return all profs
     return (
       (specs.length
         && profs.filter(p => specs.every(id => p.specialties.includes(parseInt(id)))))
       || profs
-      )
+    )
   };
 
   const handleRadio = (event, category) => {
     if (event.target.checked) {
       setCheckedCategories(prev => {
-        return { ...prev,  [category]: event.target.value }
+        return { ...prev, [category]: event.target.value }
       })
     } else {
       setCheckedCategories(prev => {
@@ -140,10 +142,10 @@ export default function DataProvider(props) {
   const getProfsByCategory = (profs, categories) => {
     let filteredData = profs;
     if (categories.city.length) {
-      filteredData = filteredData.filter(p => p.city === categories.city )
+      filteredData = filteredData.filter(p => p.city === categories.city)
     }
     if (categories.profession.length) {
-      filteredData = filteredData.filter(p => p.profession === categories.profession )
+      filteredData = filteredData.filter(p => p.profession === categories.profession)
     }
     return filteredData;
   };
