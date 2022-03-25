@@ -1,9 +1,8 @@
 import React from "react";
 
 export default function Sidebar(props) {
-  // need to populate checkboxes with prop data //
-  const { specialties, handleCheck } = props;
-  // ----- work in progress! ----- //
+
+  const { specialties, handleCheck, professions, cities } = props;
 
   const parsedSpecialties = specialties.map(s => {
     return (
@@ -13,7 +12,25 @@ export default function Sidebar(props) {
       </div>
     )
   })
-  // add onClick toggle show/hide to each category //
+  console.log('PROF', professions)
+
+  const parsedProfessions = professions.map((p, i) => {
+    return (
+      <div key={i}>
+        <input type="checkbox" value={p} onClick={e => handleCheck(e)} />
+        {p}
+      </div>
+    )
+  });
+
+  const parsedCities = cities.map((c, i) => {
+    return (
+      <div key={i}>
+        <input type="checkbox" value={c} onClick={e => handleCheck(e)} />
+        {c}
+      </div>
+    )
+  });
 
   return (
     <div className="sidebar">
@@ -25,6 +42,14 @@ export default function Sidebar(props) {
         &nbsp;&nbsp;&nbsp;&nbsp; Sort
       </header>
       <div className="sidebar__options">
+      <div className="sidebar__options__category">
+        <h4>City</h4>
+      </div>
+        {parsedCities}
+      <div className="sidebar__options__category">
+        <h4>Profession</h4>
+      </div>
+        {parsedProfessions}
         <div className="sidebar__options__category">
           <h4>Issues</h4>
         </div>

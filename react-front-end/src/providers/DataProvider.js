@@ -115,7 +115,11 @@ export default function DataProvider(props) {
   };
   
   const getFilteredProf = (profs, specs) => {
-    return profs.filter(p => specs.every(id => p.specialties.includes(parseInt(id))));
+    return (
+      profs
+        .filter(p => specs.every(id => p.specialties.includes(parseInt(id))))
+        // .filter(p => )
+    );
   };
 
 

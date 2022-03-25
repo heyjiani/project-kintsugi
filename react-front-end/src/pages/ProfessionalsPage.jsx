@@ -12,15 +12,34 @@ export default function ProfessionalsPage() {
     getProfessionalBySearch(prov, lang);
   }, []);
 
+  const getProfessions = profs => {
+    const allProfessions = [];
+    profs.forEach(p => {
+      if (!allProfessions.includes(p.profession)) {
+        allProfessions.push(p.profession);
+    }})
+    return allProfessions;
+  };
+
+  const getCities = profs => {
+    const allCities = [];
+    profs.forEach(p => {
+      if (!allCities.includes(p.city)) {
+        allCities.push(p.city);
+      }
+    })
+    return allCities;
+  }
 
   return (
     <div className="professionals">
       <Sidebar
+        cities={getCities(searchedProfessionals)}
+        professions={getProfessions(searchedProfessionals)}
         specialties={specialties}
         handleCheck={handleCheck}
       />
       <ProfessionalList
-
         professionals={checkedValues.length ? getFilteredProf(searchedProfessionals, checkedValues) : searchedProfessionals}
         specialties={specialties}
       />
