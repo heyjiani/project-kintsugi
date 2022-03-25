@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProfessionalList from "../components/Professionals/ProfessionalList";
 import Sidebar from "../components/Professionals/Sidebar";
@@ -7,8 +7,6 @@ import { DataContext } from "../providers/DataProvider";
 export default function ProfessionalsPage() {
   let { prov, lang } = useParams()
   const { getProfessionalBySearch, searchedProfessionals, specialties, handleCheck, checkedValues, getFilteredProf } = useContext(DataContext);
-
-  // const [checkedValues, setCheckedValues] = useState([]);
 
   useEffect(() => {
     getProfessionalBySearch(prov, lang);
