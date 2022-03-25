@@ -31,9 +31,15 @@ const getProfessionalBySearch = (
   language
 ) => {
   const queryString = `
-  SELECT * FROM professionals
+  SELECT
+    professionals.*,
+    array_agg(DISTINCT specialties.id) AS specialties
+  FROM professionals
+  JOIN professionals_specialties ON professional_id = professionals.id
+  JOIN specialties ON specialties.id = specialty_id
   WHERE province = $1
-  AND (language_1 = $2 OR language_2 = $2);
+  AND (language_1 = $2 OR language_2 = $2)
+  GROUP BY professionals.id;
   `;
 
   const queryValue = [province, language];
