@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-
+import useSpeechToText from 'react-hook-speech-to-text';
 
 
 export default function InputForm(props) {
@@ -61,6 +61,25 @@ export default function InputForm(props) {
     if (!formState === false) addNewAppointmentData();
   }, [formState]);
 
+  const {
+    error,
+    interimResult,
+    isRecording,
+    results,
+    startSpeechToText,
+    stopSpeechToText,
+  } = useSpeechToText({
+    continuous: true,
+    crossBrowser: true,
+    useLegacyResults: false,
+    speechRecognitionProperties: {
+      lang: 'ja',
+      interimResults: true
+    }
+  });
+
+  if (error) return <p>Web Speech API is not available in this browser</p>;
+
   return (
 
     <div className="bottomhalf">
@@ -78,6 +97,7 @@ export default function InputForm(props) {
           </div>
 
           <div>
+
             Select appointment time:
             <select
               name="time"
@@ -110,8 +130,10 @@ export default function InputForm(props) {
             class="request"
             type="text"
             placeholder="Please provide the mental health worker with some additional details about your appointment request. If you’d prefer, select the microphone to record your message. It will translate your request from your primary language to English. "
+            value={interimResult}
           />
           <br />
+          <button type="button" onClick={isRecording ? stopSpeechToText : startSpeechToText}>{isRecording ? '🛑' : '🎤'}</button>
           <button type="submit" >Submit</button>
         </div>
 
