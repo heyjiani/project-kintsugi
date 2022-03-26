@@ -3,20 +3,38 @@
   padding: 2rem;
   background-color: white;
   margin: 0 auto;
-  margin-top: 4rem; 
+  margin-top: 3rem; 
   box-shadow: $default-box-shadow;
+  color: black; 
 
+  .description {
+    color: black; 
+    font-weight: normal; 
+    text-align: left; 
+  }
     
-
   &__name {
-    color: #cba96d;
+    color: #ae915e;
+    width: 60%; 
+    padding: 1rem; 
+    background-color: #E3CE94; 
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: -1.3em; 
+    box-shadow: $default-box-shadow;
+    letter-spacing: .2rem;
   }
 
   &__tags {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding-bottom: 2rem;
     font-size: 1.5rem;
+    
+
+    li {padding-left: 1rem; 
+      padding-right: 1rem; }
+
 
     img {
       width: 25px; 
@@ -45,14 +63,17 @@
   &__bottom {
     display: flex;
     font-size: 1.5rem;
+    width: 90%; 
+    margin-left: 5%;
+    margin-right: 5%; 
+    margin-bottom: 5%; 
 
     span {
       padding: 1rem;
     }
 
     &-img {
-      width: 200px;
-      height: 250px;
+      width: 25%;
       margin: 1rem; 
     }
   }
