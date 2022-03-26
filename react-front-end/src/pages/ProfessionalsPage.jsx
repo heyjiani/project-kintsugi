@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProfessionalList from "../components/Professionals/ProfessionalList";
 import Sidebar from "../components/Professionals/Sidebar";
@@ -6,39 +6,44 @@ import { DataContext } from "../providers/DataProvider";
 
 export default function ProfessionalsPage() {
   let { prov, lang } = useParams()
-  const { getProfessionalBySearch, searchedProfessionals, professionals, specialties } = useContext(DataContext);
-
-  const [checkedValues, setCheckedValues] = useState([]);
+  const { getProfessionalBySearch, searchedProfessionals, specialties, handleCheck, checkedValues, getFilteredProf, checkedCategories, getProfsByCategory, handleRadio } = useContext(DataContext);
 
   useEffect(() => {
     getProfessionalBySearch(prov, lang);
-
   }, []);
 
+  const getProfessions = profs => {
+    const allProfessions = [];
+    profs.forEach(p => {
+      if (!allProfessions.includes(p.profession)) {
+        allProfessions.push(p.profession);
+    }})
+    return allProfessions;
+  };
 
-  const handleCheck = (event) => {
-    if (event.target.checked) {
-      setCheckedValues(prev => [...prev, event.target.value]);
-    } else {
-      const newCheckedValues = checkedValues.filter(c => c !== event.target.value)
-      setCheckedValues(newCheckedValues);
-    }
+  const getCities = profs => {
+    const allCities = [];
+    profs.forEach(p => {
+      if (!allCities.includes(p.city)) {
+        allCities.push(p.city);
+      }
+    })
+    return allCities;
   }
 
-
-  const getFilteredProf = specs => {
-    return professionals.filter(p => specs.every(id => p.specialties.includes(parseInt(id))));
-  }
+  const filteredProfData = getProfsByCategory(getFilteredProf(searchedProfessionals, checkedValues), checkedCategories)
 
   return (
     <div className="professionals">
       <Sidebar
+        cities={getCities(searchedProfessionals)}
+        professions={getProfessions(searchedProfessionals)}
         specialties={specialties}
         handleCheck={handleCheck}
+        handleRadio={handleRadio}
       />
       <ProfessionalList
-
-        professionals={checkedValues.length ? getFilteredProf(checkedValues) : searchedProfessionals}
+        professionals={filteredProfData}
         specialties={specialties}
       />
     </div>

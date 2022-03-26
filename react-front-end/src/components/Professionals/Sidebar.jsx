@@ -2,9 +2,8 @@ import React from "react";
 import { AiOutlineTag } from 'react-icons/ai'
 
 export default function Sidebar(props) {
-  // need to populate checkboxes with prop data //
-  const { specialties, handleCheck } = props;
-  // ----- work in progress! ----- //
+
+  const { specialties, handleCheck, professions, cities, handleRadio } = props;
 
   const parsedSpecialties = specialties.map(s => {
     return (
@@ -13,8 +12,25 @@ export default function Sidebar(props) {
         {s.name}
       </div>
     )
-  })
-  // add onClick toggle show/hide to each category //
+  });
+
+  const parsedProfessions = professions.map((p, i) => {
+    return (
+      <div key={i}>
+        <input type="radio" name="profession" value={p} onClick={e => handleRadio(e, 'profession', p)} />
+        {p}
+      </div>
+    )
+  });
+
+  const parsedCities = cities.map((c, i) => {
+    return (
+      <div key={i}>
+        <input type="radio" name="city" value={c} onClick={e => handleRadio(e, 'city', c)} />
+        {c}
+      </div>
+    )
+  });
 
   return (
     <div className="sidebar">
@@ -23,10 +39,21 @@ export default function Sidebar(props) {
          Sort
       </header>
       <div className="sidebar__options">
+
         <div className="sidebar__options__category">
           <h4>Issues</h4>
         </div>
         {parsedSpecialties}
+
+        <div className="sidebar__options__category">
+          <h4>City</h4>
+        </div>
+        {parsedCities}
+
+        <div className="sidebar__options__category">
+          <h4>Profession</h4>
+        </div>
+        {parsedProfessions}
       </div>
     </div>
   );

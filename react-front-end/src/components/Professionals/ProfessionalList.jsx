@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
-import { DataContext } from "../../providers/DataProvider";
+import React from "react";
+import { useParams } from "react-router-dom";
 
 import ProfessionalListItem from "./ProfessionalListItem";
 
 export default function ProfessionalList(props) {
   const { professionals, specialties } = props;
-  const { searchItem } = useContext(DataContext);
-  const { Province, Language } = searchItem;
+  const { prov, lang } = useParams();
 
   const parsedProfessionalData =
     Array.isArray(professionals) &&
@@ -26,10 +25,9 @@ export default function ProfessionalList(props) {
 
   return (
     <div className="professionals__container">
-
       <h2 className="display-info">
         Displaying professionals who speak&nbsp;<span>
-        {Language} </span>in&nbsp;<span>{Province}</span>
+        {lang} </span>in&nbsp;<span>{prov}</span>
       </h2>
       <ul className="professionals__list">
         {parsedProfessionalData}
