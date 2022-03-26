@@ -28,8 +28,8 @@ export default function ProfessionalList(props) {
     <div className="professionals__container">
 
       <h2 className="display-info">
-        Displaying professionals who speak&nbsp;
-        {Language} in &nbsp;{Province}
+        Displaying professionals who speak&nbsp;<span>
+        {Language} </span>in&nbsp;<span>{Province}</span>
       </h2>
       <ul className="professionals__list">
         {parsedProfessionalData}
