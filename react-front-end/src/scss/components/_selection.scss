@@ -6,7 +6,7 @@
   display: inline-block;
   margin: 3rem;
   box-shadow: $default-box-shadow;
-  font-size: 1.7rem;
+  font-size: 2rem;
 
   &__container {
     display: flex;
@@ -19,10 +19,15 @@
   }
 
   &__heading:hover,
-  &__list:hover {
+  &__heading:active
+  {
     padding: 0;
     color: #d5c085;
-    transform: scale(1.05);
+  }
+  &__list:hover {
+    margin-top: 5px;
+    color: #d5c085;
+
   }
 }
 

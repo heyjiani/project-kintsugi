@@ -27,16 +27,16 @@
 
     header {
       font-size: 24px;
-      text-align: right;
+      text-align: center;
       padding-right: 0.8em;
     }
 
     div {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       font-size: 1vw;
-      padding: 0 1em;
+      padding: 0 1.3em;
     }
 
     ul {
@@ -61,7 +61,7 @@
         width: 150px;
         height: 40px;
         border: none;
-        font-size: 1.4vw;
+        font-size: 1.5em;
         margin-left: 45%;
         color: #ffffff;
         background-color: #AE915E;
