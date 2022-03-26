@@ -3,29 +3,37 @@ const socket = require('socket.io');
 const listen = (httpServer) => {
   const io = socket(httpServer, {
     cors: {
-      origin: "http//localhost:3000",
+      origin: "http://localhost:3000",
       methods: ["GET", "POST"]
     }
   });
 
-  io.on('connection', (socket) => {
+  //all the socket connections comes here//
+  io.on("connection", (socket) => {
+    console.log("socket is connected", socket.id);
+    //when server connect, "me" to socket.id//
     socket.emit("me", socket.id);
 
-    socket.on("disconnect", () => {
-      socket.broadcast.emit("Call Ended")
+    socket.on("callUser", (data) => {
+      console.log("callUser:server", data);
+      io.to(data.userToCall).emit("callUser", { signal: data.signalData, from: data.from, name: data.name });
     });
 
-    socket.on("callUser", (data) => {
-      socket.to(data.userToCall).emit("callUser", { signal: data.signalData, from: data.from, name: data.name });
-    });
 
     socket.on("answerCall", (data) => {
-      socket.to(data.to).emit("call Accepted"), data.signal
+      console.log("answerCall", data);
+      io.to(data.to).emit("callAccepted", data.signal)
     });
 
-  });
+    //when server disconnect//
+    socket.on("disconnect", () => {
+      console.log("Server is disconnected.");
+      //finish callEnded event for everyone//
+      socket.broadcast.emit("CallEnded");
+    });
+  })
 
-
+  return io;
 }
 
 module.exports = { listen };
