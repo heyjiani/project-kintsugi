@@ -1,27 +1,31 @@
 import React from "react";
+import { HiOutlineLocationMarker } from 'react-icons/hi'
+import { MdWorkOutline, MdLanguage } from 'react-icons/md'
+import { IconContext } from "react-icons";
+import { AiOutlineTag } from 'react-icons/ai'
 
 export default function ProfessionalDetail(props) {
   const { professional, specialties } = props;
 
   return (
-    <>{professional && <div className="professional-detail">
-      <p className="btn-booking">
-        click here to book with&nbsp;
-        {professional.first_name}
-      </p>
-      <p className="professional-detail__name">
-        {professional.first_name}&nbsp;
-        {professional.last_name}
-      </p>
+    <>{professional && <> <h2>Book with a professional now. </h2><p className="professional-detail__name"><strong>
+    {professional.first_name}&nbsp;
+    {professional.last_name}</strong>
+  </p>
+  <div className="professional-detail">
+    
+
+
+      
       <div className="professional-detail__tags">
-        <li>{professional.profession}</li>
+        <li><MdWorkOutline /><br />{professional.profession}</li>
         {specialties &&
           specialties.map((item, i) => {
-            return <li key={i}>{item.name}</li>;
+            return <li key={i}><AiOutlineTag /><br />{item.name}</li>;
           })}
-        <li>
-          {professional.province}&nbsp;
-          {professional.city}
+        <li><HiOutlineLocationMarker /><br />
+        {professional.city},&nbsp;{professional.province}
+          
         </li>
       </div>
       <div className="professional-detail__bottom">
@@ -30,9 +34,13 @@ export default function ProfessionalDetail(props) {
           src={professional.icon_url}
           alt=""
         />
-        <span>{professional.description}</span>
+        <span className="description">{professional.description}</span>
       </div>
-    </div>}
+      <p className="btn-booking">
+        Click here to book with&nbsp;
+        {professional.first_name}.
+      </p>
+    </div></>}
     </>
 
   );
