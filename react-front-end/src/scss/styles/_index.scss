@@ -285,7 +285,7 @@ flex-direction: column;
   display: flex; 
   justify-content: center;  
   padding: 1em; 
-  font-size: .8em; 
+  font-size: 1em; 
   color: grey; 
 }
 
@@ -294,6 +294,7 @@ textarea {
   min-height: 15rem; 
   border-bottom: 0px; 
   padding: 1em; 
+  font-size: 1em; 
 }
 
 textarea:active {

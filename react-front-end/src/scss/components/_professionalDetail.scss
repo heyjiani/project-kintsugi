@@ -10,6 +10,7 @@
   .description {
     color: black; 
     font-weight: normal; 
+    text-align: left; 
   }
     
   &__name {
@@ -72,8 +73,7 @@
     }
 
     &-img {
-      width: 200px;
-      height: 250px;
+      width: 25%;
       margin: 1rem; 
     }
   }
