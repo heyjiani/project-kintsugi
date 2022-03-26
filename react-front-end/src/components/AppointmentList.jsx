@@ -5,7 +5,7 @@ import AppointmentListItem from "./AppointmentListItem";
 export default function AppointmentList(props) {
   const { appointments, professionals } = props;
   /* still need to pass professional data to appointment card and dropdown */
-
+  console.log(professionals);
   const parsedAppointmentData =
     Array.isArray(appointments) &&
     appointments.map((a) => {
