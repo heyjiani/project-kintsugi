@@ -1,5 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { HiOutlineLocationMarker } from 'react-icons/hi'
+import { MdWorkOutline, MdLanguage } from 'react-icons/md'
+import { IconContext } from "react-icons";
+import { AiOutlineTag } from 'react-icons/ai'
 
 export default function ProfessionalListItem(props) {
   const {
@@ -33,9 +37,9 @@ export default function ProfessionalListItem(props) {
           alt={first_name}
         />
         <ul>
-          <li>{profession}</li>
-          <li>{specialties[0]}</li>
-          <li>
+          <li> <MdWorkOutline />&nbsp;{profession}</li>
+          <li><AiOutlineTag />&nbsp;{specialties[0]}</li>
+          <li> <HiOutlineLocationMarker />&nbsp;
             {city}, {province}
           </li>
         </ul>
