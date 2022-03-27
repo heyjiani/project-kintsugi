@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Selection from "./Selection";
 import { provinceData, languageData } from "../../searchData";
 import { DataContext } from "../../providers/DataProvider";
+import { HiOutlineLocationMarker } from 'react-icons/hi'
+import { MdWorkOutline, MdLanguage } from 'react-icons/md'
+import { IconContext } from "react-icons";
 
 export default function HomeHeading() {
   const navigate = useNavigate();
@@ -15,16 +18,26 @@ export default function HomeHeading() {
   return (
     <div>
       <div className="heading">
+        <br />
         <h2>
           Find a mental health professional that
           meets your needs.
         </h2>
+        <IconContext.Provider value={{ className: "global-class-name" }}>
+      <MdLanguage />
+      <HiOutlineLocationMarker />
+      <MdWorkOutline />
+
+      </IconContext.Provider>
+  
         <p>
-          Start by selecting a language and a
-          location.
+          Start by selecting a <span>language</span> and a
+          <span> location.</span>
         </p>
       </div>
+      <p />
       <div className="selection__container">
+        
         <Selection
           genre="Language"
           data={languageData}
@@ -33,8 +46,9 @@ export default function HomeHeading() {
           genre="Province"
           data={provinceData}
         />
-        <div onClick={handleClick} className="btn">Search</div>
+        <div onClick={handleClick} className="searchbtn">Search</div>
       </div>
+      
     </div>
   );
 }

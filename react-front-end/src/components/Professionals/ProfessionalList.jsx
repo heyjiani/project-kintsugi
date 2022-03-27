@@ -25,10 +25,9 @@ export default function ProfessionalList(props) {
 
   return (
     <div className="professionals__container">
-
       <h2 className="display-info">
-        Displaying professionals who speak&nbsp;
-        {lang} in &nbsp;{prov}
+        Displaying professionals who speak&nbsp;<span>
+        {lang} </span>in&nbsp;<span>{prov}</span>
       </h2>
       <ul className="professionals__list">
         {parsedProfessionalData}

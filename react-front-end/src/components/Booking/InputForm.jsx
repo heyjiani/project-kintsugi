@@ -6,16 +6,33 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { MdDateRange, MdAccessTime } from 'react-icons/md'
 
 import useSpeechToText from 'react-hook-speech-to-text';
 
 
 export default function InputForm(props) {
+  
+
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState("09:00:00");
   const [formState, setFormState] = useState(false)
   const { professional } = props;
   const navigate = useNavigate();
+  const [showResults, setShowResults] = React.useState(false)
+  const onClick = () => setShowResults(true)
+
+  const Results = () => (
+    <div id="results" className="search-results">
+      <Calendar
+              onChange={setDate }
+              value={date}
+              name="date"
+              type="date"
+            />
+    </div>
+  )
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -87,18 +104,14 @@ export default function InputForm(props) {
       <form onSubmit={handleSubmit}>
         <div className="timeslots">
           <div>
-            Select appointment date:{" "}
-            <Calendar
-              onChange={setDate}
-              value={date}
-              name="date"
-              type="date"
-            />
+          <div> <MdDateRange /><br />
+      <input type="submit" value="Select Date" onClick={onClick} />
+      { showResults ? <Results /> : null }
+    </div>
+      
           </div>
 
-          <div>
-
-            Select appointment time:
+          <div><MdAccessTime /><br />
             <select
               name="time"
               value={time}
@@ -109,13 +122,14 @@ export default function InputForm(props) {
                 )
               }
             >
-              <option id="0" value="09:00:00">09:00am</option>
-              <option id="1" value="10:00:00">10:00am</option>
-              <option id="2" value="11:00:00">11:00am</option>
-              <option id="3" value="12:00:00">12:00pm</option>
-              <option id="4" value="13:00:00">1:00pm</option>
-              <option id="5" value="14:00:00">2:00pm</option>
-              <option id="6" value="15:00:00">3:00pm</option>
+              <option id="0" value="09:00:00">Select Time</option>
+              <option id="1" value="09:00:00">09:00am</option>
+              <option id="2" value="10:00:00">10:00am</option>
+              <option id="3" value="11:00:00">11:00am</option>
+              <option id="4" value="12:00:00">12:00pm</option>
+              <option id="5" value="13:00:00">1:00pm</option>
+              <option id="6" value="14:00:00">2:00pm</option>
+              <option id="7" value="15:00:00">3:00pm</option>
             </select>
           </div>
         </div>
@@ -124,7 +138,6 @@ export default function InputForm(props) {
 
         <div>
           <textarea
-            style={{ width: 600, height: 400 }}
             name="description"
             id="appointment_request"
             class="request"
@@ -133,8 +146,12 @@ export default function InputForm(props) {
             value={interimResult}
           />
           <br />
+          <div className="mic">
           <button type="button" onClick={isRecording ? stopSpeechToText : startSpeechToText}>{isRecording ? '🛑' : '🎤'}</button>
-          <button type="submit" >Submit</button>
+          &nbsp; Click the microphone to record your message in Japanese. 
+          </div>
+          <button type="submit" className="submit">Submit</button>
+         
         </div>
 
       </form>
