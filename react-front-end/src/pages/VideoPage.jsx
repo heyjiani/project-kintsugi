@@ -9,19 +9,21 @@ import Peer from "simple-peer";
 const socket = io("http://localhost:8080");
 
 export default function VideoPage() {
-  const [me, setMe] = useState("");
+  const [myself, setMyself] = useState("");
   const [stream, setStream] = useState();
   const [receivingCall, setReceivingCall] =
     useState(false);
-  const [caller, setCaller] = useState("");
-  const [callerSignal, setCallerSignal] =
-    useState();
   const [callAccepted, setCallAccepted] =
     useState(false);
   const [idToCall, setIdToCall] = useState("");
   const [callEnded, setCallEnded] =
     useState(false);
+  const [users, setUsers] = useState({});
+  const [call, setCall] = useState({});
   const [name, setName] = useState("");
+  const [caller, setCaller] = useState("");
+  const [callerSignal, setCallerSignal] =
+    useState();
 
   const myVideo = useRef();
   const peerVideo = useRef();
@@ -38,7 +40,7 @@ export default function VideoPage() {
     //set myself as id of came back from server//
     socket.on("me", (id) => {
       console.log("me", id);
-      setMe(id);
+      setMyself(id);
     });
 
     socket.on("callUser", (data) => {
@@ -49,6 +51,10 @@ export default function VideoPage() {
       setCallerSignal(data.signal);
     });
 
+    socket.on("allUsers", (users) => {
+      setUsers(users);
+    });
+
     // set camera and audio on and set as a current stream//
     navigator.mediaDevices
       .getUserMedia({
@@ -57,8 +63,9 @@ export default function VideoPage() {
       })
       .then((stream) => {
         setStream(stream);
-        console.log("myVideo", stream);
-        myVideo.current.srcObject = stream;
+        if (myVideo.current) {
+          myVideo.current.srcObject = stream;
+        }
       });
   }, []);
 
@@ -74,13 +81,15 @@ export default function VideoPage() {
       socket.emit("callUser", {
         userToCall: id,
         signalData: data,
-        from: me,
+        from: myself,
         name: name,
       });
     });
 
     peer.on("stream", (stream) => {
-      peerVideo.current.srcObject = stream;
+      if (peerVideo.current) {
+        peerVideo.current.srcObject = stream;
+      }
     });
 
     socket.on("callAccepted", (signal) => {
@@ -94,6 +103,7 @@ export default function VideoPage() {
   //create peer answering call//
   const answerCall = () => {
     setCallAccepted(true);
+
     const peer = new Peer({
       initiator: false,
       trickle: false,
@@ -155,7 +165,21 @@ export default function VideoPage() {
           }
           style={{ marginBottom: "20px" }}
         />
-        <div>{me}</div>
+        <div>{myself}</div>
+        <div>
+          {Object.keys(users).map((key) => {
+            if (key === myself) {
+              return null;
+            }
+            return (
+              <button
+                onClick={() => callUser(key)}
+              >
+                Call {key}
+              </button>
+            );
+          })}
+        </div>
 
         <input
           value={idToCall}
@@ -181,7 +205,7 @@ export default function VideoPage() {
       <div>
         {receivingCall && !callAccepted ? (
           <div>
-            <h1>{name} is calling...</h1>
+            <p>{name} is calling...</p>
             <button onClick={answerCall}>
               Answer
             </button>
