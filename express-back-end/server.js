@@ -4,6 +4,8 @@ const morgan = require("morgan");
 const BodyParser = require("body-parser");
 const app = Express();
 const PORT = 8080;
+const socketServer = require('./socketServer');
+const cors = require("cors");
 
 
 // Express Configuration
@@ -21,6 +23,7 @@ app.use(
   BodyParser.urlencoded({ extended: false })
 );
 app.use(BodyParser.json());
+app.use(cors());
 
 // Routes
 app.use("/api/clients", clientRoutes());
@@ -31,9 +34,14 @@ app.use(
 app.use("/api/appointments", appointmentRoute());
 app.use("/api/specialties", specialtiesRoute());
 
-app.listen(PORT, () => {
+
+
+
+const httpServer = app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(
     `Express seems to be listening on port ${PORT} so that's pretty good 👍`
   );
 });
+
+socketServer.listen(httpServer);

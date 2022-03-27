@@ -55,6 +55,12 @@ function App() {
             exact
           /> */}
 
+          <Route
+            path="/video"
+            element={<VideoPage />}
+            exact
+          />
+
           {/* <Route element={<Error />} /> */}
         </Routes>
         <Footer />
