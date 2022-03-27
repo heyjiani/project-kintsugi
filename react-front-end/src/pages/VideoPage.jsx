@@ -15,12 +15,9 @@ export default function VideoPage() {
     useState(false);
   const [callAccepted, setCallAccepted] =
     useState(false);
-  const [idToCall, setIdToCall] = useState("");
   const [callEnded, setCallEnded] =
     useState(false);
   const [users, setUsers] = useState({});
-  const [call, setCall] = useState({});
-  const [name, setName] = useState("");
   const [caller, setCaller] = useState("");
   const [callerSignal, setCallerSignal] =
     useState();
@@ -47,7 +44,6 @@ export default function VideoPage() {
       console.log("callUser: client");
       setReceivingCall(true);
       setCaller(data.from);
-      setName(data.name);
       setCallerSignal(data.signal);
     });
 
@@ -82,7 +78,6 @@ export default function VideoPage() {
         userToCall: id,
         signalData: data,
         from: myself,
-        name: name,
       });
     });
 
@@ -158,54 +153,33 @@ export default function VideoPage() {
       </div>
 
       <div>
-        <input
-          value={name}
-          onChange={(e) =>
-            setName(e.target.value)
-          }
-          style={{ marginBottom: "20px" }}
-        />
-        <div>{myself}</div>
-        <div>
-          {Object.keys(users).map((key) => {
-            if (key === myself) {
-              return null;
-            }
-            return (
-              <button
-                onClick={() => callUser(key)}
-              >
-                Call {key}
-              </button>
-            );
-          })}
-        </div>
-
-        <input
-          value={idToCall}
-          onChange={(e) =>
-            setIdToCall(e.target.value)
-          }
-        />
         <div>
           {callAccepted && !callEnded ? (
             <button onClick={leaveCall}>
               End Call
             </button>
           ) : (
-            <button
-              onClick={() => callUser(idToCall)}
-            >
-              Call
-            </button>
+            <div>
+              {Object.keys(users).map((key) => {
+                if (key === myself) {
+                  return null;
+                }
+                return (
+                  <button
+                    onClick={() => callUser(key)}
+                  >
+                    Call {key}
+                  </button>
+                );
+              })}
+            </div>
           )}
-          {idToCall}
         </div>
       </div>
       <div>
         {receivingCall && !callAccepted ? (
           <div>
-            <p>{name} is calling...</p>
+            <p>receiving Call</p>
             <button onClick={answerCall}>
               Answer
             </button>

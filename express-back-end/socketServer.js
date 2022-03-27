@@ -24,7 +24,6 @@ const listen = (httpServer) => {
       io.to(data.userToCall).emit("callUser", {
         signal: data.signalData,
         from: data.from,
-        name: data.name,
       });
     });
 
