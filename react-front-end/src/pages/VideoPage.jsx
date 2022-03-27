@@ -11,23 +11,19 @@ const socket = io("http://localhost:8080");
 export default function VideoPage() {
   const [myself, setMyself] = useState("");
   const [stream, setStream] = useState();
-  const [receivingCall, setReceivingCall] =
-    useState(false);
-  const [callAccepted, setCallAccepted] =
-    useState(false);
-  const [callEnded, setCallEnded] =
-    useState(false);
+  const [receivingCall, setReceivingCall] = useState(false);
+  const [callAccepted, setCallAccepted] = useState(false);
+  const [callEnded, setCallEnded] = useState(false);
   const [users, setUsers] = useState({});
   const [caller, setCaller] = useState("");
-  const [callerSignal, setCallerSignal] =
-    useState();
+  const [callerSignal, setCallerSignal] = useState();
 
   const myVideo = useRef();
   const peerVideo = useRef();
   const connectionRef = useRef();
 
   useEffect(() => {
-    //connect to server for websocket//
+    //check connection to server for websocket//
     socket.on("connect", () => {
       console.log(
         "socket client connected to server"
@@ -36,19 +32,18 @@ export default function VideoPage() {
 
     //set myself as id of came back from server//
     socket.on("me", (id) => {
-      console.log("me", id);
       setMyself(id);
     });
 
+    socket.on("allUsers", (users) => {
+      console.log(users);
+      setUsers(users);
+    });
+
     socket.on("callUser", (data) => {
-      console.log("callUser: client");
       setReceivingCall(true);
       setCaller(data.from);
       setCallerSignal(data.signal);
-    });
-
-    socket.on("allUsers", (users) => {
-      setUsers(users);
     });
 
     // set camera and audio on and set as a current stream//
@@ -65,8 +60,9 @@ export default function VideoPage() {
       });
   }, []);
 
-  //create peer for making call
+  //function for making call//
   const callUser = (id) => {
+    // a peer for caller//
     const peer = new Peer({
       initiator: true,
       trickle: false,
@@ -95,9 +91,10 @@ export default function VideoPage() {
     connectionRef.current = peer;
   };
 
-  //create peer answering call//
+  //function for receiving a call//
   const answerCall = () => {
     setCallAccepted(true);
+    // crete a peer for receiver//
 
     const peer = new Peer({
       initiator: false,
@@ -120,11 +117,33 @@ export default function VideoPage() {
     connectionRef.current = peer;
   };
 
-  // create peer and me leaving the call//
+  // function for  peer and me leaving the call//
   const leaveCall = () => {
     setCallEnded(true);
     connectionRef.current.destroy();
   };
+
+
+  const createCallButton =
+    Object.keys(users).map((key, i, arr) => {
+      if (key !== myself && arr[arr.length - 1] === key) {
+        return (
+          <button
+            onClick={() => callUser(key)}
+          >
+            Call {key}
+          </button>
+        );
+      } else {
+        console.log(arr[0], i, key, "my:", myself);
+        return null;
+      }
+    })
+
+
+
+
+
 
   return (
     <div>
@@ -160,18 +179,20 @@ export default function VideoPage() {
             </button>
           ) : (
             <div>
-              {Object.keys(users).map((key) => {
-                if (key === myself) {
-                  return null;
-                }
-                return (
-                  <button
-                    onClick={() => callUser(key)}
-                  >
-                    Call {key}
-                  </button>
-                );
-              })}
+              <div>{myself}</div>
+              {createCallButton}
+              {/* {Object.keys(users).map((key) => {
+              if (key === myself) {
+                return null;
+              }
+              return (
+                <button
+                  onClick={() => callUser(key)}
+                >
+                  Call {key}
+                </button>
+              );
+            })} */}
             </div>
           )}
         </div>

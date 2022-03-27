@@ -14,7 +14,8 @@ const listen = (httpServer) => {
   io.on("connection", (socket) => {
     if (!users[socket.id]) {
       users[socket.id] = socket.id;
-    }
+    };
+
     console.log("socket is connected", socket.id);
     //when server connect, "me" to socket.id//
     socket.emit("me", socket.id);
@@ -37,7 +38,6 @@ const listen = (httpServer) => {
 
     //when server disconnect//
     socket.on("disconnect", () => {
-      console.log("Server is disconnected.");
       //finish callEnded event for everyone//
       socket.broadcast.emit("CallEnded");
     });
