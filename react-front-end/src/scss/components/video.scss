@@ -32,15 +32,10 @@
     }
   }
 
-  &__receive {
-  }
-
   &__myself {
     width: 300px;
   }
-  &__icon {
-    width: 15%;
-  }
+
   &__receive {
     animation: calling 1s infinite;
   }

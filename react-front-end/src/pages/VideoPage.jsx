@@ -6,8 +6,6 @@ import React, {
 import { io } from "socket.io-client";
 import Peer from "simple-peer";
 import { useNavigate } from "react-router-dom";
-import icon from '../images/video-camera.png'
-
 
 const socket = io("http://localhost:8080");
 
@@ -140,11 +138,10 @@ export default function VideoPage() {
             >
               Call
             </span>
-            <img className="video__icon" src={icon} alt="phone" />
           </div>
         );
       } else {
-        console.log(arr[0], i, key, "my:", myself);
+        // console.log(arr[0], i, key, "my:", myself);
         return null;
       }
     })
