@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 export class Chat extends Component {
 
   componentDidMount() {
-
     (function (d, m) {
       var kommunicateSettings =
         { "appId": process.env.REACT_APP_KOMMUNICATE_ID, "popupWidget": true, "automaticChatOpenOnNavigation": true };

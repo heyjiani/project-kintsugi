@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { MdDateRange, MdAccessTime } from 'react-icons/md'
-
 import useSpeechToText from 'react-hook-speech-to-text';
 
 
@@ -69,18 +68,14 @@ export default function InputForm(props) {
     })
       .then(response => response.json())
       .then(body => {
-        console.log('fetch successfull')
+
         navigate('/thankyou')
       })
-
       .catch((error) => {
         console.error('Error posting new appointment. Error:', error);
       });
 
   }
-  // }
-
-
 
   useEffect(() => {
     if (!formState === false) addNewAppointmentData();

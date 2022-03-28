@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { HiOutlineLocationMarker } from 'react-icons/hi'
-import { MdWorkOutline, MdLanguage } from 'react-icons/md'
-import { IconContext } from "react-icons";
+import { MdWorkOutline } from 'react-icons/md'
 import { AiOutlineTag } from 'react-icons/ai';
+
 import { DataContext } from "../../providers/DataProvider";
 
 export default function ProfessionalDetail(props) {
@@ -20,10 +20,6 @@ export default function ProfessionalDetail(props) {
       {professional.last_name}</strong>
     </p>
       <div className="professional-detail">
-
-
-
-
         <div className="professional-detail__tags">
           <li><MdWorkOutline /><br />{professional.profession}</li>
           {specialties &&
@@ -39,7 +35,7 @@ export default function ProfessionalDetail(props) {
           <img
             className="professional-detail__bottom-img"
             src={professional.icon_url}
-            alt=""
+            alt="icon"
           />
           <span className="description">{professional.description}</span>
         </div>

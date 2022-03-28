@@ -1,11 +1,12 @@
 import React from "react";
 import "react-calendar/dist/Calendar.css";
 import { useNavigate } from "react-router-dom";
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { MdWorkOutline } from 'react-icons/md';
+import { AiOutlineTag } from 'react-icons/ai';
+
 import InputForm from "./InputForm";
-import { HiOutlineLocationMarker } from 'react-icons/hi'
-import { MdWorkOutline, MdLanguage } from 'react-icons/md'
-import { IconContext } from "react-icons";
-import { AiOutlineTag } from 'react-icons/ai'
+
 
 export default function BookingForm(props) {
   const { professional, specialties } = props;
@@ -42,7 +43,7 @@ export default function BookingForm(props) {
 
           <div className="proff_name">
             <h2>
-              {professional.first_name}{" "}
+              {professional.first_name}&nbsp;
               {professional.last_name}
             </h2>
             <br />
@@ -58,15 +59,13 @@ export default function BookingForm(props) {
               <tr>
                 <HiOutlineLocationMarker />
                 <td>
-                  {" "}
-                  {professional.city},{" "}
-                  {professional.province}{" "}
+                  &nbsp;
+                  {professional.city},&nbsp;
+                  {professional.province}=&nbsp;
                 </td>
               </tr>
             </table>
           </div>
-
-          {/* profile-header ends*/}
         </div>
         <p />
         <InputForm
@@ -74,8 +73,6 @@ export default function BookingForm(props) {
 
       </div>
     }
-      {/* form container div below  */}
-
     </>
   );
 }

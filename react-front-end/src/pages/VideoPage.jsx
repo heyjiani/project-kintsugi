@@ -31,12 +31,6 @@ export default function VideoPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    //check connection to server for websocket//
-    socket.on("connect", () => {
-      console.log(
-        "socket client connected to server"
-      );
-    });
 
     //set myself as id of came back from server//
     socket.on("me", (id) => {
