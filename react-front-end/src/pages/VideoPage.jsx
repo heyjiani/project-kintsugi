@@ -54,6 +54,7 @@ export default function VideoPage() {
           myVideo.current.srcObject = stream;
         }
       });
+
   }, []);
 
   //function for making call//
@@ -128,7 +129,6 @@ export default function VideoPage() {
         </div>
       );
     } else {
-      // console.log(arr[0], i, key, "my:", myself);
       return null;
     }
   });
@@ -173,7 +173,6 @@ export default function VideoPage() {
               </button>
             ) : (
               <div>
-                {/* <div>{myself}</div> */}
                 {createCallButton}
               </div>
             )}

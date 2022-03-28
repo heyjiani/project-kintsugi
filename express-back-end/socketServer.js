@@ -1,6 +1,6 @@
 const socket = require("socket.io");
 
-const users = {};
+let users = {};
 
 const listen = (httpServer) => {
   const io = socket(httpServer, {
@@ -40,6 +40,7 @@ const listen = (httpServer) => {
     socket.on("disconnect", () => {
       //finish callEnded event for everyone//
       socket.broadcast.emit("CallEnded");
+      users = {}
     });
   });
 
