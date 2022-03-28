@@ -16,7 +16,7 @@ describe("professionals", () => {
 
   });
 
-  it("should sort professionals with sidebar tags", () => {
+  it("should sort professionals by Issues", () => {
 
     cy.get(".sidebar").within(() => {
       cy.contains("Issues").click()
@@ -25,6 +25,22 @@ describe("professionals", () => {
 
     cy.contains(".professionals", "Xever Patel").should("not.exist");
     cy.contains(".sidebar", "Close").should("exist");
-    
-  })
+
+    cy.get(".professionals").find(".professionals__item").should("have.length", 2);
+
+  });
+
+  it("should sort professionals by Cities", () => {
+
+    cy.get(".sidebar").within(() => {
+      cy.contains("Cities").click()
+      cy.get("[value='Kelowna']").click();
+    });    
+
+    cy.contains(".professionals", "Tobias Brainsby").should("exist");
+    cy.contains(".professionals", "Garek Slamaker").should("not.exist");
+
+    cy.get(".professionals").find(".professionals__item").should("have.length", 1);
+  });
+  
 })
