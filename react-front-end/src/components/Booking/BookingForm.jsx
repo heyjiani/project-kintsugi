@@ -1,6 +1,10 @@
 import React from "react";
 import "react-calendar/dist/Calendar.css";
 import InputForm from "./InputForm";
+import { HiOutlineLocationMarker } from 'react-icons/hi'
+import { MdWorkOutline, MdLanguage } from 'react-icons/md'
+import { IconContext } from "react-icons";
+import { AiOutlineTag } from 'react-icons/ai'
 
 export default function BookingForm(props) {
   const { professional, specialties } = props;
@@ -39,24 +43,15 @@ export default function BookingForm(props) {
             <br />
             <table>
               <tr>
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/7154/7154963.png"
-                  alt=""
-                />
+              <MdWorkOutline />
                 <td>{professional.profession}</td>
               </tr>
               <tr>
-                <img
-                  src="https://cdn-icons.flaticon.com/png/512/1620/premium/1620735.png?token=exp=1648008818~hmac=fa5d955242998cbc63a6523944fb22dc"
-                  alt=""
-                />
+              <AiOutlineTag />
                 <td>{specialtiesListItem}</td>
               </tr>
               <tr>
-                <img
-                  src="https://cdn-icons.flaticon.com/png/512/2838/premium/2838912.png?token=exp=1648008845~hmac=ed9fe90b862db5ada20c35f9e8a47bad"
-                  alt=""
-                />
+              <HiOutlineLocationMarker />
                 <td>
                   {" "}
                   {professional.city},{" "}
