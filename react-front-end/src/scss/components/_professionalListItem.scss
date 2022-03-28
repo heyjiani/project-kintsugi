@@ -1,31 +1,76 @@
-/* barebones css, fix after normalizing app.css :) */
-// @import "reset.scss";
-/* ^ leaving this import here for now
-gonna move this to app.scss tomorrow! */
+@import "styles/_variable.scss";
 
 .professionals {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+
+
   &__item {
-    width: 300px;
-    padding: 1em;
-    margin: 2em;
+    width: 36%;
+    height: 250px;
+    padding: 0.3em;
+    margin: 2em 2.5em;
+    background-color: #ffffff;
+    box-shadow: $default-box-shadow;
+    white-space:nowrap;
+
+
+    h2 {
+        font-family: Alegreya;
+        font-size: 2vw; 
+        color: #E3CE94;
+    
+      }
+    
+
+    header {
+      font-size: 24px;
+      text-align: center;
+      padding-right: 0.8em;
+    }
 
     div {
       display: flex;
       align-items: center;
-      font-size: 18px;
+      justify-content: flex-start;
+      font-size: 1vw;
+      padding: 0 1.3em;
     }
 
-    h2 {
-      font-size: 32px;
-      margin: 0;
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: 0.2em 1em;
+      text-align: left;
+
+      li {
+        padding: 5px;
+      }
     }
 
-    &-image {
-      width: 50px;
+    &__image {
+      width: 100px;
     }
 
     footer {
-      padding: 0;
+      padding: 1em;
+
+      button {
+        width: 150px;
+        height: 40px;
+        border: none;
+        font-size: 1.5em;
+        margin-left: 45%;
+        color: #ffffff;
+        background-color: #AE915E;
+        box-shadow: $default-box-shadow;
+      }
+
+      button:hover {
+        background-color: #E3CE94;
+      }
     }
   }
 }

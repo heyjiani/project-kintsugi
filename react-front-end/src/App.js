@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import React from "react";
-// import axios from "axios";
 
 import {
   BrowserRouter,
@@ -15,21 +14,11 @@ import BookingPage from "./pages/BookingPage";
 import Footer from "./pages/Footer";
 import "./scss/main.scss";
 import NavBar from "./pages/NavBar";
-
-// fetchData = () => {
-//   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-//   .then((response) => {
-//     // handle success
-//     console.log(response.data) // The entire response from the Rails API
-
-//     console.log(response.data.message) // Just the message
-//     this.setState({
-//       message: response.data.message
-//     });
-//   })
-// }
+import ThankYou from "./pages/ThankYouPage";
+import VideoPage from "./pages/VideoPage";
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
@@ -41,7 +30,7 @@ function App() {
             exact
           />
           <Route
-            path="/professionals"
+            path="/professionals/search/:prov/:lang"
             element={<ProfessionalsPage />}
             exact
           />
@@ -51,8 +40,24 @@ function App() {
             exact
           />
           <Route
-            path="/booking"
+            path="/booking/:id"
             element={<BookingPage />}
+            exact
+          />
+          <Route
+            path="/thankyou"
+            element={<ThankYou />}
+            exact
+          />
+          {/* <Route
+            path="/video"
+            element={<VideoPage />}
+            exact
+          /> */}
+
+          <Route
+            path="/video"
+            element={<VideoPage />}
             exact
           />
 

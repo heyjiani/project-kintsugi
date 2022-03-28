@@ -1,7 +1,37 @@
+@import "styles/variable.scss";
+
 .selection {
   background-color: white;
-  padding: 2rem;
-  border: 2px solid black;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
   display: inline-block;
   margin: 3rem;
+  box-shadow: $default-box-shadow;
+  font-size: 2rem;
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  &__list {
+    font-size: 1.2rem;
+    margin: 0.2rem;
+  }
+
+  &__heading:hover,
+  &__heading:active
+  {
+    padding: 0;
+    color: #d5c085;
+  }
+  &__list:hover {
+    margin-top: 5px;
+    color: #d5c085;
+
+  }
+}
+
+.selected__list {
+  font-weight: 700;
+  color: #ae915e;
 }

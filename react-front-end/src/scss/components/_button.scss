@@ -1,23 +1,40 @@
+@import "styles/variable.scss";
+@import "styles/mixin.scss";
+
 .btn {
-  background-color: white;
-  padding: 2rem;
-  border: 2px solid black;
-  display: inline-block;
+  @include btnBox;
   margin: 1em;
   color: #ae915e;
+  background-color: white;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  display: inline-block;
+  margin: 3rem;
+  box-shadow: $default-box-shadow;
+  font-size: 1.7rem;
+  font-weight: bold;
+
+  &:active {
+    transform: translateY(4px);
+  }
 }
 
 .btn-delete {
-  background-color: white;
+  @include btnBox;
   padding: 0.5em;
-  border: 2px solid black;
+
+  &:active {
+    transform: translateY(4px);
+  }
 }
 
 .btn-booking {
   background-color: #ae915e;
   padding: 0.5em;
-  border: 2px solid black;
   width: 80%;
   margin: 0 auto;
   text-align: center;
+
+  &:active {
+    transform: translateY(4px);
+  }
 }

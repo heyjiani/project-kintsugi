@@ -1,15 +1,50 @@
-.professionals {
-  &__sidebar {
-    width: 250px;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    padding: 1em;
-    background-color: #ffefd5;
+.sidebar {
+  background-color: #ffffff;
+  box-shadow: $default-box-shadow;
+  margin-top: 200px;
+  margin-left: 5%; 
+  margin-right: 10px;
+  width: 25%;
+  height: 90%;
+  padding-bottom: 1em;
 
-    &__options {
-      display: flex;
-      flex-direction: column;
+  img {
+    width: 20%;
+    margin-bottom: -15px;
+  }
+
+  span {
+    color: black;
+    font-size: .7em;
+
+  }
+
+  header {
+    padding: .5em 1em .5em 1em;
+    justify-content: center;
+    font-family: Alegreya;
+    font-size: 2em; 
+    color: #E3CE94;
+    font-weight: bold;
+    
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    font-size: 28px;
+ 
+    &__category {
+      background-color: #E3CE94;
+    }
+    h4 {
+      margin: 0;
+    }
+    div {
+      padding: 0 0.5em;
+      background-color: #E3CE94;
+      margin: 10px 1em 10px 1em;
+      box-shadow: $default-box-shadow;
     }
   }
 }

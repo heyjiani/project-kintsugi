@@ -1,8 +1,37 @@
 .professionals {
 
+  background-color: #cba96d; 
+  
+  &__container {
+    margin-top: 150px;
+    font-size: 20px;
+    text-align: center;
+    width: 70%;
+
+    span {
+      color: #cba96d;
+    }
+
+
+
+    .display-info {
+        margin-top: 50px;
+        font-size: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        margin-left: 9rem;
+        margin-right: 9rem; 
+        background-color: #ffffff;
+        box-shadow: $default-box-shadow;
+    }
+  }
+
   &__list {
+    width: 100%;
+    padding: 2em;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-end;
+    justify-content: center;
   }
 }
+
