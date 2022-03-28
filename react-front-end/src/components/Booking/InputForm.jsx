@@ -20,18 +20,29 @@ export default function InputForm(props) {
   const { professional } = props;
   const navigate = useNavigate();
   const [showResults, setShowResults] = React.useState(false)
-  const onClick = () => setShowResults(true)
+  const [show, toggleShow] = React.useState(false);
+  
 
-  const Results = () => (
-    <div id="results" className="search-results">
-      <Calendar
-              onChange={setDate }
-              value={date}
-              name="date"
-              type="date"
-            />
-    </div>
-  )
+
+
+  // const onClick = () => setShowResults(true)
+
+  // const Results = () => (
+  //   <div id="results" className="calendar">
+  //     <Calendar
+  //             onChange={setDate}
+  //             value={date}
+  //             name="date"
+  //             type="date"
+  //           />
+  //           <button onClick={closeCalendar}>Select</button>
+  //   </div>
+
+  // )
+
+  // const closeCalendar = (
+    
+  // )
 
 
   const handleSubmit = (event) => {
@@ -104,9 +115,36 @@ export default function InputForm(props) {
       <form onSubmit={handleSubmit}>
         <div className="timeslots">
           <div>
+
+
           <div> <MdDateRange /><br />
-      <input type="submit" value="Select Date" onClick={onClick} />
-      { showResults ? <Results /> : null }
+
+
+      {/* <div className="calendar_button"> */}
+        <button
+          onClick={() => toggleShow(!show)}
+        >  
+          {show ? 'Close Calendar' : 'Select Date'}
+        </button>    
+        {show &&   <Calendar
+              onChange={setDate}
+              value={date}
+              name="date"
+              type="date"
+            /> 
+            // &&
+            // <button onClick={() => toggleShow(!show)>
+            //   Select {date}
+            //   </button>
+            }
+      {/* </div> */}
+
+
+      {/* <input type="submit" value="Select Date" onClick={onClick} />
+      { showResults ? <Results /> : null } */}
+
+
+
     </div>
       
           </div>

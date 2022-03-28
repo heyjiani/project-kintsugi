@@ -330,18 +330,9 @@ textarea:active {
 
 }
 
-input {
-  font-size: 1em; 
-  margin: 1em; 
-  padding: .3em; 
-  border: 2px solid black; 
-  background-color: white;
-  box-shadow: $default-box-shadow;
-  margin-top: .5em;
-}
-input:hover {
-  color: #cba96d;
-}
+
+ 
+
 
 select {
   font-size: 1em; 
@@ -380,6 +371,19 @@ select {
 justify-content: center;
 flex-direction: row;
 
+button {
+  font-size: 1em; 
+  margin: 1em; 
+  padding: .3em; 
+  border: 2px solid black; 
+  background-color: white;
+  box-shadow: $default-box-shadow;
+  margin-top: .5em;
+}
+button:hover {
+  color: #cba96d;
+}
+
   div {
     padding-left: 1em; 
     padding-right: 1em; 
@@ -415,18 +419,41 @@ flex-direction: row;
 
 // calendar 
 
+.calendar 
+{
+  position: fixed; 
+  width:500px; 
+  left: 15%; 
+  background-color: white;
+  border: 3px solid #ae915e;
+  z-index: 1000;
+  box-shadow: 0px; 
+  color: black;
+
+    span{
+      color: black; 
+    }
+    button: {
+      color: black; 
+    }
+}
+
 .react-calendar {
   width: 100px; 
   max-width: 100%;
-  background: white;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
   color: black; 
   display: inline; 
   border: 0px; 
+
+  span {
+    color: black; 
+  }
+  
 }
 .react-calendar--doubleView {
-  width: 700px;
+  width: 500px;
 }
 .react-calendar--doubleView .react-calendar__viewContainer {
   display: flex;
@@ -434,7 +461,7 @@ flex-direction: row;
 }
 .react-calendar--doubleView .react-calendar__viewContainer > * {
   width: 50%;
-  margin: 0.5em;
+  margin: 0.1em;
 }
 .react-calendar,
 .react-calendar *,
@@ -455,7 +482,7 @@ flex-direction: row;
 }
 .react-calendar__navigation {
   height: 44px;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
   color: black; 
 }
 .react-calendar__navigation button {
@@ -506,7 +533,7 @@ flex-direction: row;
 .react-calendar__tile {
   max-width: 100%;
   text-align: center;
-  padding: 0.75em 0.5em;
+  padding: 0.75em 0.2em;
   background: none;
   color: black;
 }
