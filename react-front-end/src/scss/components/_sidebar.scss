@@ -10,6 +10,23 @@
   position: fixed; 
   overflow:auto;
 
+
+  button {
+    font-size: .8em; 
+    margin: 1em; 
+    padding: .3em; 
+    border: 0px; 
+    background-color: #AE915E;
+    box-shadow: $default-box-shadow;
+    margin-top: .5em;
+    width: 85%; 
+    font-weight: bold; 
+    color: #ffffff; 
+  }
+  button:hover {
+    color: #cba96d;
+  }
+
   img {
     width: 20%;
     margin-bottom: -15px;
@@ -38,7 +55,9 @@
  
     &__category {
       background-color: #E3CE94;
+
     }
+
     h4 {
       margin: 0;
     }
