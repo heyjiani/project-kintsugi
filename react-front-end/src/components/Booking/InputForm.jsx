@@ -110,6 +110,7 @@ export default function InputForm(props) {
       onChange={setSelectedDay}
       inputPlaceholder="Select a day"
       renderInput={renderCustomInput}
+      colorPrimary="#cba96d"
       shouldHighlightWeekends
     />
 
