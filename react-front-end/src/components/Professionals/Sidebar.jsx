@@ -5,6 +5,10 @@ export default function Sidebar(props) {
 
   const { specialties, handleCheck, professions, cities, handleRadio } = props;
 
+  const [showIssues, toggleShowIssues] = React.useState(false);
+  const [showCities, toggleShowCities] = React.useState(false);
+  const [showProfession, toggleShowProfession] = React.useState(false);
+
   const parsedSpecialties = specialties.map(s => {
     return (
       <div key={s.id}>
@@ -36,25 +40,39 @@ export default function Sidebar(props) {
     <div className="sidebar">
       <header><span>
       <AiOutlineTag /></span>{" "}
-         Sort
+         Sort by
       </header>
       <div className="sidebar__options">
 
-        <div className="sidebar__options__category">
-          <h4>Issues</h4>
-        </div>
-        {parsedSpecialties}
+     
 
-        <div className="sidebar__options__category">
-          <h4>City</h4>
-        </div>
-        {parsedCities}
+          <button
+          onClick={() => toggleShowIssues(!showIssues)}
+        >  
+          {showIssues ? 'Close' : 'Issues '}
+        </button>    
+        {showIssues && parsedSpecialties
+        }
 
-        <div className="sidebar__options__category">
-          <h4>Profession</h4>
-        </div>
-        {parsedProfessions}
+    
+        <button
+          onClick={() => toggleShowCities(!showCities)}
+        >  
+          {showCities ? 'Close' : 'Cities'}
+        </button>    
+        {showCities && parsedCities
+        }
+
+      
+        <button
+          onClick={() => toggleShowProfession(!showProfession)}
+        >  
+          {showProfession ? 'Close' : 'Professions '}
+        </button>    
+        {showProfession && parsedProfessions
+        }
       </div>
     </div>
   );
 }
+

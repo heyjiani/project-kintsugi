@@ -1,12 +1,31 @@
 .sidebar {
   background-color: #ffffff;
   box-shadow: $default-box-shadow;
-  margin-top: 200px;
+  margin-top: 5em; 
   margin-left: 5%; 
   margin-right: 10px;
   width: 25%;
-  height: 90%;
+  height: 65%;
   padding-bottom: 1em;
+  position: fixed; 
+  overflow:auto;
+
+
+  button {
+    font-size: .8em; 
+    margin: 1em; 
+    padding: .3em; 
+    border: 0px; 
+    background-color: #AE915E;
+    box-shadow: $default-box-shadow;
+    margin-top: .5em;
+    width: 85%; 
+    font-weight: bold; 
+    color: #ffffff; 
+  }
+  button:hover {
+    color: #cba96d;
+  }
 
   img {
     width: 20%;
@@ -23,7 +42,7 @@
     padding: .5em 1em .5em 1em;
     justify-content: center;
     font-family: Alegreya;
-    font-size: 2em; 
+    font-size: 1em; 
     color: #E3CE94;
     font-weight: bold;
     
@@ -36,7 +55,9 @@
  
     &__category {
       background-color: #E3CE94;
+
     }
+
     h4 {
       margin: 0;
     }

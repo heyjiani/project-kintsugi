@@ -1,6 +1,11 @@
 //PG database client/connection setup
-require("dotenv").config();
+const path = require("path");
+
 const { Pool } = require("pg");
+const ENV = process.env.NODE_ENV || "development";
+const PATH = path.resolve(__dirname, "../.env." + ENV);
+
+require("dotenv").config({ path: PATH });
 
 const dbParams = {
   host: process.env.DB_HOST,
@@ -13,7 +18,7 @@ const dbParams = {
 const db = new Pool(dbParams);
 
 db.connect(() => {
-  console.log("database is connected");
+  console.log(`database is connected to ${ENV}`);
 });
 
 module.exports = db;
