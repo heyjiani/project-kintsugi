@@ -1,9 +1,11 @@
 import React from "react";
 import "react-calendar/dist/Calendar.css";
+import { useNavigate } from "react-router-dom";
 import InputForm from "./InputForm";
 
 export default function BookingForm(props) {
   const { professional, specialties } = props;
+  const navigate = useNavigate();
   const specialtiesListItem =
     //get the name value //
     specialties &&
@@ -13,11 +15,13 @@ export default function BookingForm(props) {
       })
       .join();
 
-  console.log(specialtiesListItem);
+  const handleClick = () => {
+    navigate('/');
+  }
   return (
     <>{professional &&
       <div className="form_container">
-        <p className="go_back">
+        <p className="go_back" onClick={handleClick}>
           Go back & view more professionals.
         </p>
         <p />

@@ -17,7 +17,8 @@ export default function ProfessionalsPage() {
     profs.forEach(p => {
       if (!allProfessions.includes(p.profession)) {
         allProfessions.push(p.profession);
-    }})
+      }
+    })
     return allProfessions;
   };
 

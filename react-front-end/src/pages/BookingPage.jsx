@@ -16,6 +16,7 @@ export default function BookingPage() {
     specialtiesForProfessional,
     getProfessionalById,
     getSpecialtiesByProfessionalId,
+    show,
   } = useContext(DataContext);
 
   useEffect(() => {
@@ -26,14 +27,14 @@ export default function BookingPage() {
 
   return (
     <div className="components_container">
-      <ProfessionalDetail
+      {!show && < ProfessionalDetail
         professional={professional}
         specialties={specialtiesForProfessional}
-      />
-      <BookingForm
+      />}
+      {show && <BookingForm
         professional={professional}
         specialties={specialtiesForProfessional}
-      />
+      />}
     </div>
   );
 }
