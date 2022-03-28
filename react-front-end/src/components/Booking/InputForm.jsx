@@ -4,43 +4,19 @@ import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { MdDateRange, MdAccessTime } from 'react-icons/md'
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import DatePicker from "react-modern-calendar-datepicker";
 
 import useSpeechToText from 'react-hook-speech-to-text';
 
 
 export default function InputForm(props) {
 
-
-  const [date, setDate] = useState(new Date());
   const [time, setTime] = useState("09:00:00");
   const [formState, setFormState] = useState(false)
   const { professional } = props;
   const navigate = useNavigate();
-  const [showResults, setShowResults] = React.useState(false)
-  const [show, toggleShow] = React.useState(false);
-
-
-
-
-  // const onClick = () => setShowResults(true)
-
-  // const Results = () => (
-  //   <div id="results" className="calendar">
-  //     <Calendar
-  //             onChange={setDate}
-  //             value={date}
-  //             name="date"
-  //             type="date"
-  //           />
-  //           <button onClick={closeCalendar}>Select</button>
-  //   </div>
-
-  // )
-
-  // const closeCalendar = (
-
-  // )
-
+  const [selectedDay, setSelectedDay] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -55,10 +31,12 @@ export default function InputForm(props) {
   };
 
   const addNewAppointmentData = (event) => {
+    const dateData = ` ${selectedDay.year}-${selectedDay.month}-${selectedDay.day}`
+    console.log('date apperance', dateData)
     const myData =
     {
       professional: professional.id,
-      date: date,
+      date: dateData,
       time: time,
       info: formState
     }
@@ -78,9 +56,15 @@ export default function InputForm(props) {
       });
 
   }
-  // }
 
-
+  const renderCustomInput = ({ ref }) => (
+    <input
+      readOnly
+      ref={ref} // necessary
+      placeholder="Select Date"
+      value={selectedDay ? `${selectedDay.day}/${selectedDay.month}/${selectedDay.year}` : ''}
+      className="my-custom-input-class" // a styling class
+    />)
 
   useEffect(() => {
     if (!formState === false) addNewAppointmentData();
@@ -103,8 +87,13 @@ export default function InputForm(props) {
     }
   });
 
+  
+
   if (error) return <p>Web Speech API is not available in this browser</p>;
 
+
+
+  
   return (
 
     <div className="bottomhalf">
@@ -115,30 +104,14 @@ export default function InputForm(props) {
 
 
             <div> <MdDateRange /><br />
-
-
-              {/* <div className="calendar_button"> */}
-              <button
-                onClick={() => toggleShow(!show)}
-              >
-                {show ? 'Close Calendar' : 'Select Date'}
-              </button>
-              {show && <Calendar
-                onChange={setDate}
-                value={date}
-                name="date"
-                type="date"
-              />
-                // &&
-                // <button onClick={() => toggleShow(!show)>
-                //   Select {date}
-                //   </button>
-              }
-              {/* </div> */}
-
-
-              {/* <input type="submit" value="Select Date" onClick={onClick} />
-      { showResults ? <Results /> : null } */}
+            <DatePicker
+            className="my-custom-input-class"
+      value={selectedDay}
+      onChange={setSelectedDay}
+      inputPlaceholder="Select a day"
+      renderInput={renderCustomInput}
+      shouldHighlightWeekends
+    />
 
 
 

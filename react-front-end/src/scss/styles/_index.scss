@@ -578,3 +578,17 @@ button:hover {
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
 }
+
+
+.my-custom-input-class {
+  font-size: 1em;  
+  padding: .3em; 
+  border: 2px solid black; 
+  box-shadow: $default-box-shadow;
+  margin-top: .5em;
+  text-align: center; 
+  width: 7em; }
+
+  .my-custom-input-class:hover {
+    color: #cba96d;
+  }
