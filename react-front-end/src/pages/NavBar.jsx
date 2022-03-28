@@ -11,7 +11,7 @@ export default function NavBar() {
       </div>
       <NavLinks />
       <div className="navigation__links2">
-        <a href="/myappointments">View Appointments</a>
+        <a className="logout">Logout</a>
       </div>
     </nav>
   );

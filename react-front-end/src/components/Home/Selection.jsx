@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+
 import SelectionList from './SelectionList';
-// import SelectionList from "./SelectionList";
 
 export default function Selection({ genre, data }) {
   const [show, setShow] = useState(false);

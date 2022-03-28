@@ -12,14 +12,20 @@ export default function HomeHeading() {
   const navigate = useNavigate();
   const { searchItem } = useContext(DataContext);
   const { Province, Language } = searchItem;
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
 
   const handleClick = () => {
     if (Language === "") {
       setError("Please pick a Language");
+      setTimeout(() => {
+        setError('')
+      }, 5000);
       return;
     } else if (Province === "") {
       setError("Please pick a province");
+      setTimeout(() => {
+        setError('')
+      }, 5000);
       return;
     } else {
       navigate(`/professionals/search/${Province}/${Language}`);
