@@ -1,6 +1,3 @@
-
-// how to toggle?
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -12,7 +9,7 @@ import useSpeechToText from 'react-hook-speech-to-text';
 
 
 export default function InputForm(props) {
-  
+
 
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState("09:00:00");
@@ -21,7 +18,7 @@ export default function InputForm(props) {
   const navigate = useNavigate();
   const [showResults, setShowResults] = React.useState(false)
   const [show, toggleShow] = React.useState(false);
-  
+
 
 
 
@@ -41,7 +38,7 @@ export default function InputForm(props) {
   // )
 
   // const closeCalendar = (
-    
+
   // )
 
 
@@ -117,36 +114,36 @@ export default function InputForm(props) {
           <div>
 
 
-          <div> <MdDateRange /><br />
+            <div> <MdDateRange /><br />
 
 
-      {/* <div className="calendar_button"> */}
-        <button
-          onClick={() => toggleShow(!show)}
-        >  
-          {show ? 'Close Calendar' : 'Select Date'}
-        </button>    
-        {show &&   <Calendar
-              onChange={setDate}
-              value={date}
-              name="date"
-              type="date"
-            /> 
-            // &&
-            // <button onClick={() => toggleShow(!show)>
-            //   Select {date}
-            //   </button>
-            }
-      {/* </div> */}
+              {/* <div className="calendar_button"> */}
+              <button
+                onClick={() => toggleShow(!show)}
+              >
+                {show ? 'Close Calendar' : 'Select Date'}
+              </button>
+              {show && <Calendar
+                onChange={setDate}
+                value={date}
+                name="date"
+                type="date"
+              />
+                // &&
+                // <button onClick={() => toggleShow(!show)>
+                //   Select {date}
+                //   </button>
+              }
+              {/* </div> */}
 
 
-      {/* <input type="submit" value="Select Date" onClick={onClick} />
+              {/* <input type="submit" value="Select Date" onClick={onClick} />
       { showResults ? <Results /> : null } */}
 
 
 
-    </div>
-      
+            </div>
+
           </div>
 
           <div><MdAccessTime /><br />
@@ -185,11 +182,11 @@ export default function InputForm(props) {
           />
           <br />
           <div className="mic">
-          <button type="button" onClick={isRecording ? stopSpeechToText : startSpeechToText}>{isRecording ? '🛑' : '🎤'}</button>
-          &nbsp; Click the microphone to record your message in Japanese. 
+            <button type="button" onClick={isRecording ? stopSpeechToText : startSpeechToText}>{isRecording ? '🛑' : '🎤'}</button>
+            &nbsp; Click the microphone to record your message in Japanese.
           </div>
           <button type="submit" className="submit">Submit</button>
-         
+
         </div>
 
       </form>

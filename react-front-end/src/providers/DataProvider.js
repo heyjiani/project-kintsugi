@@ -18,6 +18,8 @@ export default function DataProvider(props) {
   const [checkedValues, setCheckedValues] = useState([]);
   const [checkedCategories, setCheckedCategories] = useState({ city: "", profession: "" });
 
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
     getAllSpecialties();
     getAllProfessionals();
@@ -139,6 +141,8 @@ export default function DataProvider(props) {
     getProfsByCategory,
     handleCheck,
     handleRadio,
+    show,
+    setShow
 
   };
 
