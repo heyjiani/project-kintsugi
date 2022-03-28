@@ -18,6 +18,7 @@ export default function BookingForm(props) {
   const handleClick = () => {
     navigate('/');
   }
+
   return (
     <>{professional &&
       <div className="form_container">

@@ -13,6 +13,7 @@ export default function ProfessionalDetail(props) {
     setShow(!show)
   }
 
+
   return (
     <>{professional && <> <h2>Book with a professional now. </h2><p className="professional-detail__name"><strong>
       {professional.first_name}&nbsp;

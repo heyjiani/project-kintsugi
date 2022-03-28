@@ -6,6 +6,11 @@ import React, {
 import { io } from "socket.io-client";
 import Peer from "simple-peer";
 import { useNavigate } from "react-router-dom";
+import { FaVideo } from 'react-icons/fa';
+import { FiPhoneCall } from 'react-icons/fi';
+import { MdCall } from 'react-icons/md';
+import { MdCallEnd } from 'react-icons/md';
+
 
 const socket = io("http://localhost:8080");
 
@@ -138,6 +143,7 @@ export default function VideoPage() {
             >
               Call
             </span>
+            <FaVideo className="video__icon" />
           </div>
         );
       } else {
@@ -164,7 +170,7 @@ export default function VideoPage() {
             />
           ) : (
             <div className="video__peer-empty">
-              {receivingCall && !callAccepted ? (<p className="video__receive" > Receiving Call...</p>) : (<p> Your professional will call you....</p>)}
+              {receivingCall && !callAccepted ? (<p className="video__receive" > Receiving Call...<FiPhoneCall /></p>) : (<p> Your professional will call you....</p>)}
 
               <img
                 src="https://cdn-icons-png.flaticon.com/512/3062/3062992.png"
@@ -192,6 +198,7 @@ export default function VideoPage() {
             {callAccepted && !callEnded ? (
               <button className="btn-video" onClick={leaveCall}>
                 End Call
+                <MdCallEnd className="video__icon" />
               </button>
             ) : (
               <div>
@@ -205,6 +212,7 @@ export default function VideoPage() {
               <div>
                 <button className="btn-video" onClick={answerCall}>
                   Answer
+                  <MdCall className="video__icon" />
                 </button>
               </div>
             ) : null}
@@ -212,6 +220,7 @@ export default function VideoPage() {
           <div>
             <button className="btn-video" onClick={backToMain}>
               Back to Main
+
             </button>
           </div>
         </div>

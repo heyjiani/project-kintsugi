@@ -1,6 +1,3 @@
-
-// how to toggle?
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -12,7 +9,7 @@ import useSpeechToText from 'react-hook-speech-to-text';
 
 
 export default function InputForm(props) {
-  
+
 
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState("09:00:00");
@@ -25,11 +22,11 @@ export default function InputForm(props) {
   const Results = () => (
     <div id="results" className="search-results">
       <Calendar
-              onChange={setDate }
-              value={date}
-              name="date"
-              type="date"
-            />
+        onChange={setDate}
+        value={date}
+        name="date"
+        type="date"
+      />
     </div>
   )
 
@@ -104,11 +101,11 @@ export default function InputForm(props) {
       <form onSubmit={handleSubmit}>
         <div className="timeslots">
           <div>
-          <div> <MdDateRange /><br />
-      <input type="submit" value="Select Date" onClick={onClick} />
-      { showResults ? <Results /> : null }
-    </div>
-      
+            <div> <MdDateRange /><br />
+              <input type="submit" value="Select Date" onClick={onClick} />
+              {showResults ? <Results /> : null}
+            </div>
+
           </div>
 
           <div><MdAccessTime /><br />
@@ -147,11 +144,11 @@ export default function InputForm(props) {
           />
           <br />
           <div className="mic">
-          <button type="button" onClick={isRecording ? stopSpeechToText : startSpeechToText}>{isRecording ? '🛑' : '🎤'}</button>
-          &nbsp; Click the microphone to record your message in Japanese. 
+            <button type="button" onClick={isRecording ? stopSpeechToText : startSpeechToText}>{isRecording ? '🛑' : '🎤'}</button>
+            &nbsp; Click the microphone to record your message in Japanese.
           </div>
           <button type="submit" className="submit">Submit</button>
-         
+
         </div>
 
       </form>
