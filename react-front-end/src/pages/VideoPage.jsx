@@ -6,6 +6,7 @@ import React, {
 import { io } from "socket.io-client";
 import Peer from "simple-peer";
 import { useNavigate } from "react-router-dom";
+import icon from '../images/video-camera.png'
 
 
 const socket = io("http://localhost:8080");
@@ -63,6 +64,7 @@ export default function VideoPage() {
         }
       });
   }, []);
+
 
   //function for making call//
   const callUser = (id) => {
@@ -138,7 +140,7 @@ export default function VideoPage() {
             >
               Call
             </span>
-            <img className="video__icon" src="https://cdn-icons-png.flaticon.com/128/711/711245.png" alt="phone" />
+            <img className="video__icon" src={icon} alt="phone" />
           </div>
         );
       } else {
@@ -165,7 +167,7 @@ export default function VideoPage() {
             />
           ) : (
             <div className="video__peer-empty">
-              {receivingCall && !callAccepted ? (<p> Receiving Call...</p>) : (<p> Wait for your Appointment....</p>)}
+              {receivingCall && !callAccepted ? (<p className="video__receive" > Receiving Call...</p>) : (<p> Your professional will call you....</p>)}
 
               <img
                 src="https://cdn-icons-png.flaticon.com/512/3062/3062992.png"
@@ -204,7 +206,6 @@ export default function VideoPage() {
           <div>
             {receivingCall && !callAccepted ? (
               <div>
-                <p className="video__receive">Receiving Call...</p>
                 <button className="btn-video" onClick={answerCall}>
                   Answer
                 </button>

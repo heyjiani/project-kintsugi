@@ -1,12 +1,13 @@
 .video {
   margin: 3em 0;
-  padding: 3rem 0;
+  padding: 5rem 0;
   background-color: #cba96d;
 
   &__container {
     display: flex;
     justify-content: space-around;
   }
+
   &__peer {
     width: 800px;
 
@@ -31,6 +32,9 @@
     }
   }
 
+  &__receive {
+  }
+
   &__myself {
     width: 300px;
   }
@@ -38,6 +42,7 @@
     width: 15%;
   }
   &__receive {
+    animation: calling 1s infinite;
   }
 }
 
@@ -65,6 +70,10 @@
 }
 
 @keyframes calling {
-  0% {
+  50% {
+    transform: translateY(4px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
   }
 }
