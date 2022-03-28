@@ -1,8 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
-import { MdWorkOutline, MdLanguage } from 'react-icons/md';
-import { IconContext } from 'react-icons';
+import { MdWorkOutline } from 'react-icons/md';
 import { AiOutlineTag } from 'react-icons/ai';
 
 export default function ProfessionalListItem(props) {

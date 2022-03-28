@@ -3,7 +3,6 @@ import { AiOutlineTag } from 'react-icons/ai';
 
 export default function Sidebar(props) {
   const { specialties, handleCheck, professions, cities, handleRadio } = props;
-
   const [showIssues, toggleShowIssues] = React.useState(false);
   const [showCities, toggleShowCities] = React.useState(false);
   const [showProfession, toggleShowProfession] = React.useState(false);

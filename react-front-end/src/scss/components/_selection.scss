@@ -8,7 +8,6 @@
   box-shadow: $default-box-shadow;
   font-size: 2rem;
 
-
   &__container {
     display: flex;
     align-items: flex-start;
@@ -20,19 +19,32 @@
   }
 
   &__heading:hover,
-  &__heading:active
-  {
+  &__heading:active {
     padding: 0;
     color: #d5c085;
   }
   &__list:hover {
     margin-top: 5px;
     color: #d5c085;
-
+  }
+  &__error {
+    margin: 50px 0 -15px;
+    color: rgb(120, 97, 97);
+    font-weight: 700;
+    animation: error 0.5s ease-out 5;
   }
 }
 
 .selected__list {
   font-weight: 700;
   color: #ae915e;
+}
+
+@keyframes error {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
 }

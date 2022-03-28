@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { MdWorkOutline, MdLanguage } from 'react-icons/md';
@@ -12,9 +12,20 @@ export default function HomeHeading() {
   const navigate = useNavigate();
   const { searchItem } = useContext(DataContext);
   const { Province, Language } = searchItem;
+  const [error, setError] = useState("")
 
   const handleClick = () => {
-    navigate(`/professionals/search/${Province}/${Language}`);
+    if (Language === "") {
+      setError("Please pick a Language");
+      return;
+    } else if (Province === "") {
+      setError("Please pick a province");
+      return;
+    } else {
+      navigate(`/professionals/search/${Province}/${Language}`);
+      setError("");
+    }
+
   };
 
   return (
@@ -32,7 +43,8 @@ export default function HomeHeading() {
           Start by selecting a <span>language</span> and a<span> location.</span>
         </p>
       </div>
-      <p />
+
+      <p className='selection__error'> {error}</p>
       <div className="selection__container">
         <Selection genre="Language" data={languageData} />
         <Selection genre="Province" data={provinceData} />
