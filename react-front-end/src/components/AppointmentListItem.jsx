@@ -19,12 +19,9 @@ export default function AppointmentListItem(props) {
       <div>{date}</div>
       <div>{time}</div>
       <div>{description}</div>
-      {/* <img
-        src="https://cdn-icons-png.flaticon.com/128/1946/1946429.png"
-        alt=""
-      /> */}
 
       <img onClick={handleClick}
+        className="appointment__icon"
         src="https://cdn-icons-png.flaticon.com/128/4185/4185236.png"
         alt=""
       />
