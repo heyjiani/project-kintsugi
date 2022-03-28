@@ -15,8 +15,10 @@ import Footer from "./pages/Footer";
 import "./scss/main.scss";
 import NavBar from "./pages/NavBar";
 import ThankYou from "./pages/ThankYouPage";
+import VideoPage from "./pages/VideoPage";
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
@@ -45,6 +47,17 @@ function App() {
           <Route
             path="/thankyou"
             element={<ThankYou />}
+            exact
+          />
+          {/* <Route
+            path="/video"
+            element={<VideoPage />}
+            exact
+          /> */}
+
+          <Route
+            path="/video"
+            element={<VideoPage />}
             exact
           />
 

@@ -6,18 +6,16 @@ import { DataContext } from "../providers/DataProvider";
 
 export default function AppointmentPage() {
   let { id } = useParams();
-  const { professionals, getAppointmentsByUserId, clientAppointments } = useContext(DataContext);
-  console.log("pro", professionals);
+  const { getAppointmentsByUserId, clientAppointments } = useContext(DataContext);
+
   useEffect(() => {
     getAppointmentsByUserId(1)
 
   }, []);
 
-  console.log(clientAppointments);
-
   return (
     <div className="components_container">
-      <AppointmentList appointments={clientAppointments} professionals={professionals} />
+      <AppointmentList appointments={clientAppointments} />
     </div>
   );
 }
