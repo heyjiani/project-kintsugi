@@ -5,6 +5,8 @@ import React, {
 } from "react";
 import { io } from "socket.io-client";
 import Peer from "simple-peer";
+import { useNavigate } from "react-router-dom";
+
 
 const socket = io("http://localhost:8080");
 
@@ -21,6 +23,8 @@ export default function VideoPage() {
   const myVideo = useRef();
   const peerVideo = useRef();
   const connectionRef = useRef();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     //check connection to server for websocket//
@@ -128,11 +132,14 @@ export default function VideoPage() {
     Object.keys(users).map((key, i, arr) => {
       if (key !== myself && arr[arr.length - 1] === key) {
         return (
-          <button
-            onClick={() => callUser(key)}
-          >
-            Call {key}
-          </button>
+          <div className="btn-video">
+            <span
+              onClick={() => callUser(key)}
+            >
+              Call
+            </span>
+            <img className="video__icon" src="https://cdn-icons-png.flaticon.com/128/711/711245.png" alt="phone" />
+          </div>
         );
       } else {
         console.log(arr[0], i, key, "my:", myself);
@@ -140,56 +147,77 @@ export default function VideoPage() {
       }
     })
 
+  const backToMain = () => {
+    navigate('/')
+  }
+
   return (
-    <div>
-      <div>
-        <div>
-          {stream && (
-            <video
-              playsInline
-              muted
-              ref={myVideo}
-              autoPlay
-              style={{ width: "300px" }}
-            />
-          )}
-        </div>
-        <div>
+    <div className="video">
+      <div className="video__container">
+        <div className="video__left">
           {callAccepted && !callEnded ? (
             <video
+              className="video__peer"
               playsInline
               ref={peerVideo}
               autoPlay
-              style={{ width: "300px" }}
-            />
-          ) : null}
-        </div>
-      </div>
 
-      <div>
-        <div>
-          {callAccepted && !callEnded ? (
-            <button onClick={leaveCall}>
-              End Call
-            </button>
+            />
           ) : (
-            <div>
-              <div>{myself}</div>
-              {createCallButton}
+            <div className="video__peer-empty">
+              {receivingCall && !callAccepted ? (<p> Receiving Call...</p>) : (<p> Wait for your Appointment....</p>)}
+
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3062/3062992.png"
+                alt="iconImage"
+              />
             </div>
           )}
         </div>
-      </div>
-      <div>
-        {receivingCall && !callAccepted ? (
+
+
+        <div className="video__right">
           <div>
-            <p>receiving Call</p>
-            <button onClick={answerCall}>
-              Answer
+            {stream && (
+              <video
+                playsInline
+                muted
+                ref={myVideo}
+                autoPlay
+                className="video__myself"
+              />
+            )}
+          </div>
+
+          <div>
+            {callAccepted && !callEnded ? (
+              <button className="btn-video" onClick={leaveCall}>
+                End Call
+              </button>
+            ) : (
+              <div>
+                {/* <div>{myself}</div> */}
+                {createCallButton}
+              </div>
+            )}
+          </div>
+          <div>
+            {receivingCall && !callAccepted ? (
+              <div>
+                <p className="video__receive">Receiving Call...</p>
+                <button className="btn-video" onClick={answerCall}>
+                  Answer
+                </button>
+              </div>
+            ) : null}
+          </div>
+          <div>
+            <button className="btn-video" onClick={backToMain}>
+              Back to Main
             </button>
           </div>
-        ) : null}
+        </div>
       </div>
-    </div>
+    </div >
   );
 }

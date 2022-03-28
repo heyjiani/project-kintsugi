@@ -1,0 +1,70 @@
+.video {
+  margin: 3em 0;
+  padding: 3rem 0;
+  background-color: #cba96d;
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__peer {
+    width: 800px;
+
+    &-empty {
+      width: 800px;
+
+      background-color: white;
+      text-align: center;
+      box-shadow: $default-box-shadow;
+      padding: 1rem;
+      font-size: 1.5rem;
+
+      img {
+        width: 35%;
+        opacity: 0.5;
+      }
+
+      p {
+        color: #947b50;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__myself {
+    width: 300px;
+  }
+  &__icon {
+    width: 15%;
+  }
+  &__receive {
+  }
+}
+
+.btn-video {
+  display: flex;
+  justify-content: center;
+  border: none;
+  font-size: 1em;
+  padding: 0.2em 0.6em;
+  color: #ffffff;
+  background-color: #ae915e;
+  margin-top: 2rem;
+  width: 100%;
+  box-shadow: $default-box-shadow;
+}
+.btn-video:hover {
+  transform: scale(1.05);
+}
+.btn-video:active {
+  transform: translateY(-5px);
+}
+
+.video__icon {
+  margin-left: 15px;
+}
+
+@keyframes calling {
+  0% {
+  }
+}
