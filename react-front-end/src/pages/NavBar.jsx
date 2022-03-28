@@ -1,5 +1,5 @@
-import React from "react";
-import NavLinks from "../components/NavLinks";
+import React from 'react';
+import NavLinks from '../components/NavLinks';
 
 export default function NavBar() {
   return (

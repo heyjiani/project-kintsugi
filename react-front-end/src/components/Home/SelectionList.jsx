@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { DataContext } from "../../providers/DataProvider";
+import React, { useContext, useState } from 'react';
+import { DataContext } from '../../providers/DataProvider';
 
 export default function SelectionList(props) {
   const [active, setActive] = useState(null);
@@ -9,12 +9,11 @@ export default function SelectionList(props) {
     const { genre, item } = e.target.dataset;
 
     setActive(i);
-    addSearchItem(genre, item)
-
+    addSearchItem(genre, item);
   };
 
   return (
-    <div >
+    <div>
       {props.data.map((item, i) => {
         return (
           <li
@@ -24,9 +23,7 @@ export default function SelectionList(props) {
             onClick={(e) => {
               handleToggle(e, i);
             }}
-            className={
-              active === i ? "selection__list selected__list" : "selection__list"
-            }
+            className={active === i ? 'selection__list selected__list' : 'selection__list'}
           >
             {item}
           </li>
