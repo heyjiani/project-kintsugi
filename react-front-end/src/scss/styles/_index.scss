@@ -429,6 +429,8 @@ button:hover {
   z-index: 1000;
   box-shadow: 0px; 
   color: black;
+  display: block; 
+  margin-top: 2em; 
 
     span{
       color: black; 
@@ -439,6 +441,7 @@ button:hover {
 }
 
 .react-calendar {
+  margin-top: 2em; 
   width: 100px; 
   max-width: 100%;
   font-family: Arial, Helvetica, sans-serif;
@@ -446,6 +449,8 @@ button:hover {
   color: black; 
   display: inline; 
   border: 0px; 
+  z-index: 1000; 
+  position: static; 
 
   span {
     color: black; 
