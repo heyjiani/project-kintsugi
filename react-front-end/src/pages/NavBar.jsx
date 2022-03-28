@@ -10,6 +10,9 @@ export default function NavBar() {
         </a>
       </div>
       <NavLinks />
+      <div className="navigation__links2">
+        <a href="/myappointments">View Appointments</a>
+      </div>
     </nav>
   );
 }
