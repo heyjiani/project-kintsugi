@@ -117,6 +117,7 @@ export default function DataProvider(props) {
     clientAppointments,
     checkedValues,
     checkedCategories,
+    show,
     getAppointmentsByUserId,
     getAllProfessionals,
     getAllSpecialties,
@@ -128,7 +129,6 @@ export default function DataProvider(props) {
     getProfsByCategory,
     handleCheck,
     handleRadio,
-    show,
     setShow
   };
 

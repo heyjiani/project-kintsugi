@@ -16,7 +16,6 @@ const listen = (httpServer) => {
       users[socket.id] = socket.id;
     };
 
-    console.log("socket is connected", socket.id);
     //when server connect, "me" to socket.id//
     socket.emit("me", socket.id);
     io.sockets.emit("allUsers", users);
@@ -29,7 +28,6 @@ const listen = (httpServer) => {
     });
 
     socket.on("answerCall", (data) => {
-      console.log("answerCall", data);
       io.to(data.to).emit(
         "callAccepted",
         data.signal
