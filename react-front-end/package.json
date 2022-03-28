@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "scss": "node-sass --watch src/scss -o css"
+    "scss": "node-sass --watch src/scss -o css",
+    "cypress": "cypress open -P ."
   },
   "eslintConfig": {
     "extends": "react-app"
