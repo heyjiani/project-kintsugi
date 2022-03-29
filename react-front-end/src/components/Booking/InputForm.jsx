@@ -1,12 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { MdDateRange, MdAccessTime } from 'react-icons/md'
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import DatePicker from "react-modern-calendar-datepicker";
-
 import useSpeechToText from 'react-hook-speech-to-text';
 
 
@@ -27,19 +25,17 @@ export default function InputForm(props) {
 
   const handleTimeChange = (time) => {
     setTime(time);
-    console.log(time);
   };
 
   const addNewAppointmentData = (event) => {
-    const dateData = ` ${selectedDay.year}-${selectedDay.month}-${selectedDay.day}`
-    console.log('date apperance', dateData)
+    const dateData = ` ${selectedDay.year}-${selectedDay.month}-${selectedDay.day}`;
     const myData =
     {
       professional: professional.id,
       date: dateData,
       time: time,
       info: formState
-    }
+    };
     fetch('/api/appointments', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
@@ -73,7 +69,6 @@ export default function InputForm(props) {
     error,
     interimResult,
     isRecording,
-    results,
     startSpeechToText,
     stopSpeechToText,
   } = useSpeechToText({
@@ -86,17 +81,13 @@ export default function InputForm(props) {
     }
   });
 
-  if (error) return <p>Web Speech API is not available in this browser</p>;
-
+  if (error) return <p>Web Speech API is not available in this browser</p>
   return (
-
     <div className="bottomhalf">
 
       <form onSubmit={handleSubmit}>
         <div className="timeslots">
           <div>
-
-
             <div> <MdDateRange /><br />
               <DatePicker
                 className="my-custom-input-class"
@@ -107,13 +98,8 @@ export default function InputForm(props) {
                 colorPrimary="#cba96d"
                 shouldHighlightWeekends
               />
-
-
-
             </div>
-
           </div>
-
           <div><MdAccessTime /><br />
             <select
               name="time"
@@ -136,7 +122,6 @@ export default function InputForm(props) {
             </select>
           </div>
         </div>
-
         <p />
 
         <div>
@@ -154,9 +139,7 @@ export default function InputForm(props) {
             &nbsp; Click the microphone to record your message in Japanese.
           </div>
           <button type="submit" className="submit">Submit</button>
-
         </div>
-
       </form>
     </div>
 
