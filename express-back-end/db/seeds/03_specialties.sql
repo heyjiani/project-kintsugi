@@ -4,7 +4,7 @@ INSERT INTO specialties (name) VALUES
 ('Addiction'),
 ('ADHD'),
 ('Anxiety'),
-('bipolar Disorder'),
+('Bipolar Disorder'),
 ('Depression'),
 ('Domestic Abuse'),
 ('Eating Disorders'),
