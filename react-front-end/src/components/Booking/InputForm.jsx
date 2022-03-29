@@ -84,7 +84,6 @@ export default function InputForm(props) {
   if (error) return <p>Web Speech API is not available in this browser</p>
   return (
     <div className="bottomhalf">
-
       <form onSubmit={handleSubmit}>
         <div className="timeslots">
           <div>
