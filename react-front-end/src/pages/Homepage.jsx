@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import HomeHeading from "../components/Home/HomeHeading";
-import Placeholder from "../components/Home/Placeholder";
+import HomeHeading from '../components/Home/HomeHeading';
+import Placeholder from '../components/Home/Placeholder';
 
 export default function Homepage() {
   return (

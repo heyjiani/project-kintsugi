@@ -1,6 +1,5 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function AppointmentListItem(props) {
   // component has a dropdown on click //
@@ -13,19 +12,19 @@ export default function AppointmentListItem(props) {
 
   const handleClick = () => {
     navigate('/video');
-  }
+  };
   return (
     <li className="appointment">
       <div>{date}</div>
       <div>{time}</div>
       <div>{description}</div>
 
-      <img onClick={handleClick}
+      <img
+        onClick={handleClick}
         className="appointment__icon"
         src="https://cdn-icons-png.flaticon.com/128/4185/4185236.png"
         alt=""
       />
-
     </li>
   );
 }

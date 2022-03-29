@@ -1,14 +1,14 @@
-import React from "react";
-
+import React from 'react';
 
 export default function NavLinks() {
   return (
     <div className="navigation__links">
       <div>
-        <a href="/">About</a>
+        <a href="/">Get Help</a>
+
       </div>
       <div>
-        <a href="/">Get Help</a>
+        <a href="/myappointments">View Appointments</a>
       </div>
     </div>
   );

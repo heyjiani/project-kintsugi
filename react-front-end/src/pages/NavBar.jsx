@@ -1,5 +1,5 @@
-import React from "react";
-import NavLinks from "../components/NavLinks";
+import React from 'react';
+import NavLinks from '../components/NavLinks';
 
 export default function NavBar() {
   return (
@@ -11,7 +11,7 @@ export default function NavBar() {
       </div>
       <NavLinks />
       <div className="navigation__links2">
-        <a href="/myappointments">View Appointments</a>
+        <div className="logout">Logout</div>
       </div>
     </nav>
   );

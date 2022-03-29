@@ -7,10 +7,6 @@ const PORT = 8080;
 const socketServer = require('./socketServer');
 const cors = require("cors");
 
-
-// Express Configuration
-// app.use(Express.static("public"));
-
 // Routes requires
 const clientRoutes = require("./routes/clients");
 const professionalRoutes = require("./routes/professionals");

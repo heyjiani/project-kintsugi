@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import SelectionList from "./SelectionList";
-// import SelectionList from "./SelectionList";
+import React, { useState } from 'react';
 
-export default function Selection({
-  genre,
-  data,
-}) {
+import SelectionList from './SelectionList';
+
+export default function Selection({ genre, data }) {
   const [show, setShow] = useState(false);
 
   //click and dropdown the list of genre//
@@ -15,10 +12,7 @@ export default function Selection({
 
   return (
     <div className="selection">
-      <div
-        className="selection__heading"
-        onClick={handleShow}
-      >
+      <div className="selection__heading" onClick={handleShow}>
         {genre}
       </div>
       {show && (
