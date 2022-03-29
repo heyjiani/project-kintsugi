@@ -8,7 +8,9 @@ This project was developed by [Aya Okizaki](), [Lindsay Tannahill](), and [mysel
 
 
 ## Features
-![screenshot1]()
+
+[-- add features/gifs here --]
+![screenshot1](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/Screen%20Shot%202022-03-29%20at%2012.57.34%20AM.png?raw=true)
 ![screenshot2]()
 ![screenshot3]()
 
