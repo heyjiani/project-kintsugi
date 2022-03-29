@@ -18,7 +18,6 @@ export default function Placeholder() {
             your language and understand your cultural background.
           </p>
           <strong> Get started by selecting a language and location in the search above. </strong>
-
         </div>
         <div></div>
       </div>

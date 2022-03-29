@@ -17,4 +17,6 @@ describe('Navigation', () => {
     cy.contains('.professionals__item', 'Garek Slamaker');
     cy.contains('professionals__item', 'Ole Beagley').should('not.exist');
   });
+
+
 });
