@@ -38,6 +38,7 @@ export default function HomeHeading() {
     <div>
       <div className="heading">
         <br />
+        
         <h2>Find a mental health professional that meets your needs.</h2>
         <IconContext.Provider value={{ className: 'global-class-name' }}>
           <MdLanguage />
@@ -45,13 +46,26 @@ export default function HomeHeading() {
           <MdWorkOutline />
         </IconContext.Provider>
 
-        <p>
+        
+
+       <p>
           Start by selecting a <span>language</span> and a<span> location.</span>
         </p>
+ 
       </div>
 
+      <div className="icons">
+     <span> <MdLanguage /></span> 
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <span><HiOutlineLocationMarker /></span>
+     </div>
+
       <p className='selection__error'> {error}</p>
+      
+
       <div className="selection__container">
+        
         <Selection genre="Language" data={languageData} />
         <Selection genre="Province" data={provinceData} />
         <div onClick={handleClick} className="searchbtn">

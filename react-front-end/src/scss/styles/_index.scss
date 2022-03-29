@@ -32,12 +32,12 @@ body {
   }
 
   h1 {
-    font-size: 70px;
+    font-size: 4.5rem;
     color: #ffffff;
     margin: 0px;
     margin-top: 10px;
     margin-bottom: 0px;
-    padding-left: 1em;
+    padding-left: .8em;
     font-weight: normal;
     font-family: "Alegreya", serif;
     -webkit-font-smoothing: antialiased;
@@ -50,8 +50,9 @@ body {
     font-size: 2vw;
     color: #ffffff;
     margin-top: 3rem;
-    margin-left: 0rem;
+    margin-left: -10rem;
     white-space: nowrap;
+
 
     :hover {
       margin-top: 5px;
@@ -83,6 +84,7 @@ body {
   text-align: right;
   font-family: "Bebas Neue", cursive;
   letter-spacing: 0.2em;
+  margin-right: .8em
 }
 
 span {
@@ -139,6 +141,11 @@ code {
     Consolas, "Courier New", monospace;
 }
 
+
+.hidden
+{color: #cba96d; 
+padding-left: 9.2em; }
+
 // header
 
 h2 {
@@ -151,6 +158,7 @@ h2 {
 
 .heading {
   margin-bottom: -1rem;
+  margin-top: -50px; 
 
   h2 {
     font-size: 3rem;
@@ -159,7 +167,7 @@ h2 {
     font-weight: normal;
     color: #ffffff;
     padding: 0px;
-    margin: -50px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
   }
 
   .global-class-name {
@@ -174,12 +182,18 @@ h2 {
   }
 }
 
+.icons
+{margin: 2em; 
+text-align: center; 
+margin-bottom: -2.5em; 
+margin-left: -3.8em; }
+
 .placeholder {
   background-color: #ffffff;
   width: 60%;
   text-align: center;
   box-shadow: $default-box-shadow;
-  padding: 1rem 1rem 3rem;
+  padding: 2rem 2rem 3rem;
   font-size: 1.5rem;
 
   img {
