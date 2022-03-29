@@ -20,6 +20,7 @@ Users can book appointments, and use a voice transcriber if a keyboard in their 
 
 Users can view a list of their appointments and have live meetings via video.
 ![Appointment Page](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/appt_page_screenshot.png?raw=true)
+![Video page](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/live_appt_page.png?raw=true)
 
 ## Running the projects
 
