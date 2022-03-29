@@ -6,9 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 36px;
-  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat976.ani),
-    url(https://cur.cursors-4u.net/nature/nat-10/nat976.gif),
-    auto !important;
 }
 
 .navigation {
@@ -215,10 +212,30 @@ margin-left: -3.8em; }
   }
 }
 
+
 .center {
   text-align: center;
   display: flex;
   justify-content: space-between;
+ }
+
+.center2 {
+  text-align: center;
+  justify-content: center;
+  width: 60%; 
+  margin-left: 20%;
+  margin-right: 20%; 
+  min-height: 540px; 
+  padding-top: 2em; 
+
+  a {
+    font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.2em;
+  color: white; 
+  font-size: .8em; 
+  padding-right: .5em; 
+  }
+  a:hover {opacity: .6}
 }
 
 // bookingForm
