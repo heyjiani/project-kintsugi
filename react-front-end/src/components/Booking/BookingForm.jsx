@@ -55,9 +55,8 @@ export default function BookingForm(props) {
                 <tr>
                   <HiOutlineLocationMarker />
                   <td>
-                    &nbsp;
                     {professional.city},&nbsp;
-                    {professional.province}=&nbsp;
+                    {professional.province}&nbsp;
                   </td>
                 </tr>
               </table>
