@@ -8,6 +8,8 @@ This project was developed by [Aya Okizaki](), [Lindsay Tannahill](), and [mysel
 
 
 ## Features
+
+[-- add features/gifs here --]
 ![screenshot1]()
 ![screenshot2]()
 ![screenshot3]()
