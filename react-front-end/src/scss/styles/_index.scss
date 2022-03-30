@@ -98,14 +98,43 @@ span {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  min-height: 90vh; 
+  // overflow: clip;
+}
+.components_container2 {
+  background-color: #cba96d;
+  padding-top: 150px;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 90vh;
+  overflow: clip;
 }
 
-footer {
+.card footer {
   background-color: white;
   display: flex;
   justify-content: space-between;
   padding: 25px 54px 25px 54px;
   font-size: 15px;
+  // height: 20%;
+  // overflow-y: clip; 
+}
+
+  footer {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 54px 25px 54px;
+  font-size: 15px;
+  max-height: 10vh;
+  bottom: 0; 
+  // height: 20%;
+  // overflow-y: clip; 
+
 
   h4 {
     color: #cba96d;
