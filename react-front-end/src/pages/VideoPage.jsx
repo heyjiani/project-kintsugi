@@ -1,24 +1,22 @@
-import React, {
-  useState,
-  useRef,
-  useEffect,
-} from "react";
-import { io } from "socket.io-client";
-import Peer from "simple-peer";
-import { useNavigate } from "react-router-dom";
-import icon from '../images/video-camera.png'
+import React, { useState, useRef, useEffect } from 'react';
+import { io } from 'socket.io-client';
+import Peer from 'simple-peer';
+import { useNavigate } from 'react-router-dom';
+import { FaVideo } from 'react-icons/fa';
+import { FiPhoneCall } from 'react-icons/fi';
+import { MdCall } from 'react-icons/md';
+import { MdCallEnd } from 'react-icons/md';
 
-
-const socket = io("http://localhost:8080");
+const socket = io('http://localhost:8080');
 
 export default function VideoPage() {
-  const [myself, setMyself] = useState("");
+  const [myself, setMyself] = useState('');
   const [stream, setStream] = useState();
   const [receivingCall, setReceivingCall] = useState(false);
   const [callAccepted, setCallAccepted] = useState(false);
   const [callEnded, setCallEnded] = useState(false);
   const [users, setUsers] = useState({});
-  const [caller, setCaller] = useState("");
+  const [caller, setCaller] = useState('');
   const [callerSignal, setCallerSignal] = useState();
 
   const myVideo = useRef();
@@ -28,24 +26,17 @@ export default function VideoPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    //check connection to server for websocket//
-    socket.on("connect", () => {
-      console.log(
-        "socket client connected to server"
-      );
-    });
-
     //set myself as id of came back from server//
-    socket.on("me", (id) => {
+    socket.on('me', (id) => {
       setMyself(id);
     });
 
-    socket.on("allUsers", (users) => {
+    socket.on('allUsers', (users) => {
       console.log(users);
       setUsers(users);
     });
 
-    socket.on("callUser", (data) => {
+    socket.on('callUser', (data) => {
       setReceivingCall(true);
       setCaller(data.from);
       setCallerSignal(data.signal);
@@ -55,7 +46,7 @@ export default function VideoPage() {
     navigator.mediaDevices
       .getUserMedia({
         video: true,
-        audio: true,
+        audio: true
       })
       .then((stream) => {
         setStream(stream);
@@ -63,8 +54,8 @@ export default function VideoPage() {
           myVideo.current.srcObject = stream;
         }
       });
-  }, []);
 
+  }, []);
 
   //function for making call//
   const callUser = (id) => {
@@ -72,24 +63,24 @@ export default function VideoPage() {
     const peer = new Peer({
       initiator: true,
       trickle: false,
-      stream: stream,
+      stream: stream
     });
 
-    peer.on("signal", (data) => {
-      socket.emit("callUser", {
+    peer.on('signal', (data) => {
+      socket.emit('callUser', {
         userToCall: id,
         signalData: data,
-        from: myself,
+        from: myself
       });
     });
 
-    peer.on("stream", (stream) => {
+    peer.on('stream', (stream) => {
       if (peerVideo.current) {
         peerVideo.current.srcObject = stream;
       }
     });
 
-    socket.on("callAccepted", (signal) => {
+    socket.on('callAccepted', (signal) => {
       setCallAccepted(true);
       peer.signal(signal);
     });
@@ -105,17 +96,17 @@ export default function VideoPage() {
     const peer = new Peer({
       initiator: false,
       trickle: false,
-      stream: stream,
+      stream: stream
     });
 
-    peer.on("signal", (data) => {
-      socket.emit("answerCall", {
+    peer.on('signal', (data) => {
+      socket.emit('answerCall', {
         signal: data,
-        to: caller,
+        to: caller
       });
     });
 
-    peer.on("stream", (stream) => {
+    peer.on('stream', (stream) => {
       peerVideo.current.srcObject = stream;
     });
 
@@ -129,76 +120,59 @@ export default function VideoPage() {
     connectionRef.current.destroy();
   };
 
-
-  const createCallButton =
-    Object.keys(users).map((key, i, arr) => {
-      if (key !== myself && arr[arr.length - 1] === key) {
-        return (
-          <div className="btn-video">
-            <span
-              onClick={() => callUser(key)}
-            >
-              Call
-            </span>
-            <img className="video__icon" src={icon} alt="phone" />
-          </div>
-        );
-      } else {
-        console.log(arr[0], i, key, "my:", myself);
-        return null;
-      }
-    })
+  const createCallButton = Object.keys(users).map((key, i, arr) => {
+    if (key !== myself && arr[arr.length - 1] === key) {
+      return (
+        <div className="btn-video">
+          <span onClick={() => callUser(key)}>Call</span>
+          <FaVideo className="video__icon" />
+        </div>
+      );
+    } else {
+      return null;
+    }
+  });
 
   const backToMain = () => {
-    navigate('/')
-  }
+    navigate('/');
+  };
 
   return (
     <div className="video">
       <div className="video__container">
         <div className="video__left">
           {callAccepted && !callEnded ? (
-            <video
-              className="video__peer"
-              playsInline
-              ref={peerVideo}
-              autoPlay
-
-            />
+            <video className="video__peer" playsInline ref={peerVideo} autoPlay />
           ) : (
             <div className="video__peer-empty">
-              {receivingCall && !callAccepted ? (<p className="video__receive" > Receiving Call...</p>) : (<p> Your professional will call you....</p>)}
+              {receivingCall && !callAccepted ? (
+                <p className="video__receive">
+                  {' '}
+                  Receiving Call...
+                  <FiPhoneCall />
+                </p>
+              ) : (
+                <p> Your professional will call you....</p>
+              )}
 
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/3062/3062992.png"
-                alt="iconImage"
-              />
+              <img src="https://cdn-icons-png.flaticon.com/512/3062/3062992.png" alt="iconImage" />
             </div>
           )}
         </div>
 
-
         <div className="video__right">
           <div>
-            {stream && (
-              <video
-                playsInline
-                muted
-                ref={myVideo}
-                autoPlay
-                className="video__myself"
-              />
-            )}
+            {stream && <video playsInline muted ref={myVideo} autoPlay className="video__myself" />}
           </div>
 
           <div>
             {callAccepted && !callEnded ? (
               <button className="btn-video" onClick={leaveCall}>
                 End Call
+                <MdCallEnd className="video__icon" />
               </button>
             ) : (
               <div>
-                {/* <div>{myself}</div> */}
                 {createCallButton}
               </div>
             )}
@@ -208,6 +182,7 @@ export default function VideoPage() {
               <div>
                 <button className="btn-video" onClick={answerCall}>
                   Answer
+                  <MdCall className="video__icon" />
                 </button>
               </div>
             ) : null}
@@ -219,6 +194,6 @@ export default function VideoPage() {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 }

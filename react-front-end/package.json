@@ -5,10 +5,10 @@
   "dependencies": {
     "axios": "^0.18.1",
     "react": "^17.0.2",
-    "react-calendar": "^3.7.0",
     "react-dom": "^17.0.2",
     "react-hook-speech-to-text": "^0.8.0",
     "react-icons": "^4.3.1",
+    "react-modern-calendar-datepicker": "^3.1.6",
     "react-router-dom": "^6.2.2",
     "react-scripts": "2.1.8",
     "simple-peer": "^9.11.1",
@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "scss": "node-sass --watch src/scss -o css"
+    "scss": "node-sass --watch src/scss -o css",
+    "cypress": "cypress open -P ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,6 +33,7 @@
   ],
   "proxy": "http://localhost:8080",
   "devDependencies": {
+    "cypress": "^9.5.2",
     "node-sass": "^4.14.0"
   }
 }

@@ -2,18 +2,21 @@
   margin: 3em 0;
   padding: 5rem 0;
   background-color: #cba96d;
+  min-height: 80vh; 
+  margin-bottom: 0px; 
 
   &__container {
     display: flex;
     justify-content: space-around;
+    // width: 80vw; 
+   
   }
 
   &__peer {
-    width: 800px;
+    width: 60vw;
 
     &-empty {
-      width: 800px;
-
+      width: 55vw;
       background-color: white;
       text-align: center;
       box-shadow: $default-box-shadow;
@@ -31,15 +34,11 @@
       }
     }
   }
-
-  &__receive {
-  }
-
   &__myself {
-    width: 300px;
+    width: 25vw;
   }
   &__icon {
-    width: 15%;
+    margin-left: 15px;
   }
   &__receive {
     animation: calling 1s infinite;
@@ -49,13 +48,14 @@
 .btn-video {
   display: flex;
   justify-content: center;
+  align-items: center;
   border: none;
-  font-size: 1em;
+  font-size: 2rem;
   padding: 0.2em 0.6em;
   color: #ffffff;
   background-color: #ae915e;
   margin-top: 2rem;
-  width: 100%;
+  width: 25vw;
   box-shadow: $default-box-shadow;
 }
 .btn-video:hover {
@@ -65,15 +65,13 @@
   transform: translateY(-5px);
 }
 
-.video__icon {
-  margin-left: 15px;
-}
-
 @keyframes calling {
   50% {
+    opacity: 1;
     transform: translateY(4px) scale(1.2);
   }
   100% {
-    transform: translateY(0) scale(1);
+    opacity: 0.7;
+    transform: translateY(0) scale(1) opacity(1);
   }
 }

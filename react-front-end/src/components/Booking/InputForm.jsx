@@ -1,38 +1,20 @@
-
-// how to toggle?
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { MdDateRange, MdAccessTime } from 'react-icons/md'
-
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import DatePicker from "react-modern-calendar-datepicker";
 import useSpeechToText from 'react-hook-speech-to-text';
 
 
 export default function InputForm(props) {
-  
 
-  const [date, setDate] = useState(new Date());
   const [time, setTime] = useState("09:00:00");
   const [formState, setFormState] = useState(false)
   const { professional } = props;
   const navigate = useNavigate();
-  const [showResults, setShowResults] = React.useState(false)
-  const onClick = () => setShowResults(true)
-
-  const Results = () => (
-    <div id="results" className="search-results">
-      <Calendar
-              onChange={setDate }
-              value={date}
-              name="date"
-              type="date"
-            />
-    </div>
-  )
-
+  const [selectedDay, setSelectedDay] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,17 +25,17 @@ export default function InputForm(props) {
 
   const handleTimeChange = (time) => {
     setTime(time);
-    console.log(time);
   };
 
   const addNewAppointmentData = (event) => {
+    const dateData = ` ${selectedDay.year}-${selectedDay.month}-${selectedDay.day}`;
     const myData =
     {
       professional: professional.id,
-      date: date,
+      date: dateData,
       time: time,
       info: formState
-    }
+    };
     fetch('/api/appointments', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
@@ -61,18 +43,23 @@ export default function InputForm(props) {
     })
       .then(response => response.json())
       .then(body => {
-        console.log('fetch successfull')
+
         navigate('/thankyou')
       })
-
       .catch((error) => {
         console.error('Error posting new appointment. Error:', error);
       });
 
   }
-  // }
 
-
+  const renderCustomInput = ({ ref }) => (
+    <input
+      readOnly
+      ref={ref} // necessary
+      placeholder="Select Date"
+      value={selectedDay ? `${selectedDay.day}/${selectedDay.month}/${selectedDay.year}` : ''}
+      className="my-custom-input-class" // a styling class
+    />)
 
   useEffect(() => {
     if (!formState === false) addNewAppointmentData();
@@ -82,7 +69,6 @@ export default function InputForm(props) {
     error,
     interimResult,
     isRecording,
-    results,
     startSpeechToText,
     stopSpeechToText,
   } = useSpeechToText({
@@ -95,22 +81,24 @@ export default function InputForm(props) {
     }
   });
 
-  if (error) return <p>Web Speech API is not available in this browser</p>;
-
+  if (error) return <p>Web Speech API is not available in this browser</p>
   return (
-
     <div className="bottomhalf">
-
       <form onSubmit={handleSubmit}>
         <div className="timeslots">
           <div>
-          <div> <MdDateRange /><br />
-      <input type="submit" value="Select Date" onClick={onClick} />
-      { showResults ? <Results /> : null }
-    </div>
-      
+            <div> <MdDateRange /><br />
+              <DatePicker
+                className="my-custom-input-class"
+                value={selectedDay}
+                onChange={setSelectedDay}
+                inputPlaceholder="Select a day"
+                renderInput={renderCustomInput}
+                colorPrimary="#cba96d"
+                shouldHighlightWeekends
+              />
+            </div>
           </div>
-
           <div><MdAccessTime /><br />
             <select
               name="time"
@@ -133,7 +121,6 @@ export default function InputForm(props) {
             </select>
           </div>
         </div>
-
         <p />
 
         <div>
@@ -147,13 +134,11 @@ export default function InputForm(props) {
           />
           <br />
           <div className="mic">
-          <button type="button" onClick={isRecording ? stopSpeechToText : startSpeechToText}>{isRecording ? '🛑' : '🎤'}</button>
-          &nbsp; Click the microphone to record your message in Japanese. 
+            <button type="button" onClick={isRecording ? stopSpeechToText : startSpeechToText}>{isRecording ? '🛑' : '🎤'}</button>
+            &nbsp; Click the microphone to record your message in Japanese.
           </div>
           <button type="submit" className="submit">Submit</button>
-         
         </div>
-
       </form>
     </div>
 

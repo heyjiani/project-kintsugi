@@ -1,59 +1,67 @@
-import React from "react";
-import { AiOutlineTag } from 'react-icons/ai'
+import React from 'react';
+import { AiOutlineTag } from 'react-icons/ai';
 
 export default function Sidebar(props) {
-
   const { specialties, handleCheck, professions, cities, handleRadio } = props;
+  const [showIssues, toggleShowIssues] = React.useState(false);
+  const [showCities, toggleShowCities] = React.useState(false);
+  const [showProfession, toggleShowProfession] = React.useState(false);
 
-  const parsedSpecialties = specialties.map(s => {
+  const parsedSpecialties = specialties.map((s) => {
     return (
       <div key={s.id}>
-        <input type="checkbox" value={s.id} onClick={e => handleCheck(e)} />
+        <input type="checkbox" value={s.id} onClick={(e) => handleCheck(e)} />
         {s.name}
       </div>
-    )
+    );
   });
 
   const parsedProfessions = professions.map((p, i) => {
     return (
       <div key={i}>
-        <input type="radio" name="profession" value={p} onClick={e => handleRadio(e, 'profession', p)} />
+        <input
+          type="radio"
+          name="profession"
+          value={p}
+          onClick={(e) => handleRadio(e, 'profession', p)}
+        />
         {p}
       </div>
-    )
+    );
   });
 
   const parsedCities = cities.map((c, i) => {
     return (
       <div key={i}>
-        <input type="radio" name="city" value={c} onClick={e => handleRadio(e, 'city', c)} />
+        <input type="radio" name="city" value={c} onClick={(e) => handleRadio(e, 'city', c)} />
         {c}
       </div>
-    )
+    );
   });
 
   return (
     <div className="sidebar">
-      <header><span>
-      <AiOutlineTag /></span>{" "}
-         Sort
+      <header>
+        <span>
+          <AiOutlineTag />
+        </span>{' '}
+        Sort by
       </header>
       <div className="sidebar__options">
+        <button onClick={() => toggleShowIssues(!showIssues)}>
+          {showIssues ? 'Close' : 'Issues '}
+        </button>
+        {showIssues && parsedSpecialties}
 
-        <div className="sidebar__options__category">
-          <h4>Issues</h4>
-        </div>
-        {parsedSpecialties}
+        <button onClick={() => toggleShowCities(!showCities)}>
+          {showCities ? 'Close' : 'Cities'}
+        </button>
+        {showCities && parsedCities}
 
-        <div className="sidebar__options__category">
-          <h4>City</h4>
-        </div>
-        {parsedCities}
-
-        <div className="sidebar__options__category">
-          <h4>Profession</h4>
-        </div>
-        {parsedProfessions}
+        <button onClick={() => toggleShowProfession(!showProfession)}>
+          {showProfession ? 'Close' : 'Professions '}
+        </button>
+        {showProfession && parsedProfessions}
       </div>
     </div>
   );

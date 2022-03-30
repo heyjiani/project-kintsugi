@@ -2,13 +2,10 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 36px;
-  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat976.ani),
-    url(https://cur.cursors-4u.net/nature/nat-10/nat976.gif),
-    auto !important;
 }
 
 .navigation {
@@ -16,16 +13,15 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0px 0px .8em 0em ;
-
+  padding: 0px 0px 0.8em 0em;
+  margin-left: 0em;
   z-index: 99;
   font-family: "Alegreya", serif;
   color: #ffffff;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #cba96d;
-
 
   .logo {
     display: flex;
@@ -33,12 +29,12 @@ body {
   }
 
   h1 {
-    font-size: 70px;
+    font-size: 4.5rem;
     color: #ffffff;
     margin: 0px;
     margin-top: 10px;
     margin-bottom: 0px;
-    padding-left: 0.5em;
+    padding-left: .8em;
     font-weight: normal;
     font-family: "Alegreya", serif;
     -webkit-font-smoothing: antialiased;
@@ -47,25 +43,45 @@ body {
 
   &__links {
     display: flex;
-    padding: 0 2em;
+    padding: 0 0em;
     font-size: 2vw;
     color: #ffffff;
-    width: 100%;
     margin-top: 3rem;
-    margin-left: 15rem;
-    white-space:nowrap;
+    margin-left: -10rem;
+    white-space: nowrap;
+
 
     :hover {
       margin-top: 5px;
-      opacity: .7;
+      opacity: 0.7;
     }
 
     div {
-      padding-left: 90px;
+      justify-content: center;
+      width: 60%;
+      padding-left: 1em;
+      padding-right: 1em;
     }
-
-    
   }
+
+  &__links2 {
+    font-size: 2vw;
+    margin-top: 3rem;
+    padding-right: 1.2em;
+
+    :hover {
+      margin-top: 5px;
+      opacity: 0.7;
+    }
+  }
+}
+
+.logout {
+  color: #856c6c;
+  text-align: right;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.2em;
+  margin-right: .8em
 }
 
 span {
@@ -80,16 +96,45 @@ span {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  justify-content: space-between;
   text-align: center;
+  min-height: 90vh; 
+  // overflow: clip;
+}
+.components_container2 {
+  background-color: #cba96d;
+  padding-top: 150px;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 90vh;
+  overflow: clip;
 }
 
-footer {
+.card footer {
   background-color: white;
   display: flex;
   justify-content: space-between;
   padding: 25px 54px 25px 54px;
   font-size: 15px;
+  // height: 20%;
+  // overflow-y: clip; 
+}
+
+  footer {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 54px 25px 54px;
+  font-size: 15px;
+  max-height: 10vh;
+  bottom: 0; 
+  // height: 20%;
+  // overflow-y: clip; 
+
 
   h4 {
     color: #cba96d;
@@ -103,10 +148,8 @@ footer {
 a {
   color: #ffffff;
   text-decoration: none;
-  font-family: 'Bebas Neue', cursive;
-  letter-spacing: .2em;
-
-   
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.2em;
 }
 
 textarea {
@@ -124,6 +167,11 @@ code {
     Consolas, "Courier New", monospace;
 }
 
+
+.hidden
+{color: #cba96d; 
+padding-left: 9.2em; }
+
 // header
 
 h2 {
@@ -136,34 +184,42 @@ h2 {
 
 .heading {
   margin-bottom: -1rem;
+  margin-top: -50px; 
 
   h2 {
     font-size: 3rem;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     font-family: "Alegreya", serif;
     font-weight: normal;
     color: #ffffff;
     padding: 0px;
-    margin: -50px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
   }
 
   .global-class-name {
-    color:#ffffff; 
-    margin-right: 25px; 
-    margin-top: 35px; 
+    color: #ffffff;
+    margin-right: 25px;
+    margin-top: 35px;
   }
 
   p {
     font-size: 2rem;
-    margin-bottom: -30px; }
+    margin-bottom: -30px;
+  }
 }
+
+.icons
+{margin: 2em; 
+text-align: center; 
+margin-bottom: -2.5em; 
+margin-left: -3.8em; }
 
 .placeholder {
   background-color: #ffffff;
   width: 60%;
   text-align: center;
   box-shadow: $default-box-shadow;
-  padding: 1rem;
+  padding: 2rem 2rem 3rem;
   font-size: 1.5rem;
 
   img {
@@ -181,14 +237,34 @@ h2 {
     font-family: "Alegreya", serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: .3em;
+    letter-spacing: 0.3em;
   }
 }
+
 
 .center {
   text-align: center;
   display: flex;
   justify-content: space-between;
+ }
+
+.center2 {
+  text-align: center;
+  justify-content: center;
+  width: 60%; 
+  margin-left: 20%;
+  margin-right: 20%; 
+  min-height: 540px; 
+  padding-top: 2em; 
+
+  a {
+    font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.2em;
+  color: white; 
+  font-size: .8em; 
+  padding-right: .5em; 
+  }
+  a:hover {opacity: .6}
 }
 
 // bookingForm
@@ -198,7 +274,7 @@ h2 {
   width: 60%;
   text-align: center;
   font-size: 1.5rem;
-  padding: 2rem;
+  padding: 1rem;
   margin: 2rem;
   margin-bottom: 3rem;
   box-shadow: $default-box-shadow;
@@ -206,8 +282,7 @@ h2 {
   justify-content: center;
   flex-direction: column;
   margin-left: 20%;
-  margin-right: 20%; 
-
+  margin-right: 20%;
 
   .go_back {
     color: #ffffff;
@@ -221,44 +296,40 @@ h2 {
   }
 
   .go_back:hover {
-    background-color: #E3CE94;
+    background-color: #e3ce94;
   }
-
 
   td {
     text-align: left;
     padding-left: 10px;
-   
   }
 
   table {
-    padding-left: 1rem; 
+    padding-left: 1rem;
   }
 
   img {
-    width: 30px ; 
-    padding: 0px; 
-    margin: 0px; 
-
+    width: 30px;
+    padding: 0px;
+    margin: 0px;
   }
 
-  .profile_header  {
+  .profile_header {
     display: flex;
     justify-content: flex-start;
-    flex-direction: row ;
+    flex-direction: row;
     margin-left: 25%;
     margin-right: 25%;
     margin-top: -1rem;
 
-    .proff_name h2{
+    .proff_name h2 {
       font-family: Alegreya;
-      font-weight: bold; 
-      font-size: 2rem; 
+      font-weight: bold;
+      font-size: 2rem;
       color: #ae915e;
-      margin-bottom: -1rem; 
-      margin-top: -.5rem; 
-      margin-left: 1rem; 
-
+      margin-bottom: -1rem;
+      margin-top: -0.5rem;
+      margin-left: 1rem;
     }
   }
 }
@@ -269,60 +340,46 @@ h2 {
 }
 
 .bottomhalf {
-display: flex;
-justify-content: space-around;
-flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 
-.mic {
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  margin-left: 15%;
-  margin-right: 15%; 
-  margin-top: -1em; 
-  margin-bottom: 1em; 
-  width: 70%; 
-  display: flex; 
-  justify-content: center;  
-  padding: 1em; 
-  font-size: 1em; 
-  color: grey; 
-}
+  .mic {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -1em;
+    margin-bottom: 1em;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    font-size: 0.7em;
+    color: grey;
+  }
 
-textarea {
-  width: 70%;
-  min-height: 15rem; 
-  border-bottom: 0px; 
-  padding: 1em; 
-  font-size: 1em; 
-}
+  textarea {
+    width: 80%;
+    min-height: 15rem;
+    border-bottom: 0px;
+    padding: 1em;
+    font-size: 0.7em;
+  }
 
-textarea:active {
-  border: 0px; 
+  textarea:active {
+    border: 0px;
+  }
 
-}
-
-input {
-  font-size: 1em; 
-  margin: 1em; 
-  padding: .3em; 
-  border: 2px solid black; 
-  background-color: white;
-  box-shadow: $default-box-shadow;
-  margin-top: .5em;
-}
-input:hover {
-  color: #cba96d;
-}
-
-select {
-  font-size: 1em; 
-  margin: 1em; 
-  padding: .3em; 
-  border: 2px solid black; 
-  box-shadow: $default-box-shadow;
-  margin-top: .5em;
-}
+  select {
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.3em;
+    border: 2px solid black;
+    box-shadow: $default-box-shadow;
+    margin-top: 0.5em;
+  }
 
   select:hover {
     color: #cba96d;
@@ -336,31 +393,42 @@ select {
     margin-right: 15%;
     background-color: #ae915e;
     padding: 1rem;
-    border: 0px; 
+    border: 0px;
     width: 70%;
   }
 
   .submit:hover {
     background-color: #cba96d;
   }
-
-
 }
 
 .timeslots {
   display: flex;
-justify-content: center;
-flex-direction: row;
+  justify-content: center;
+  flex-direction: row;
+
+  button {
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.3em;
+    border: 2px solid black;
+    background-color: white;
+    box-shadow: $default-box-shadow;
+    margin-top: 0.5em;
+  }
+  button:hover {
+    color: #cba96d;
+  }
 
   div {
-    padding-left: 1em; 
-    padding-right: 1em; 
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
 
 .chat {
   color: #cba96d;
-  font-size: 2px; 
+  font-size: 2px;
 }
 
 .searchbtn {
@@ -376,145 +444,26 @@ flex-direction: row;
   font-weight: bold;
 
   &:active {
-    transform: translateY(4px);
+    transform: translateY(2px);
   }
   &:hover {
     margin-top: 1.2em;
-    opacity: .7; 
+    opacity: 0.7;
   }
 }
 
+// calendar
 
-// calendar 
 
-.react-calendar {
-  width: 100px; 
-  max-width: 100%;
-  background: white;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.125em;
-  color: black; 
-  display: inline; 
-  border: 0px; 
-}
-.react-calendar--doubleView {
-  width: 700px;
-}
-.react-calendar--doubleView .react-calendar__viewContainer {
-  display: flex;
-  margin: -0.5em;
-}
-.react-calendar--doubleView .react-calendar__viewContainer > * {
-  width: 50%;
-  margin: 0.5em;
-}
-.react-calendar,
-.react-calendar *,
-.react-calendar *:before,
-.react-calendar *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.react-calendar button {
-  margin: 0;
-  border: 0;
-  outline: none;
-  color: black; 
-}
-.react-calendar button:enabled:hover {
-  cursor: pointer;
-}
-.react-calendar__navigation {
-  height: 44px;
-  margin-bottom: 1em;
-  color: black; 
-}
-.react-calendar__navigation button {
-  min-width: 44px;
-  background: none;
-  color: black; 
-}
-.react-calendar__navigation button:enabled:hover,
-.react-calendar__navigation button:enabled:focus {
-  background-color: #e6e6e6;
-  color: black;
-}
-.react-calendar__navigation button[disabled] {
-  background-color: #f0f0f0;
-  color: black;
-}
-.react-calendar__month-view__weekdays {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.75em;
-  color: black; 
-}
-.react-calendar__month-view__weekdays__weekday {
-  padding: 0.5em;
-}
-.react-calendar__month-view__weekNumbers {
-  font-weight: bold;
-}
-.react-calendar__month-view__weekNumbers .react-calendar__tile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75em;
-  padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
-}
-.react-calendar__month-view__days__day--weekend {
-  color: #d10000;
-}
-.react-calendar__month-view__days__day--neighboringMonth {
-  color: #757575;
-}
-.react-calendar__year-view .react-calendar__tile,
-.react-calendar__decade-view .react-calendar__tile,
-.react-calendar__century-view .react-calendar__tile {
-  padding: 2em 0.5em;
-}
-.react-calendar__tile {
-  max-width: 100%;
-  text-align: center;
-  padding: 0.75em 0.5em;
-  background: none;
-  color: black;
-}
-.react-calendar__tile:disabled {
-  background-color: #f0f0f0;
-  color: black; 
-}
-.react-calendar__tile:enabled:hover,
-.react-calendar__tile:enabled:focus {
-  background-color: #e6e6e6;
-  color: black; 
-}
-.react-calendar__tile--now {
-  background: #ffff76;
-  color: black; 
-}
-.react-calendar__tile--now:enabled:hover,
-.react-calendar__tile--now:enabled:focus {
-  background: #ffffa9;
-  color: black; 
-}
-.react-calendar__tile--hasActive {
-  background: #76baff;
-}
-.react-calendar__tile--hasActive:enabled:hover,
-.react-calendar__tile--hasActive:enabled:focus {
-  background: #a9d4ff;
-}
-.react-calendar__tile--active {
-  background: #006edc;
-  color: white;
-}
-.react-calendar__tile--active:enabled:hover,
-.react-calendar__tile--active:enabled:focus {
-  background: #1087ff;
-}
-.react-calendar--selectRange .react-calendar__tile--hover {
-  background-color: #e6e6e6;
-}
+.my-custom-input-class {
+  font-size: 1em;  
+  padding: .3em; 
+  border: 2px solid black; 
+  box-shadow: $default-box-shadow;
+  margin-top: .5em;
+  text-align: center; 
+  width: 7em; }
+
+  .my-custom-input-class:hover {
+    color: #cba96d;
+  }

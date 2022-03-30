@@ -1,13 +1,13 @@
 import React, {
   useContext,
-  useEffect,
+  useEffect
   // useState,
-} from "react";
-import { useParams } from "react-router-dom";
+} from 'react';
+import { useParams } from 'react-router-dom';
 
-import BookingForm from "../components/Booking/BookingForm";
-import ProfessionalDetail from "../components/Booking/ProfessionalDetail";
-import { DataContext } from "../providers/DataProvider";
+import BookingForm from '../components/Booking/BookingForm';
+import ProfessionalDetail from '../components/Booking/ProfessionalDetail';
+import { DataContext } from '../providers/DataProvider';
 
 export default function BookingPage() {
   let { id } = useParams();
@@ -16,24 +16,20 @@ export default function BookingPage() {
     specialtiesForProfessional,
     getProfessionalById,
     getSpecialtiesByProfessionalId,
+    show
   } = useContext(DataContext);
 
   useEffect(() => {
     getProfessionalById(id);
     getSpecialtiesByProfessionalId(id);
-
   }, [id]);
 
   return (
     <div className="components_container">
-      <ProfessionalDetail
-        professional={professional}
-        specialties={specialtiesForProfessional}
-      />
-      <BookingForm
-        professional={professional}
-        specialties={specialtiesForProfessional}
-      />
+      {!show && (
+        <ProfessionalDetail professional={professional} specialties={specialtiesForProfessional} />
+      )}
+      {show && <BookingForm professional={professional} specialties={specialtiesForProfessional} />}
     </div>
   );
 }

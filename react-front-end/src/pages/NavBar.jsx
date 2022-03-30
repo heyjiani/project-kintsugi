@@ -1,5 +1,5 @@
-import React from "react";
-import NavLinks from "../components/NavLinks";
+import React from 'react';
+import NavLinks from '../components/NavLinks';
 
 export default function NavBar() {
   return (
@@ -10,6 +10,9 @@ export default function NavBar() {
         </a>
       </div>
       <NavLinks />
+      <div className="navigation__links2">
+        <div className="logout">Logout</div>
+      </div>
     </nav>
   );
 }
