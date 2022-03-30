@@ -32,7 +32,6 @@ export default function VideoPage() {
     });
 
     socket.on('allUsers', (users) => {
-      console.log(users);
       setUsers(users);
     });
 
@@ -123,7 +122,7 @@ export default function VideoPage() {
   const createCallButton = Object.keys(users).map((key, i, arr) => {
     if (key !== myself && arr[arr.length - 1] === key) {
       return (
-        <div className="btn-video">
+        <div key={i} className="btn-video">
           <span onClick={() => callUser(key)}>Call</span>
           <FaVideo className="video__icon" />
         </div>

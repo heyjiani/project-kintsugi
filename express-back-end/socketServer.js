@@ -5,7 +5,7 @@ let users = {};
 const listen = (httpServer) => {
   const io = socket(httpServer, {
     cors: {
-      origin: "http://localhost:3000",
+      origin: "*",
       methods: ["GET", "POST"],
     },
   });
