@@ -40,7 +40,7 @@ export default function ProfessionalListItem(props) {
           </li>
         </ul>
       </div>
-      <footer>
+      <footer className="card">
         <button onClick={() => handleOnClick(id)}>Find out more</button>
       </footer>
     </li>
