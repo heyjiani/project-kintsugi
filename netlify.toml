@@ -1,6 +1,6 @@
 [build]
   base    = "react-front-end/"
-  publish = "react-front-end/build/"
+  publish = "build/"
   command = "npm run build"
 
 [build.environment]
