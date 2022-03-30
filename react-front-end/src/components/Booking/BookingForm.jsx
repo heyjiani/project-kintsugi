@@ -1,5 +1,4 @@
 import React from 'react';
-import 'react-calendar/dist/Calendar.css';
 import { useNavigate } from 'react-router-dom';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { MdWorkOutline } from 'react-icons/md';
