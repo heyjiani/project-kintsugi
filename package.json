@@ -9,8 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm start --prefix server",
-    "install-client": "cd client && npm install && npm run build && cd ..",
-    "install-server": "cd express-back-end && npm install",
+    "install-client": "cd react-front-end && npm install && npm run build && cd ..",
+    "install-server": "cd express-back-end && npm install && cd ..",
     "heroku-postbuild": "npm run install-client && npm run install-server"
   },
   "repository": {
