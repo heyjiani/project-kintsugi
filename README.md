@@ -8,9 +8,19 @@ This project was developed by [Aya Okizaki](), [Lindsay Tannahill](), and [mysel
 
 
 ## Features
-![screenshot1]()
-![screenshot2]()
-![screenshot3]()
+
+Users can search by language or location, or receive help from an automated chatbot. 
+![Homepage](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/homepage_interactive.gif?raw=true)
+
+Users can sort professionals available to them by location, issues, and type of profession.
+![screenshot3](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/prof_page.gif?raw=true)
+
+Users can book appointments, and use a voice transcriber if a keyboard in their language is not available to them.
+![Booking Page](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/booking_page.gif?raw=true)
+
+Users can view a list of their appointments and have live meetings via video.
+![Appointment Page](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/appt_page_screenshot.png?raw=true)
+![Video page](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/live_appt_page.png?raw=true)
 
 ## Running the projects
 
