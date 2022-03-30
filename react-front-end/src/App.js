@@ -12,12 +12,6 @@ import NavBar from './pages/NavBar';
 import ThankYou from './pages/ThankYouPage';
 import VideoPage from './pages/VideoPage';
 
-import axios from 'axios';
-
-if (process.env.REACT_APP_API_BASE_URL) {
-  axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
-}
-
 const App = () => {
   return (
     <>
