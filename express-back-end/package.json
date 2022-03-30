@@ -6,6 +6,7 @@
   "author": "garrettgsb",
   "license": "MIT",
   "scripts": {
+    "start": "node server.js",
     "go": "nodemon server.js",
     "reset": "psql -U development -d kintsugi_dev < ./db/schema.sql && psql -U development -d kintsugi_dev < ./db/seeds/01_clients.sql && psql -U development -d kintsugi_dev < ./db/seeds/02_professionals.sql && psql -U development -d kintsugi_dev < ./db/seeds/03_specialties.sql && psql -U development -d kintsugi_dev < ./db/seeds/04_appointments.sql && psql -U development -d kintsugi_dev < ./db/seeds/05_professionals_specialties.sql",
     "test:server": "NODE_ENV=test npm start"
