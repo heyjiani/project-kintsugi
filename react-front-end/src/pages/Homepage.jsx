@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import HomeHeader from "../components/HomeHeader";
-import Placeholder from "../components/Placeholder";
+import HomeHeading from '../components/Home/HomeHeading';
+import Placeholder from '../components/Home/Placeholder';
 
 export default function Homepage() {
   return (
     <>
       <div className="components_container">
-        <HomeHeader />
+        <HomeHeading />
         <Placeholder />
       </div>
     </>

@@ -1,14 +1,26 @@
-# React + Express No-Fluff Boilerplate
+# Kintsugi
 
-A boilerplate project for anyone interested in making a project that uses React and Express.
+Kintsugi is an app that aims to promote accessibility to mental healthcare for immigrants by connecting them to providers of their cultural/linguistic background. Built in ***React*** + ***Express***, it allows users to look up mental healthcare workers based on their language and location, and connect with them by booking appointments, sending transcribed voice messages, and video chatting. 
 
-This repository is a bootleg of @NimaBoscarino's [React Rails Boilerplate](https://github.com/NimaBoscarino/react-rails-boilerplate). It uses the same React app, but replaces the Rails server with an Express server.
+Named after the Japanese art of mending broken pottery with gold/silver lacquer, Kintsugi was built with the intention of helping to destigmatize mental illness in vulnerable communities, and reframing the act of getting help in a more open, compassionate light. 
 
-Note! This boilerplate has _no fluff_! That means that there's nothing set up for you to do authentication stuff, there's no Redux stuff, and there's no React Router stuff. On the Express end, there is no session storage or database connection.
+This project was developed by [Aya Okizaki](), [Lindsay Tannahill](), and [myself]() as our final project at the Lighthouse Labs Web Development Bootcamp. 
 
-The main important bit is that the React project has `proxy` set to `localhost:8080` in the `package.json` file, and that the Express app listens to port 8080 in `server.js`. Take a look!
 
-You can (and perhaps should) rename the directories `express-back-end` and `react-front-end` if you want-- The name doesn't matter.
+## Features
+
+Users can search by language or location, or receive help from an automated chatbot. 
+![Homepage](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/homepage_interactive.gif?raw=true)
+
+Users can sort professionals available to them by location, issues, and type of profession.
+![screenshot3](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/prof_page.gif?raw=true)
+
+Users can book appointments, and use a voice transcriber if a keyboard in their language is not available to them.
+![Booking Page](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/booking_page.gif?raw=true)
+
+Users can view a list of their appointments and have live meetings via video.
+![Appointment Page](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/appt_page_screenshot.png?raw=true)
+![Video page](https://github.com/heyjiani/project-kintsugi/blob/develop/react-front-end/docs/screenshots/live_appt_page.png?raw=true)
 
 ## Running the projects
 
@@ -18,29 +30,19 @@ In one terminal, `cd` into `react-front-end`. Run `npm install` or `yarn` to ins
 
 In the other terminal, `cd` into `express-back-end`. Run `npm install` or `yarn` to install the dependencies, then `npm start` or `yarn start` to launch the server.
 
-In the browser, you can click on the button and see the data get loaded.
+## Dependencies
+*  axios: _0.18.1_
+*  react: _17.0.2_
+*  react-dom: _17.0.2_
+*  react-hook-speech-to-text: _0.8.0_
+*  react-icons: _4.3.1_
+*  react-modern-calendar-datepicker: _3.1.6_
+*  react-router-dom: _6.2.2_
+*  react-scripts: _2.1.8_
+*  simple-peer: _9.11.1_
+*  socket.io-client: _4.4.1_
 
-If this doesn't work, please message me!
+## React + Express No-Fluff Boilerplate
 
-## Next steps
+This project was built with @NimaBoscarino's [React Rails Boilerplate](https://github.com/NimaBoscarino/react-rails-boilerplate). 
 
-From here, you can start working on your project!
-
-As soon as the dependencies are installed, your Express server can serve JSON and static assets (like images) in response to API calls from the React app. You can get started on developing your React app, routing plan, etc. right away! Any request that isn't handled by React is passed on to the Express server. That means that you can call a route like `/api/users` from React using `fetch`, `axios`, or something else, and Express will receive it as though they originated from the same app. For routing, best practice is to namespace all of your data routes to `/api`, so that they don't clash with other routing schemes, like React Router.
-
-At some point, you'll likely want to install and configure a database driver for Postgres or MongoDB-- Refer to past projects for hints on how to do this.
-
-And don't forget to update the README!
-
-## Example Projects
-
-You might want to look at examples of projects that have used this boilerplate for hints on how to extend it. Here are a few:
-
-* [Later Cart](https://github.com/bonitac/later-cart)
-* [Buddi.io](https://github.com/Danny-Tran/buddi.io)
-
-If you'd like your project added to the list, please shoot me a message.
-
-## Contact
-
-Please contact me on Slack (@garrettgsb) or Nima at `nima@lighthouselabs.com` if you have any questions, requests, or feedback, or post an issue to this repo. If you are using the boilerplate, I'd love to hear from you as well!
