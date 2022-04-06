@@ -440,24 +440,6 @@ h2 {
   font-size: 2px;
 }
 
-.searchbtn {
-  @include btnBox;
-  margin: 1em;
-  color: #ae915e;
-  background-color: white;
-  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-  display: inline-block;
-  margin: 3rem;
-  box-shadow: $default-box-shadow;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-
-  &:active {
-    transform: translateY(2px);
-  }
-}
-
 // calendar
 
 .my-custom-input-class {
