@@ -1,23 +1,61 @@
+@import "styles/variable.scss";
+@import "styles/mixin.scss";
+
 .btn {
-  background-color: white;
-  padding: 2rem;
-  border: 2px solid black;
-  display: inline-block;
+  @include btnBox;
   margin: 1em;
   color: #ae915e;
-}
-
-.btn-delete {
   background-color: white;
-  padding: 0.5em;
-  border: 2px solid black;
-}
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  display: inline-block;
+  margin: 3rem;
+  box-shadow: $default-box-shadow;
+  font-size: 1.7rem;
+  font-weight: bold;
 
-.btn-booking {
-  background-color: #ae915e;
-  padding: 0.5em;
-  border: 2px solid black;
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
+  &:active {
+    transform: translateY(4px);
+  }
+
+  &-delete {
+    @include btnBox;
+    margin-top: 50px;
+    font-size: 1.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    &:active {
+      transform: translateY(4px);
+    }
+  }
+
+  &-booking {
+    background-color: #ae915e;
+    padding: 0.5em;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+
+    &:active {
+      transform: translateY(4px);
+    }
+  }
+
+  &-search {
+    @include btnBox;
+    margin: 1em;
+    color: #ae915e;
+    background-color: white;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+    display: inline-block;
+    margin: 3rem;
+    box-shadow: $default-box-shadow;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
 }

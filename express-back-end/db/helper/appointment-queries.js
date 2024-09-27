@@ -10,7 +10,7 @@ const getAppointments = () => {
 };
 
 const getSingleAppointment = (id) => {
-  const queryString = `SELECT * FROM clients
+  const queryString = `SELECT * FROM appointments
   WHERE id = $1;`;
   const queryValue = [id];
 
@@ -22,18 +22,47 @@ const getSingleAppointment = (id) => {
     });
 };
 
-const newAppointment = (client_id, prof_id, appointment_data) => {
-  const { date, time, description } = appointment_data 
-  const queryValues = [client_id, prof_id, date, time, description]
+const getAppointmentsByUserId = (client_id) => {
+  const queryString = `
+    SELECT * FROM appointments
+    WHERE client_id  = $1;
+  `;
+  const queryValue = [client_id];
+
+  return db
+    .query(queryString, queryValue)
+    .then((res) => res.rows)
+    .catch((err) => console.log(err.message));
+};
+
+const newAppointment = (
+  client_id,
+  prof_id,
+  appointment_data
+) => {
+  const { date, time, info } =
+    appointment_data;
+  const queryValues = [
+    client_id,
+    prof_id,
+    date,
+    time,
+    info,
+  ];
   const queryString = `INSERT INTO appointments (client_id, professional_id, date, time, description) VALUES
-  ($1, $2, $3, $4, $5) RETURNING *`
-  
+  ($1, $2, $3, $4, $5) RETURNING *`;
+
   return db
     .query(queryString, queryValues)
     .then((res) => res.rows[0])
     .catch((err) => {
       console.log(err.message);
     });
-  };
+};
 
-module.exports = { getAppointments, getSingleAppointment, newAppointment };
+module.exports = {
+  getAppointments,
+  getSingleAppointment,
+  newAppointment,
+  getAppointmentsByUserId,
+};

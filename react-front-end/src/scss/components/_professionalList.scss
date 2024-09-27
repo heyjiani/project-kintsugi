@@ -1,0 +1,40 @@
+.professionals {
+
+  background-color: #cba96d; 
+  
+  &__container {
+    margin-top: 6.5em;
+    font-size: 20px;
+    text-align: center;
+    width: 70%;
+    margin-left: 30%; 
+    min-height: 75vh; 
+
+    span {
+      color: #cba96d;
+    }
+
+
+
+    .display-info {
+        margin-top: 50px;
+        font-size: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        margin-left: 12%;
+        margin-right: 12%;
+        background-color: #ffffff;
+        box-shadow: $default-box-shadow;
+        width: 76%;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+

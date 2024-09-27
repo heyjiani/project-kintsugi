@@ -1,0 +1,199 @@
+body {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 36px;
+}
+
+.components_container {
+  background-color: #cba96d;
+  padding-top: 150px;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 90vh;
+  // overflow: clip;
+}
+.components_container2 {
+  background-color: #cba96d;
+  padding-top: 150px;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 90vh;
+  overflow: clip;
+}
+
+.card footer {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 54px 25px 54px;
+  font-size: 15px;
+  // height: 20%;
+  // overflow-y: clip;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.2em;
+}
+
+textarea {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+  width: 75%;
+  min-height: 65%;
+  resize: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco,
+    Consolas, "Courier New", monospace;
+}
+
+.hidden {
+  color: #cba96d;
+  padding-left: 9.2em;
+}
+
+// header
+
+h2 {
+  font-size: 3rem;
+  font-family: "Alegreya", serif;
+  font-weight: normal;
+  padding: 0px;
+  margin: 30px 0px -30px 0px;
+}
+
+.heading {
+  margin-bottom: -1rem;
+  margin-top: -50px;
+
+  h2 {
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    font-family: "Alegreya", serif;
+    font-weight: normal;
+    color: #ffffff;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .global-class-name {
+    color: #ffffff;
+    margin-right: 25px;
+    margin-top: 35px;
+  }
+
+  p {
+    font-size: 2rem;
+    margin-bottom: -30px;
+  }
+}
+
+.icons {
+  margin: 2em;
+  text-align: center;
+  margin-bottom: -2.5em;
+  margin-left: -3.8em;
+}
+
+.placeholder {
+  background-color: #ffffff;
+  width: 60%;
+  text-align: center;
+  box-shadow: $default-box-shadow;
+  padding: 2rem 2rem 3rem;
+  font-size: 1.5rem;
+
+  img {
+    width: 25%;
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-size: 70px;
+    color: #cba96d;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: normal;
+    font-family: "Alegreya", serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.3em;
+  }
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.center2 {
+  text-align: center;
+  justify-content: center;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  min-height: 540px;
+  padding-top: 2em;
+
+  a {
+    font-family: "Bebas Neue", cursive;
+    letter-spacing: 0.2em;
+    color: white;
+    font-size: 0.8em;
+    padding-right: 0.5em;
+  }
+  a:hover {
+    opacity: 0.6;
+  }
+}
+
+// bookingForm
+
+.timeslots {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  button {
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.3em;
+    border: 2px solid black;
+    background-color: white;
+    box-shadow: $default-box-shadow;
+    margin-top: 0.5em;
+  }
+  button:hover {
+    color: #cba96d;
+  }
+
+  div {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+.chat {
+  color: #cba96d;
+  font-size: 2px;
+}
